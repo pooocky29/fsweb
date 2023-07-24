@@ -8,30 +8,44 @@
 </head>
 <body>
     <h1>이미지</h1>
-    <!-- 
+    <!-- 자료수집
+        1.텍스트
+        2.이미지 : png윙,언스플래쉬,크롬웹스토어:fatkun 크롬추가
+        3.동영상
+        4.사운드  
+    -->
+    <!-- 최상위 폴더(root폴더)-작업영역폴더 
         사용 이미지
-        1. 이탈리아 풀리아주의 건축물인 트룰리: assets/pic_trulli.jpg
-        2. 클러치백: assets/images/i2.jpg
-        3. 커피콩: coffeebeans.jpg
-        4. 직장: ../workplace.jpg
-        5. 배너: http://frontendw.dothome.co.kr/assets/images/banner.jpg
+        1. 이탈리아 풀리아주의 건축물인 트룰리: fsweb/50_html/assets/pic_trulli.jpg
+        2. 갤러리: fsweb/50_html/assets/images/gallery2.jpg
+        3. 커피콩: fsweb/50_html/coffeebeans.jpg
+        4. 직장: fsweb/workplace.jpg
+        5. 배너: http://frontendw.dothome.co.kr/assets/coca.png
     -->
 
     <!-- 웹접근성: 장애인이나 고령자분들이 웹 사이트에서 제공하는 정보를 비장애인과 동등하게 접근하고 이용 할 수 있도록 보장하는 것 -> alt를 반드시 기록한다. -->
     
     <!-- 폴더와 파일명 구분자는 /(슬래시) 이다. -->
-    
-    <!-- 1. html문서보다 하위 폴더에 이미지가 있는 경우: 폴더1/폴더2/폴더3/.../파일명으로 쓴다. -->
+    <!--html 문서가 기준이되어서 경로설정을 한다!  -->
+    <!-- [상대경로 지정방식] -->
+    <!-- 1. html문서보다 하위 폴더(assets)에 이미지가 있는 경우: 폴더1/폴더2/폴더3/.../파일명으로 쓴다. -->
+        <img src="assets/trulli.jpg" alt="이탈리아 풀리아주의 건축물인 트룰리">
+        <img src="assets/imges/gallery2.jpg" alt="ooo 클러치백">
 
-    <!-- 2. html문서와 이미지가 같은 폴더에 있는 경우: 파일 이름만 쓴다. -->
+    <!-- 2. html문서와 이미지가 같은 폴더에 있는 경우: 파일 이름만 쓴다. --> 
+        <img src="coffeebeans.png" alt="coffeebeans">
 
     <!-- 3. html문서보다 상위 폴더에 이미지가 있는 경우: ../../파일명으로 쓴다. -->
-
+        <img src="../Workplace.jpg" alt="노트북이미지">
     <hr>
-    <!-- 루트 폴더로 부터 경로 설정 -->
-
-    <hr>
+    <!-- 루트(/로 구분) 폴더(fsweb)로 부터 경로 설정 (서버에서만 동작을한다.오픈브라우저로안보임) -->
+    <!--루트폴더경로설정 장점으로는 html이 위치와 관계없이 보인다. -->
+        <img src="/50_html/coffeebeans.png" alt=""> 
+        <img src="/50_html/assets/trulli.jpg" alt="">
+        <img src="/50_html/assets/imges/gallery2.jpg" alt="">
+        <img src="/Workplace.jpg" alt="">
+        <hr>
     <!-- 절대 경로 지정 방법 -->
-
+        <img src="http://lhj2023.dothome.co.kr/assets/images/coca.png" alt="">
 </body>
 </html>
