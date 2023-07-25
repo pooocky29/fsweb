@@ -10,6 +10,7 @@
     <h1>하이퍼링크</h1>
    <!-- 
         a태그 표기법-> <태그 필수속성(href)="값" [선택속성(_blank)="값"]>
+        a태그는 인라인 속성이다.
 
     -->
     <!-- 
@@ -48,12 +49,22 @@
             
             
     <hr>
+    <!-- href(속성값)은 ul,tel,mail,파일(html,jpg,pdf)를 넣을수 있음 -->
 
+    <span>상대경로</span>
     <!-- 같은 폴더: 파일명만 기록한다. -->
     <a href="09_이미지.html">09_이미지.html</a>
     <!-- 하위 폴더: 폴더/파일명 -->
     <a href="assets/pic_trulli.jpg">트룰리</a>
     <!-- 상위 폴더: ../파일명 -->
     <a href="../workplace.jpg">작업</a>
+    <br>
+    <span>루트경로</span> <!-- 작업폴더50_html이 기준이되어서 기록하는방법임 -->
+    <!-- 같은 폴더: 파일명만 기록한다. -->
+    <a href="/50_html/09_이미지.html">09_이미지.html</a>
+    <!-- 하위 폴더: 폴더/파일명 -->
+    <a href="/50_html/assets/trulli.jpg">트룰리</a>
+    <!-- 상위 폴더: ../파일명 -->
+    <a href="/Workplace.jpg">작업</a>
 </body>
 </html>
