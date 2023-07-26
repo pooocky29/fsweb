@@ -18,10 +18,15 @@
           - 크기: 가로 400px, 세로 379px
     -->
     <h2>캡션 달기</h2>
-    <!-- figure와 figcaption을 사용하여 이미지에 캡션을 달아 보세요. -->
-
+    <figure>
+        <img src="assets/trulli.jpg" alt="트룰리">
+        <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+    </figure>
+    <!-- <figure>(미디어 그룹핑)와 <figcaption>(figure/map의 하위요소로 사용해야된다.)을 사용하여 이미지에 캡션(=미이어에 대한 설명글)을 달아 보세요. -->
     <hr>
     <h2>이미지 맵</h2>
+    <!-- map(하나의 이미지에 둘 이상의 링크걸때 사용)| area() -->
+    <!-- map|area|figcaption은 <img> 아래에 쓰인다. -->
     <!-- img 태그의 usemap 속성 값은 map 태그의 name 속성과 같아야 한다. -->
     <!-- area 태그에 alt 속성을 반드시 기록한다. -->
     <!-- 예) usemap="#map", name="map" -->
@@ -30,16 +35,22 @@
     <!-- img 태그의 usemap 속성을 사용하여 하나의 이미지에 3개의 링크를 적용해 보세요. -->
     <!-- 
         맵의 모양에 따른 좌표:
-        1. shape="poly"의 경우 coords="x1,y1,x2,y2,x3,y3,..."
-        2. shape="rect"의 경우 coords="x1,y1,x2,y2"
-        3. shape="circle"의 경우 coords="x1,y1,R" (R은 반지름)
+        1. shape="poly"의 경우 coords="50,189,38,341,269,346,259,189,270,46,31,46"
+        2. shape="rect"의 경우 coords="292,172,335,244"
+        3. shape="circle"의 경우 coords="338,300,44" (R은 반지름)
      -->
     <p>컴퓨터, 핸드폰, 커피 잔을 클릭하여 새 페이지로 이동하고 주제에 대해 자세히 읽어보십시오.</p>
 
-    <img src="" alt="" usemap="">
-    <map name="">
-        <area shape="" coords="" alt="" href="" target="">
+    <img src="../Workplace.jpg" alt="작업이미지" usemap="#workplace">
+    <map name="workplace">
+        <area shape="poly" coords="50,189,38,341,269,346,259,189,270,46,31,46" alt="현대자동차" href="https://www.hyundai.com/worldwide/ko/" target="_blank">
+        <area shape="circle" coords="338,300,44" alt="메가커피" href="https://www.mega-mgccoffee.com/" target="_blank">
+        <area shape="rect" coords="338,300,44" alt="할리스커피" href="https://www.hollys.co.kr/" target="_blank">
     </map>
+    
+
+
+
 
 </body>
 
