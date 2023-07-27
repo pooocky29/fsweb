@@ -6,67 +6,196 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML</title>
+    
 </head>
+
+<!--폼 태그는 섹션을 여러개 나눠서 사용가능하다. ex.네이버 회원가입창처럼.
+
+    <form>: 폼요소 그룹핑으로 사용/선택사항이 아닌 필수입력 /인라인요소 성격
+    <fieldset>: 그룹핑으로 사용 / 블록요소 성격
+         <legend>:필드셋으로 그룹핑한 콘텐츠의 제목달때 사용
+
+    <input>  : 한줄 텍스트입력 / 타입이 여러가지이다. / 종료태그 없음
+    <lable>  
+    <button> : 버튼태그는 속성으로 submit(전송) | reset | button 3가지를 나타낼 수 있다.
+    <textarea> : 여러줄 텍스트입력 / 타입이 없다.
+
+    <select> : 목록 (DB연결될 목적으로 사용)
+        <option>: select를 사용할떄 사용해줘야함. /  ✨value은 필수값이다.(백앤드에 데이터를 보낼때 구분할 이름이라서 이름을           지어줘야한다. name같은 역활이다.)
+        <optgroup>: 그룹지을수 있는 태그
+            
+    <input>    ->name: map name 사용할때처럼 이름을 지을수 있다.
+      ✨(백앤드에다가 input에 담긴 내용을 보냄 / 데이터 베이스의 필드와 이름이 같다)
+      ✨(id는 라벨for과 연결되며 / name은 데이터베이스와 연결되는 용도로 사용)
+           (name이랑 value가 다른 속성으로 쓰임. 태그마다 다르게 사용해야함.) 
+    <datalist>: 콤보= 목록+입력 (select개념에 input개념까지 합쳐진 태그)
+ -->
+
+ <!-- type="값" 속성
+    
+    -값: text(나머지 속성에 해당안되면 test타입으로 쓴다.) | password | hidden
+    -제출버튼처럼생긴 :  submit(전송) | reset | button | image | file
+    -새로나온값: search | email | tel | url
+    
+  -->
+
+  <!-- <datalist>와  <select>차이점은 datalist는 목록 외에도 목록에 없는 사항을 사용자가 입력할수 있다. -->
+
+  <!-- method란 데이터전송방식
+    
+    get:데이터가 적을때 사용한다. 그리고 기본속성이다.
+    post:데이터 양이 많을때 사용.
+
+   -->
 
 <body>
     <h1>폼</h1>
     <p>폼(양식)? 검색 창, 로그인 창, 회원가입, 게시판</p>
     <!-- 서버 프로그래밍언어: php, jsp, asp -->
-    <!-- 자동 완성 기능:  autocomplete="on" -->
-    <form action="action_page.php" method="get">
-
-        <fieldset>
-            <legend>검색 창</legend>
+    <!-- 자동 완성 기능:  autocomplete="on" 또는 off로 사용 -->
+    
+    
+    <h2>검색창</h2>
+    <form action="search.php" method="get" autocomplete="off">
+  
+       
             <!-- 검색 입력 상자 -->
             구글 검색:
-            
+            <input type="search" name="search">
             <!-- 검색 버튼 -->
+            <input type="submit" value="검색">
+       
+    </form>
 
-        </fieldset>
+    <hr>
 
-        <fieldset>
-            <legend>로그인</legend>
 
+    <h2>아이디/패스워드</h2>
+<!-- <label>두개가 다른 박스인지 웹브라우저가 구분을 못하기 때문에 라벨링을 해준다. 
+      연결하기: for에 이름을 붙여주고 input 태그에 id를 같이 써서 라벨과 인풋태그를 연결해준다  -->
+    <form action="login.jsp" method="get">
+
+        <!-- 라벨링을 안하고 placeholder을 사용하면 굳이 라벨링을 안해도 됨. -->
             <!-- 아이디 -->
-            아이디:
+            <label for="user_id">아이디:</label>
+            <input type="text" id="user_id" name="user_id">
             <!-- 패스워드 -->
-            패스워드:
+            <label for="user_pw">패스워드:</label>
+            <input type="password" id="user_pw" name="user-pw">
+            <!-- 로그인 버튼 방법2가지(개발자가 선택사항)-->
+            <input type="submit" value="로그인"> <!-- 겉에 보이게 하는 value -->
+            <button type="submit">로그인</button>
+        
+    </form>
 
-            <!-- 로그인 버튼 -->
-
-        </fieldset>
-
+    <hr>
+    <h2>회원가입</h2>
+    <form action="" method="post">
         <fieldset>
             <legend>회원 가입</legend>
             
             <!-- 이용 약관 -->
             <div>
                 <!-- 체크박스 -->
-                ooo 이용약관 동의(필수)
+                <!-- 이용약관 동의(필수)글자도 클릭했을때 체크박스가 체크되려면 label태그를 써야함(편의상 이유로 쓰임) -->
+                <input type="checkbox" id="chk1">
+                <label for="chk1">ooo 이용약관 동의(필수)</label>
             </div>
 
             <div>
                 <!-- 글상자 -->
-                여러분을 환영합니다. ooo 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 -중략-
+                <!-- column(열) row(행)  *가로로 30글자 보이고 10줄로 보이게한다는 의미 -->
+                <!-- 텍스트 내용이 안지워 질려면 readonly="readonly" -->
+                <textarea readonly="readonly" name="" id="" cols="30" rows="10">여러분을 환영합니다. ooo 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 -중략- </textarea>
             </div>
 
             <div>
                 <!-- text 입력 상자 -->
-                생년월일
+                년<input type="text" >
+
+                <!-- value는 초기값 역활도한다. -->
+                <input type="text" value="입력해주세요">
+
                 <!-- 목록 상자 -->
-                월
+                <!-- selected속성은 제일 상단으로 보이게 해주는 속성 -->
+                <select name="" id="">
+                    <option value="">월</option>
+                    <optgroup label="봄">
+                    <option value="jan">1</option>
+                    <option value="des">12</option>
+                    <option value="feb">2</option>
+                    </optgroup>
+                    <optgroup label="여름">
+                    <option value="mar">3</option>
+                    <option value="apr">4</option>
+                    <option value="may" selected>5</option>
+                    </optgroup>
+                    <optgroup label="가을">
+                    <option value="jun">6</option>
+                    <option value="jul">7</option>
+                    <option value="aug">8</option>
+                    </optgroup>
+                    <optgroup label="겨울">
+                    <option value="set">9</option>
+                    <option value="oct">10</option>
+                    <option value="nov">11</option>
+                    </optgroup>
+                </select>
+
                 <!-- text 입력 상자 -->
+                <!-- value처럼 미리보기 기능을 해주는 속성은 placeholder -->
+                일 <input type="text" name="day" placeholder="일을 입력해주세요" >
             </div>
 
             <div>
                 <!-- 이메일 -->
-                본인 확인 이메일<span>(선택)</span>
+
+                본인 확인 이메일
+                <input type="text" name="user_id2">@
+                <input type="text" name="user_domain" list="mail">
+                <!-- input의 list와 id가 연결된다. 그게 datalist의 방법 -->
+                <datalist id="mail">
+                    <option value="naver">naver.com</option>
+                    <option value="google">google.com</option>
+                    <option value="daum">daum.net</option>
+                </datalist>
+
             </div>
 
             <div>
                 <!-- 전화번호 -->
-                휴대전화
+                <label for="user_tel">휴대전화</label>
+                <!-- 유효성검사 자바스크립트로 함 :폼에 잘못입력하면 경고문고 띄우는것. -->
+                <input type="tel" id="user_tel" name="user_tel">
             </div>
+
+            
+            <!-- 관심 프로그램 -->
+            <!-- 체크박스는 여러 개의 항목 중 여러개 선택가능하다 -->
+            <!-- 체크박스는 name을 같이 써도 되고 name명을 다르게 써도 된다. -->
+            <!-- value에 담아서 백엔드로 전송함  -->
+            <!-- 사용편의를 위해 마지막 라벨링해줌 -->
+            
+            <label><input type="checkbox" name="chk2" value="html">html</label>
+            <label><input type="checkbox"  name="chk2" value="css">css</label>
+            <label><input type="checkbox" name="chk2" value="javascript">javascript</label>
+           
+
+
+
+            <!-- 라디오버튼은 여러개 항목 중 1개 선택 가능하다. -->
+            <!-- 라디오 타입은 예외적으로 한그룹으로 봐서 name을 똑같이 쓴다.그래야 항목이 1개만 선택된다.
+                하지만 다른 섹션의 라디오버튼은 다른name명으로 처리한다. -->
+            <!-- 동의 여부 확인 -->
+            <!-- 마지막 라벨링해줌 -->
+            <input type="radio" id="radio1" name="agree" value="y">
+            <label for="radio1">동의함</label>
+            <input type="radio" id="radio2" name="agree" value="n">
+            <label for="radio2">비동의함</label>
+
+            <!-- 전송버튼 -->
+            <button type="submit" value="가입하기" >가입하기</button>
+
         </fieldset>
     </form>
 </body>

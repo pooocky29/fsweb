@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>검색창</h3>
+    <label for="search">구글검색:</label>
+    <input type="search" id="search">
+    <input type="submit" value="검색">
+
+
+    <h3>아이디/패스워드</h3> 
+
+    <label for="id">아이디:</label>
+    <input type="text" id="id" name="">
+    <label for="pw">패스워드:</label>
+    <input type="password" id="pw" name="">
+    <!-- 버튼2가지 방식 -->
+    <button type="submit">로그인</button>
+    <input type="submit" name="" id="" value="로그인">
+
+
+    <h3>회원가입</h3>
+
+    <fieldset>
+        <legend>회원가입</legend>
+
+        <input type="checkbox" name="" id="필수">
+        <label for="필수">이용약관동의(필수)</label>
+
+        <!-- 이용약관 text -->
+        <textarea readonly name="" id="" cols="30" rows="10">
+        여러분을 환영합니다. ooo 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 -중략- </textarea>
+
+      <input type="text" value="생년을 입력하세요">년
+
+      <select name="" id="">
+        <option value="">1~3월</option>
+        <option value="">3~7월</option>
+        <option value="" selected>7~12월은 내생일</option>
+      </select>
+
+      <input type="text" placeholder="일을 입력해주세요">일
+
+
+      <input type="text" list="mail">이메일 고르기
+        <datalist id="mail">
+            <option value="naver">naver.com</option>
+            <option value="google">google.com</option>
+            <option value="daum">daum.net</option>
+        </datalist>
+
+    </fieldset>
+
+    
+</body>
+</html>
