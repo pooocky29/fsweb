@@ -9,37 +9,75 @@
 </head>
 
 <body>
+    <!-- 
+
+        비디오안에 소스태그를 사용한다
+        <video>
+            <source src="비디오.mp4" type="video/mp4"> ->브라우저에서 지원을 안될때 webm으로 사용 webm지원안되면 ogg이렇게 사용함
+            <source src="비디오.webm" type="video/webm">
+            <source src="비디오.ogg" type="video/ogg"> ogv와 ogg는 같다 /압축률이 좋지만 화질이 떨어짐 
+        </video>    
+
+
+                 //ctrl+D -> 같은단어 다중선택
+        <audio>
+            <source src="오디오.mp3" type="audio/mpeg"> 
+            <source src="오디오.ogv" type="audio/ogg">
+            <source src="오디오.wav" type="audio/wav">
+        </audio>
+
+        <iframe> :외부파일을 연결할떄 사용
+        
+        -->
+
+
     <h1>미디어</h1>
     <!-- 파일 이름에 공백 사용하지 말 것!! -->
-    <h2>비디오</h2>
     <!-- 
         비디오 소스: 
         1. assets/video/mov_bbb.mp4
         2. Big Buck Bunny(빅 벅 버니): https://www.youtube.com/embed/YE7VzlLtp-4
-            - 비디오 크기: width="1097" height="617"
-
+        - 비디오 크기: width="1097" height="617"
+        
         비디오 컨버트: https://convertio.co/kr/video-converter/
-
+        
         비디오 타입:
         1. video/mp4
         2. video/webm
         3. video/ogg
-
+        
         비디오 속성:
         1. autoplay: 자동 실행
         2. muted: 음소거
         3. loop: 무한 반복
         4. controls: 컨트롤
-     -->
-
+    -->
+    
+    <h2>비디오</h2>
     <!-- video와 source 태그로 비디오를 삽입해 보세요. -->
-    <video>
+    <video autoplay muted controls loop>
+        <source src="assets/video/mov_bbb.mp4" type="video/mp4">mp4</video>
+        <source src="assets/video/mov_bbb.webm" type="video/webm">webm</video>
+        <source src="assets/video/mov_bbb.ogv" type="video/ogg">ogg</video>
+        당신의 브라우저는 (HTML video태그)를 지원하지 않는다.
         Your browser does not support HTML video.
     </video>
 
 
-    <h2>유튜브 비디오</h2>
+
+
+    <h2>유튜브 비디오 vs 비메오</h2>
+
+
     <!-- 유튜브 비디오를 iframe 태그로 삽입해 보세요. -->
+    <!-- 유튜브영상 우클릭->코드복사  -->
+    <iframe src="https://www.youtube.com/embed/YE7VzlLtp-4"></iframe>
+
+    <!-- vimeo 비디오를 iframe 태그로 삽입해 보세요.-->
+    <!-- 공유하기클릭-> 임베디드-> 설정에 들어가면 프레임설정이 가능함 -->
+    <!-- muted=0&은 음소거 -->
+    <iframe src="https://player.vimeo.com/video/1084537?h=b1b3ab5aa2muted=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
 
 
     <!-- 
@@ -47,10 +85,10 @@
         1. assets/audio/horse.ogv
         2. assets/audio/Good_Morning!_Reed_Mathis.mp3
 
-        오디오 타입:
+        오디오 타입: 세가지는 성격이 좀 다름
         1. audio/ogg
         2. audio/mpeg
-        3. audio/wav
+        3. audio/wav ->경고음 쓸때 사용/ 짧은 음향 사용
 
         오디오 속성:
         1. autoplay: 자동 실행
@@ -61,7 +99,10 @@
 
     <h2>오디오</h2>
      <!-- 1번 오디오 소스를 이용하여 audio와 source 태그로 오디오를 삽입해 보세요. -->
-    <audio>
+    <audio controls muted loop autoplay>
+        <source src="assets/audio/horse.ogv" type="audio/ogg">
+        <source src="assets/audio/horse.mp3" type="audio/mpeg">
+        당신의 브라우저는 오디오 요소를 지원하지 않는다.
         Your browser does not support the audio element.
     </audio>
 
