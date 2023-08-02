@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        /* 140개 영문 키워드: https://www.w3schools.com/colors/colors_names.asp */
+
+        /* HEX: 16진수 -> 0~9, A~F  #RRGGBB 또는 #RGB #ff0000 을  #f00으로 축약가능하다 */
+
+        /* rgb(0~255, 0~255, 0~255) rgb(0,0,0) rgb(255,255,255)         */  
+
+        /* rgba(0~255, 0~255, 0~255, 0~1) 끝에 하나추가 된건 투명도를 나타냄(0일때는 투명 1일때는 불투명)    */
+
+        /* hsl(0~359, 0~100%, 0~100%)   hsl(0, 0%, 50%)  색상(heu)/채도(saturation)/밝기(lightness)      */
+        
+        /* hsla(0~359, 0~100%, 0~100%, 0~1)  */
+
+        /* 영문 키워드는 연습용  
+           포폴은 16진수사용하기
+           투명도는 rgba 사용  */
+           
+           #cName{color: red;}
+           #cHex{color: #ff0000;}
+           #cRgb{color: rgb(255,0,0);}
+           #cRgba{color: rgba(255, 0, 0, 0.466);}
+           #cHsl,#cHsla{color: hsl(0,100%,50%);}
+           p{color: aqua;}  /* 우선순위가 id>class>요소 라서 안먹힘. */
+
+ </style>
+</head>
+<body>
+    <h1>CSS 색상 값</h1>
+    <p  id="cName">red</p>
+    <p  id="cHex">#ff0000</p>
+    <p  id="cRgb">rgb(255, 0, 0)</p>
+    <p  id="cRgba">rgba(255, 0, 0, 0.5)</p>
+    <p  id="cHsl">hsl(0, 100%, 50%)</p>
+    <p  id="cHsla">hsla(0, 100%, 50%, 0.5)</p>
+</body>
+</html>

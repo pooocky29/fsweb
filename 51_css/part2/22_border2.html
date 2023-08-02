@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테두리응용</title>
+    <style>
+        /* 인라인 요소는 width/height 지정불가임
+            a/span/img태그는 인라인요소
+            그래서 dispaly:inline-block쓰기. */
+
+        ul{width: 400px; margin: 0; padding: 0; font-size: 12px;}
+        li{ border-bottom: solid; padding-bottom: 8px; margin: 16px 0; }  
+        span{display: inline-block; padding-right: 50px;}
+         a{ width: 310px; margin-right: 16px; text-decoration: none; }
+         a:hover{text-decoration: underline; color: blue; }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브..</span>2023-0</a></li>
+        <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브..</span>2023-0</a></li>
+        <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브..</span>2023-0</a></li>
+        <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브..</span>2023-0</a></li> 
+    </ul>
+</body>
+</html>

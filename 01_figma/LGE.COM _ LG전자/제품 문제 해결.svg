@@ -1,0 +1,11 @@
+<svg data-name="02.-Icon/home/support_64" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+    <path data-name="패스 381" d="M39.248 58.949H18.1a.927.927 0 0 1-.922-.932V5.995a.926.926 0 0 1 .922-.932h28.117a.927.927 0 0 1 .923.932v32.041" style="stroke:#000;stroke-width:2px;fill:#fff;stroke-miterlimit:10"/>
+    <path data-name="패스 383" d="m51.993 39.136-2.393-.007a1.268 1.268 0 0 0-1.153-.977l-2.526-.02v-.275a.987.987 0 0 0-.982-.99h-3.01v-4.661a1.965 1.965 0 1 0-3.929 0v14.72L33.917 42.5a1.954 1.954 0 0 0-2.774-.159 1.99 1.99 0 0 0-.157 2.795l2.6 3.346a15.192 15.192 0 0 1 1.982 3.392c.928 2.186 3.477 7.077 3.477 7.077l11.989-.055s1.583-.577 1.855-6.572l.082-4.276v-7.92a.986.986 0 0 0-.978-.992z" style="stroke-linejoin:round;stroke-linecap:round;fill:#ffe8ab;stroke:#000;stroke-width:2px"/>
+    <path data-name="선 15" transform="translate(41.936 36.561)" style="fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#000;stroke-width:2px" d="M0 7.033V0"/>
+    <path data-name="패스 386" d="M0 5.843V0" transform="translate(45.686 37.918)" style="fill:none;stroke-linecap:round;stroke:#000;stroke-width:2px"/>
+    <path data-name="선 17" transform="translate(49.233 39.185)" style="fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#000;stroke-width:2px" d="M0 4.569V0"/>
+    <path data-name="선 18" transform="translate(28.787 10.351)" style="fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#000;stroke-width:2px" d="M6.974 0H0"/>
+    <path data-name="패스 384" d="M31.042 29.129h1.165V35.9" style="fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#000;stroke-width:2px"/>
+    <path data-name="선 19" transform="translate(30.948 36.003)" style="fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#000;stroke-width:2px" d="M0 0h2.554"/>
+    <path data-name="패스 385" d="M33.502 25.001a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5"/>
+</svg>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        /* old한 방식 */
+        /* 
+        블록레벨 요소를 가로배치해주는 기능을한다.
+        float: left(왼쪽기준으로 배치), right(오른쪽기준으로 배치)
+        clear: both 
+        clear는 float 처리한 요소의 아래 요소에 대해서 float이 적용되지 않게 제거 */
+
+
+
+         /* 만약에 자식을 float했을때 부모에 height값을 주면 요소들이 밀려서 올라가지 않는다. */
+         /* 하지만 float때문에 height값이 깎여서 부모에 height값을 강제로 주는건 좋은 방법이 아님. */
+        /* 그래서 overflow가 사용해야됨 */
+
+
+
+        div { width:200px; height:150px;}
+
+
+        /* float을 주면 absolte처럼 공중에 떠서 밑에 있던 요소들이 밀려서 올라온다. */ 
+        /* 단, 위에요소들은 영향을 받지 않는다. */
+          
+        /* (1) .div1의 float를 left로 지정하시오. */
+        .div1 {
+            background:lightblue;
+            float: left;
+            /* width의 기본값이 콘텐츠크기로 바뀐다. */
+        }
+
+        /* (2) .div2의 float를 right로 지정하시오. */
+        .div2 {
+            float: right;
+            background: lightcoral;
+        }
+
+        /* (3) .div3의 clear 속성을 both로 지정하시오. */
+        /* clear:both를 하면 밀리지 않고 영향을 받지 않는다.  */
+        .div3 {
+            clear: both;
+            background: rgb(230, 230, 59);
+         }
+    </style>
+</head>
+<body>
+    <h1>플로트</h1>
+    <div class="div1">박스1</div>
+    <div class="div2">박스2</div>
+    <div class="div3">박스3</div>
+</body>
+</html>

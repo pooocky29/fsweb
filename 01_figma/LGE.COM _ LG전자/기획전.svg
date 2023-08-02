@@ -1,0 +1,12 @@
+<svg data-name="02.-Icon/home/event_64" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+    <g data-name="그룹 835">
+        <path data-name="패스 7445" d="M58 24H7v-7a3.209 3.209 0 0 1 3-3h45c1.511 0 3 .578 3 3z" style="stroke-linecap:round;stroke-linejoin:round;stroke:#000;stroke-width:2px;fill:#fff"/>
+        <path data-name="패스 7446" d="M53 54H12a3.208 3.208 0 0 1-3-3V24h47v27a3.21 3.21 0 0 1-3 3z" style="stroke-linecap:round;stroke-linejoin:round;stroke:#000;stroke-width:2px;fill:#fff"/>
+        <path data-name="패스 7447" d="M32.293 19.581a2.437 2.437 0 0 0-2.12-.681l-9.014 1.5a2.434 2.434 0 0 0-2 2l-1.5 9.013a2.432 2.432 0 0 0 .68 2.119l13 13a2.987 2.987 0 0 0 4.221 0l9.73-9.732a2.988 2.988 0 0 0 0-4.222zm-5.836 7.474a1.846 1.846 0 1 1 0-1.88 1.846 1.846 0 0 1 0 1.88z" style="fill:#dbed8b"/>
+        <path data-name="패스 7448" d="M31.94 19.563a2.378 2.378 0 0 0-2.069-.664l-8.8 1.462a2.376 2.376 0 0 0-1.952 1.953l-1.461 8.8a2.374 2.374 0 0 0 .663 2.068l12.688 12.683a2.915 2.915 0 0 0 4.12 0l9.495-9.495a2.916 2.916 0 0 0 0-4.121zm-5.7 7.294a1.8 1.8 0 1 1 0-1.835 1.8 1.8 0 0 1 0 1.835z" style="fill:none;stroke:#000;stroke-width:2px"/>
+        <path data-name="선 200" transform="translate(33.009 27.916)" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:#000;stroke-width:2px" d="m0 0 .412 12.907"/>
+        <path data-name="패스 7449" d="M31.237 35.447a1.848 1.848 0 1 1-1.907-1.792 1.848 1.848 0 0 1 1.907 1.792z" transform="translate(-1 -1)" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:#000;stroke-width:2px"/>
+        <path data-name="패스 7450" d="M40.912 35.168a1.848 1.848 0 1 1-1.907-1.792 1.848 1.848 0 0 1 1.907 1.792z" transform="translate(-1 -1)" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:#000;stroke-width:2px"/>
+        <path data-name="패스 7451" d="M13.157 11.572a2.3 2.3 0 0 1 .956-1.787C16 8.269 20 8.952 22.634 12.231c3.155 4.311 2.915 10.482 1.593 11.5" transform="translate(1.21 1.583)" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:#000;stroke-width:2px"/>
+    </g>
+</svg>
