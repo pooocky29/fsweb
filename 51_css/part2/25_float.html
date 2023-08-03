@@ -15,9 +15,17 @@
 
 
 
-         /* 만약에 자식을 float했을때 부모에 height값을 주면 요소들이 밀려서 올라가지 않는다. */
+         /* 만약에 자식을 float했을때 부모에height값을 주면 요소들이 밀려서 올라가지 않는다. */
          /* 하지만 float때문에 height값이 깎여서 부모에 height값을 강제로 주는건 좋은 방법이 아님. */
-        /* 그래서 overflow가 사용해야됨 */
+         /* 그래서 overflow가 사용해야됨 */
+
+
+         /* 해결방안 4가지
+         1. ::after +clear:both;
+         2. overflow:hiden;
+         3. clear:both; 
+         4. height
+         */
 
 
 

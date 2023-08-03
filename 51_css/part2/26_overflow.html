@@ -6,31 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        .container {
-            background: red;
-            overflow:hidden;
-        }
-        .container div {
-            float:left;
-            width:200px;
-            height:100px;
-            margin:20px;
-            background:yellow;
-        }
+        /* overflow: hidden는 .container영역(빨간색부분)을 벗어난 부분을 가린다 */
+        .container {background: red; overflow: hidden; }
+
+        /* 🤩만약 여기에 overflow:hidden을 주면 우선순위가 높아서 아래 클래스준 영역css건 값이 먹히지 않는다. */
+        .container div{float:left; width:200px ; height:100px; margin:20px; background:yellow; }
+      
+        /* overflow-y: 세로스크롤 overflow-x:가로스크롤 */
+
+
+
+            /* 강제로 스크롤창 생기게하기 : scroll과 auto(컨텐츠가 영역보다 크면 생김) */
+            /* visible: 넘쳐도 보임  hidden: 넘쳐도 안보임  */
 
         /* (1) .ovf1에 overflow 속성을 visible로 지정하시오. */
-
+                .ovf1{overflow: visible;}
 
         /* (2) .ovf2에 overflow-y 속성을 scroll로 지정하시오. */
-
+                .ovf2{overflow-y: scroll;}
 
         /* (3) .ovf3에 overflow 속성을 hidden으로 지정하시오. */
-
+                .ovf3{overflow: hidden;}
 
         /* (4) .ovf4에 overflow 속성을 auto로 지정하시오. */
+                .ovf4{overflow: auto;}
 
+         /* (5) .ovf5에 overflow 속성을 auto로 지정하기 /내용이 적기때문에 스크롤이 생기지 않는다.    */
+                .ovf5{overflow: auto;}
 
     </style>
+
+
 </head>
 <body>
     <h1>오버플로우</h1>
@@ -40,6 +46,7 @@
         <div class="ovf2">scroll: Lorem, ipsum dolor sit amet consectetur adipisicing elit. A molestias ipsam laudantium fuga odit enim at pariatur autem aspernatur exercitationem excepturi dignissimos nobis explicabo porro voluptate, rem itaque. Perferendis, ullam?</div>
         <div class="ovf3">hidden: Lorem, ipsum dolor sit amet consectetur adipisicing elit. A molestias ipsam laudantium fuga odit enim at pariatur autem aspernatur exercitationem excepturi dignissimos nobis explicabo porro voluptate, rem itaque. Perferendis, ullam?</div>
         <div class="ovf4">auto: Lorem, ipsum dolor sit amet consectetur adipisicing elit. A molestias ipsam laudantium fuga odit enim at pariatur autem aspernatur exercitationem excepturi dignissimos nobis explicabo porro voluptate, rem itaque. Perferendis, ullam?</div>
+        <div class="ovf5">auto: Lorem, ipsum dolorauto: Lorem, ipsum dolorauto: Lorem, ipsum dolor </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인사이트 float</title>
+</head>
+<style>
+    /* float를 사용해서 img를 붕뜨게 만듬. */
+    img{float: left; margin: 48px 48px 0 0; }
+    .profil2::after{content: ''; display: block; clear: both; border: 1px solid blueviolet; }
+    
+    .profil1{margin-bottom: 48px;}
+    .profil2{}
+    
+
+    /* magin-> 가로의 가운데 정렬 1980-960 = 480px 양쪽여백   */
+    /* margin을 주려면 width값이 꼭 필요함. */
+    /* <img>태그를 가운데 정렬하려면 display:block을 주기  */
+    div{margin:0 auto; width: 960px;}
+
+    /* 쉬운 해결방법: p{overflow: hidden; border: 1px solid blue;} */
+</style>
+
+
+<body>
+    <div>
+        <p class="profil1">We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <p class="profil2"><img src="/70_project/images/PhotoofMe.jpg" alt="사람이미지">Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+</body>
+</html>
