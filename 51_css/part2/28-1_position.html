@@ -6,25 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        .parent {
-            position: relative;
-            height:500px;
-            background: yellow;
-        }
+         body{margin: 0;}
+         /* 자식 absolute이 부모 relative기준으로 위치 이동을 한다 
+            그리고 absolute는 부모기준이 static만 빼고 모두 기준이 될수 있다.*/
+
+         /*
+        ✨ [자식div에 absol쓰고 부모div에 높이값을 안주었을때]
+             자식에게 absolute를 쓰거나 float를 쓰면 부모 height값이 자식 컨텐츠크기만큼 줄어든다.
+             그래서 부모div에 높이/넓이 값을 안주니 노란색이 안보임. 
+
+        ✨ [부모와 자식 둘다 absolte를 썼을때 노란박스는 보이지 않고 빨간 박스는 보이는 이유는?]
+               그 이유는 자식박스는 text가 있어서 화면상에 보임. */
+
+
+        /* position:relative;을 사용하면 witd값을 안줘도됨  */
+        /* position:absolte;사용하면 withd/higeht크기가 컨테츠 크기만큼 잡힌다. */
+
+       
+         
+        .parent {position: relative; height: 500px; background: rgb(255, 255, 0); }
 
         /* .parent의 자식 div를 부모를 기준으로 정중앙 배치하시오. */
         .parent div {
-            width:200px;
-            /* height:50px; */
-            background: red;
+            width:200px;  height: 50px; background: red;
             /* width의 절반의 음수 값으로 지정한다. */
+            position: absolute;
+            left: 50%; 
+            top: 50%;
+            margin-left: -100px;
             /* height의 절반의 음수 값으로 지정한다. */
-
+            margin-top: -25px ;
             /* 텍스트 중앙 배치 */
-            text-align: center;
-            line-height: 50px;
-        }
+            text-align: center; line-height: 50px;}
+            /* text-align(가로 중앙정렬)
+               line-height(세로 중앙정렬) */
     </style>
+        
 </head>
 <body>
     <h1>부모 요소에 자식 요소의 정중앙 배치</h1>

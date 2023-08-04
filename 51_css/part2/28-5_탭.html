@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭</title>
+    <style>
+        #tabs{width: 400px; height: 200px; border: 2px solid rgb(192, 192, 192);}
+        ul{ margin: 0; padding: 0; }
+        .btn li{list-style: none; display:inline-block; margin: 20px 10px; padding-left:5px ; border: 2px solid #c5c5c5;
+                border-radius: 5px; }
+        .btn li a{color: black; text-decoration: none;}       
+
+        #tab1 ul{width: 400px; margin-left: 0px;}
+        #tab1 ul li{list-style: none; }
+        #tab1 ul li a{text-decoration: none;}
+        #tab1 ul li span{color: black; margin-right: 20px; }
+        #tab2{}
+
+
+    </style>
+</head>
+<body>
+   <div id="tabs">
+        <!-- 탭버튼영역 -->
+        <ul class="btn">
+            <li><a href="#tab1">공지사항</a></li>
+            <li><a href="#tab2">갤러리</a></li>
+        </ul>
+        <!-- 내용역역 -->
+        <div id="tab1">
+            <ul>
+                <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브..</span>2023.03.08</a></li>
+                <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브..</span>2023.03.08</a></li>
+                <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브..</span>2023.03.08</a></li>
+            </ul>
+        </div>
+        <div id="tab2">두번째내용</div>
+   </div> 
+</body>
+</html>

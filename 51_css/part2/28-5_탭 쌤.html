@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭</title>
+    
+    <style>
+        ul{margin: 0; padding: 0;}
+       #tabs li{display: inline-block; background-color: lawngreen; padding: 8px 16px; }
+       #tabs div{width: 400px; height: 200px; position: absolute; top:40px;}
+
+       #tab1 {background-color: blue;}
+       #tab2{background-color: brown;}
+
+    </style>
+</head>
+<body>         
+   <div id="tabs">
+        <!-- 탭버튼영역 -->
+        <ul class="btn">
+            <li><a href="#tab1">메뉴1</a></li>
+            <li><a href="#tab2">메뉴2</a></li>
+        </ul>
+        <!-- 내용역역 -->
+        <div id="tab1">
+            <ul>
+                <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브..</span>2023.03.08</a></li>
+                <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브..</span>2023.03.08</a></li>
+                <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브..</span>2023.03.08</a></li>
+            </ul>
+        </div>
+        <div id="tab2">두번째내용</div>
+   </div> 
+</body>
+</html>

@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+
+
+/* reset */
+*{box-sizing: border-box; margin: 0; padding: 0;}
+
+/*공통요소 common*/
+#wrap{width: 1200px; margin: 0 auto; }
+
+/* logo */
+.logo{float: left;}
+
+/* gnb */
+/* 1depth */
+#gnb .main li{display: inline-block; outline: 1px solid royalblue; }
+#gnb{float: right;}
+
+
+/* 2depth */
+#gnb .sub{display: none;}
+
+
+
+/* 슬라이드 */
+#slide li{position: absolute; top: 50px; }

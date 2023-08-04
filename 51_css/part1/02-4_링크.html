@@ -6,22 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
+
+        /* 가상요소 ::after, ::before */
+        /* 가상클래스 a:link , a:visited,선택자:hover,선택자:active */
+
         /* 
             의사(Pseudo, 가상, 유사) 클래스
 
-            a:link - 방문전: 파란색
-            a:visited - 방문후: 보라색
-            선택자:hover - 올린경우: 파란색
-            선택자:active - 눌린경우: 빨간색
+            🎈 a:link - 클릭전: 파란색   🎈 a:visited - 클릭후: 보라색    --> 둘다 a태그에만 사용할 수 있다.
+            🎈선택자:hover - 마우스 올린경우: 파란색                       --> 제한없이 선택자를 붙여서 사용가능
+            🎈선택자:active - 마우스 눌린경우: 빨간색                      --> 
 
-            :link -> :visited -> :hover -> :active 순으로 기록해야한다.
-        */
+            :link -> :visited -> :hover -> :active 순으로 기록해야한다. */
+         
 
+         /* 캐시삭제를 하면 브라우저에서 visited 초기화가능  */
+
+         a:link{color: red;}
+         a:visited{color: orange;}
+         a:hover{color: yellow;}
+         a:active{color: greenyellow;}
+
+         body .aa11{color: #ccc; text-decoration: none;}
+         body .aa11:hover{color: #333; text-decoration:underline;}
     </style>
 </head>
 <body>
     <h1>의사 클래스 선택자</h1>
     <a href="#">링크1</a>
     <a href="#">링크2</a>
+    <a href="#" class="aa11">링크2</a>
 </body>
 </html>
