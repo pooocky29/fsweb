@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+
+*{box-sizing: border-box; 
+   margin: 0; padding: 0}
+
+
+/* gnb */
+body{height: 1500px;}
+header{position: fixed;  width: 100%; height: 50px; border: 1px solid blue; overflow: hidden;  }
+
+.gnb li{display: inline-block;   padding-right:40px;  }
+.gnb li a{text-decoration: none; font-size: 20px; font-weight: 100px; color: black;}
+.gnb{float:right; margin-top:10px ; }
+
+.logo{display: inline-block; margin-left: 40px;}
+
+/* 섹션1 */
+
+.section{width: 1700px; margin: 0 auto; position: relative;}
+.main-pic img{width: 1700px; margin: 0 auto;}
+section h2{font-size: 40px; position: absolute; top: 50%; left: 750px;}
