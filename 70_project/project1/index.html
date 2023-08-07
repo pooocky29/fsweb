@@ -70,7 +70,7 @@
         
 
         <!-- 모달팝업 -->
-        <div class="modal"><!-- 화면전체 그레이-->
+        <div id="modal"><!-- 화면전체 그레이-->
             <div class="popup"><!-- 보이는 하얀창 -->
                 <h2>LG가전 웹사이트 리뉴얼 안내</h2>
                 <p>고객님들의 더욱 편리하고 안전한 쇼핑을 위해 웹사이트 리뉴얼이 진행됩니다. 리뉴얼 기간 중에는 상품 구매 및 결제가 불가하니 이점 참고 부탁드립니다. LG가전을 이용해주시는 고객님들께 감사드리며, 더 나은 서비스로 다시 찾아뵙겠습니다. 감사합니다.</p>
@@ -80,33 +80,34 @@
         <!-- //모달팝업 -->
 
 
-        <!-- 콘텐츠 영역 -->
-        <div id="contents">
-            <!-- 탭메뉴 -->
-            <div id="tabs">
-                <!-- 탭버튼영역 -->
-                <ul class="btn">
-                    <li><a href="#tab1">공지사항</a></li>
-                    <li><a href="#tab2">갤러리</a></li>
+      <!-- 콘텐츠 영역 -->
+      <div id="contents">
+        <!-- 탭메뉴 -->
+        <div id="tabs">
+            <!-- 공지사항 -->
+            <label for="btn1">공지사항</label>
+            <input type="radio" name="tabs" id="btn1" checked>
+            <div id="tab1">
+                <ul>
+                    <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브</span>2023.08</a></li>
+                    <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브</span>2023.05</a></li>
+                    <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브</span>2023.02</a></li>
+                    <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브</span>2023.01</a></li>
                 </ul>
-                <!-- 내용역역 -->
-                <div id="tab1">
-                    <ul>
-                        <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브</span>2023.08</a></li>
-                        <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브</span>2023.05</a></li>
-                        <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브</span>2023.02</a></li>
-                        <li><a href="#"><span>맞춤 플랜을 제안하는 크리에이티브</span>2023.01</a></li>
-                    </ul>
-                </div>
-                <div id="tab2">
-                    <a href="#"><img src="image/gallery1.png" alt="갤러리"></a>
-                    <a href="#"><img src="image/gallery2.png" alt="갤러리"></a>
-                    <a href="#"><img src="image/gallery3.png" alt="갤러리"></a>
-                </div>
             </div>
-            <!-- //탭메뉴 -->
+            <!-- 갤러리 -->
+            <label for="btn2">갤러리</label>
+            <input type="radio" name="tabs" id="btn2">
+            <div id="tab2">
+                <a href="#"><img src="image/gallery1.png" alt="갤러리"></a>
+                <a href="#"><img src="image/gallery2.png" alt="갤러리1"></a>
+                <a href="#"><img src="image/gallery3.png" alt="갤러리2"></a>
+            </div>
+        </div>
 
-            <!-- 배너img -->
+        <!-- //탭메뉴 -->
+
+            <!-- 배너이미지-->
             <div class="banner"><a href="#"><img src="image/banner.png" alt="배너이미지"></a></div>
             <!-- 바로가기img -->
             <div class="shortcut"><a href="#"><img src="image/shortcut.png" alt="바로가기이미지"></a></div>

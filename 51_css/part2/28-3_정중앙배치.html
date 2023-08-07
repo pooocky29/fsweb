@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>박스를 정중앙배치</title>
         <style>
-                body>div{border: 1px solid green; position: relative;}
+                body{margin: 0;}
+
+                body>div{position: relative;}
                 /* font의 상속이 돼서 글꼴을 txt에 쓰기 */
                 .txt{position: absolute; left: 50%; top: 50%;  transform: translate(-50%,-50%); font-family: "Segoe UI",Arial,sans-serif;}
                 /* 
@@ -15,8 +17,7 @@
                 3.이미지는 인라인 요소 따라서 텍스트처럼 text-align:center; 사용하여 가운데 배치가능
                  */
                 .main_img{width: 1500px; height: 800px; margin: 0 auto;}
-                .tit1{padding: 8px 16px; background-color: black; color: #fff; opacity: 0.75; 
-                font-size: 32px; font-weight: bold; }
+                .tit1{padding: 8px 16px; background-color: black; color: #fff; opacity: 0.75; font-size: 32px; font-weight: bold; }
                 .tit1 + span{letter-spacing: 4px; font-size: 32px; }
         </style>
 </head>

@@ -1,22 +1,59 @@
-@charset "UTF-8";
+@charset "UTP-8";
+
+/* 초기화 */
+*{box-sizing: border-box; }
+body,h1,ul{margin: 0;}
+ul{padding: 0;}
+img{width: 100%;}
+/* clearfix 만들어놓기 */
+.clearfix::after{content: ''; display: block; clear: both; }
 
 
-*{box-sizing: border-box; 
-   margin: 0; padding: 0}
+/* 영역확인(와이어프레임) */
+.sec{height: 800px; }
+#sec1{background-color: rgb(255, 255, 171); }
+#sec2{background-color: rgb(226, 226, 111);}
+#sec3{background-color: rgb(139, 139, 46);}
+#sec4{background-color: rgb(99, 99, 8);}
+footer{background-color: lightblue;}
 
 
-/* gnb */
-body{height: 1500px;}
-header{position: fixed;  width: 100%; height: 50px; border: 1px solid blue; overflow: hidden;  }
 
-.gnb li{display: inline-block;   padding-right:40px;  }
-.gnb li a{text-decoration: none; font-size: 20px; font-weight: 100px; color: black;}
-.gnb{float:right; margin-top:10px ; }
+/* 해더 */
+header{background-color:lightblue; width: 100%; height: 55px; position: fixed;
+       box-shadow: 0px 2px 5px 0 rgba(0,0,0,0.16) , 0px 2px 0px 0 rgba(0,0,0,0.12); background-color: #fff; z-index: 999;}
+header::after{content: ""; display: block; clear: both;}
 
-.logo{display: inline-block; margin-left: 40px;}
+  /* 로고 */
+  .logo{float: left;}
+
+  /* 네비게이션 */
+  #gnb{float: right;}
+  #gnb li{display: inline-block; margin: 0 16px;}
+
+
+
+/* 섹션공통 */
+.sec{width: 1500px; margin: 0 auto; position: relative; }
 
 /* 섹션1 */
+#sec1{top: 55px;}
+.txt{position: absolute; left: 50%; top: 50%;  margin-top: -10px;
+    margin-left: -80px; color: #fff; background-color: yellow;}
+.tit1{padding: 8px 16px; background-color: #000; opacity: 0.75; }
 
-.section{width: 1700px; margin: 0 auto; position: relative;}
-.main-pic img{width: 1700px; margin: 0 auto;}
-section h2{font-size: 40px; position: absolute; top: 50%; left: 750px;}
+
+/* 섹션2,3 공통 */
+.sec23 li{ float: left; width: 360px; height:240px ; margin-right: 20px;}
+.sec23 li:nth-of-type(4n){margin-right: 0;}
+
+/* 섹션2*/
+#sec2 li{position: relative;}
+#sec2 span{position: absolute; left: 0; top: 0; padding: 8px 16px; color: #fff; background-color: #111;}
+
+/* 섹션3 */
+
+
+
+/* 섹션4 */
+/* 푸터 */
