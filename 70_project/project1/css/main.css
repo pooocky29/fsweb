@@ -25,7 +25,7 @@ header{height: 100px; padding: 30px 0;}
 
 /* 1depth */
 #gnb .main li{display: inline-block; width: 150px; }
-
+#gnb .main li a{text-decoration: none; font-size: 16px;  font-family: Arial, Helvetica, sans-serif; color: black;}
 
 /* 2depth */
 #gnb .sub{display: none;}
@@ -34,7 +34,7 @@ header{height: 100px; padding: 30px 0;}
 
 /* 슬라이드 */
 #slide{height: 300px; }
-#slide li{position: absolute;}
+#slide li{position: absolute; list-style: none;}
 
 
 /* 모달 */
@@ -70,14 +70,19 @@ header{height: 100px; padding: 30px 0;}
         #tab1 li {
             border-bottom: 1px solid #ccc;
             padding-bottom: 8px;
-            margin: 4px 0;}
+            margin: 4px 0;
+            list-style: none; }
+        #tab1 ul li a{text-decoration: none; 
+                        color: #313131;}
+        #tab1 ul li span{color: #313131;}
 
         #tab1 span {display: inline-block; width: 334px;}
 
         /* 갤러리 */
         #tabs #tab2 {
-            background-color: lightcoral;
-            padding: 24px 16px;}
+            padding: 24px 16px;
+            text-align: center;}
+        #tabs img{border: 1px solid #ccc; border-radius: 10px;}    
        
 
 
@@ -99,4 +104,5 @@ footer .blogo{width: 200px;}
 footer .copy{width: 640px; color: #ffffff;}
 /* sns */
 footer .sns{width: 300px; }
-.sns ul li{float: left; margin: 0 16px;}
+.sns ul li{float: left; margin: 0 16px; list-style: none; } 
+.sns ul li a{font-size: 16px; font-weight: 200px;  color: #ffffff; text-decoration: none;  }

@@ -1,0 +1,12 @@
+@charset "UTP-8";
+
+
+*{box-sizing: border-box;} 
+body,h1,h2,h3,p,ul{margin: 0; }
+body{background-color: #fff;}
+
+ul{padding: 0;}
+
+img{width: 100%;}
+
+.clearfix::after{content: ''; clear: both; display: block;}

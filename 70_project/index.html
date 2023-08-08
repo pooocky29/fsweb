@@ -1,43 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이현주</title><!-- my site -->
+    <!-- my site -->
+    <title>이현주</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <!-- 헤더 -->
-    <header>
-        <nav class="gnb">네비게이션</nav>
-    </header>
+        <header>
+            <nav id="gnb">
+                <ul class="clearfix">
+                    <li><a href="#sec1">HOME</a></li>
+                    <li><a href="#sec2">ABOUT</a></li>
+                    <li><a href="#sec3">PHOTOPOLIO</a></li>
+                    <li><a href="#sec4">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <!-- 섹션1 -->
-    <section id="sec1" class="sec">
-        <h1>LEE HYUN JU</h1>
-    </section>
+    <!-- 섹션1 :페럴렉스 이미지-->
+        <section id="sec1" class="sec">
+            <h1>LEE HYUN JU</h1>
+        </section>
 
-    <!-- 섹션2 -->
+    <!-- 섹션2 :나의소개-->
     <section id="sec2" class="sec">
-        <!-- 설명글 -->
-        <h2>Abut me</h2>
-        <p><em>I like web programming</em></p>
-        <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <div class="my-pic">
-            <img src="images/PhotoofMe.jpg" alt="me-pic">
-            <p><b>lee hyun hu</b></p>
+        <!-- container -->
+        <div class="container">
+            <!-- 설명글 -->
+            <h2>나의소개</h2>
+            <p><em>성장하는 웹 개발자가 되기위해</em></p>
+            <div class="basic clearfix">
+                <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="my-pic">
+                <p><b>이현주</b></p>
+                <img src="images/PhotoofMe.jpg" alt="내사진">
+            </div>
             <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    
+            <!-- 스킬 -->
+            <div class="skill">
+                <h3>Im really good at:</h3>
+                <p>Web programming</p>
+                <div><span>90%</span></div>
+                <p>Front programming</p>
+                <div><span>90%</span></div>
+                <p>Backend programming</p>
+                <div><span>90%</span></div>
+            </div>
+            <!-- //스킬 -->
         </div>
-        <!-- 스킬 -->
-        <h3>Im really good at:</h3>
-        <p>Web programming</p>
-        <div><span>90%</span></div>
-        <p>Front programming</p>
-        <div><span>90%</span></div>
-        <p>Backend programming</p>
-        <div><span>90%</span></div>
+        <!-- //container -->
+        
         <!-- 카운터 -->
         <div class="counter">
-            <ul>
+            <ul class="clearfix">
                 <li><span>+8</span>Total Pages</li>
                 <li><span>3+</span>Web projects</li>
                 <li><span>3+</span>App projects</li>
@@ -45,54 +65,75 @@
             </ul>
         </div>
     </section>
-
+        
     <!-- 섹션3 -->
-    <section id="sec3" class="sec">
-        <div><span>PORTFOLIO</span></div>
-        <h2>MY Work</h2>
-        <p><em>아래 작품은 나의 최근 작품입니다.<br>이미지를 클릭하면 더 커진 이미지로 볼 수 있습니다.</em></p>
-        <div class="pf">
-            <ul>
-                <li><img src="images/Bearcloseup.jpg" alt="작품1"></li>
-                <li><img src="images/Coffeebeans.jpg" alt="작품2"></li>
-                <li><img src="images/Emptyghosttrain.jpg" alt="작품3"></li>
-                <li><img src="images/Mybelovedtypewriter.jpg" alt="작품4"></li>
-                <li><img src="images/Quietocean.jpg" alt="작품5"></li>
-                <li><img src="images/Sailing.jpg" alt="작품6"></li>
-                <li><img src="images/Themistoverthemountains.jpg" alt="작품7"></li>
-                <li><img src="images/Themist.jpg" alt="작품8"></li>
-            </ul>
-        </div>
-        <a href="#">더보기</a>
-    </section>
+        <section id="sec3" class="sec">
+            <div><span>PORTFOLIO</span></div>
+            <!-- container -->
+            <div class="container">
+                <h2>MY Work</h2>
+                <p><em>아래 작품은 나의 최근 작품입니다.<br>이미지를 클릭하면 더 커진 이미지로 볼 수 있습니다.</em></p>
+                <div class="pf">
+                    <ul class="clearfix">
+                        <li><img src="images/pf1.png" alt="LG전자"></li>
+                        <li><img src="images/pf2.png" alt="미상"></li>
+                        <li><img src="images/pf2.png" alt="할리스커피"></li>
+                        <li><img src="images/pf2.png" alt="묵찌빠게임"></li>
+                        <li><img src="images/pf2.png" alt="팀프로젝트"></li>
+                        <li><img src="images/pf2.png" alt="미상1"></li>
+                        <li><img src="images/pf2.png" alt="미상1"></li>
+                        <li><img src="images/pf2.png" alt="미상1"></li>
+                    </ul>
+                </div>
+                <a href="#">더보기</a>
+            </div>
+            <!-- //container -->
+        </section>
 
     <!-- 섹션4 -->
-    <section id="sec4" class="sec">
-        <div><span>CONTACT</span></div>
-        <h2>WHERE I WORK(나의위치)</h2>
-        <p><em>I'd love your feedback!(당신의 연락을 기다립니다.)</em></p>
-        <div><img src="images/map.jpg" alt="나의위치"></div>
-        <div class="addr">
-            <ul>
-                <li>Chicago, US</li>
-                <li>Phone: +00 151515</li>
-                <li>Email: mail@mail.com</li>
-            </ul>           
-            <p>Swing by for a cup of , or leave me a note:</p>
-        </div>
-        <form action="my.jpg">
-            <input type="text" placeholder="이름" >
-            <input type="email" placeholder="메일" >
-            <input type="text" placeholder="메세지">
-            <button>메세지전송하기</button>
-        </form>
-    </section>
+        <section id="sec4" class="sec">
+            <div><span>CONTACT</span></div>
+            <h2>WHERE I WORK(나의위치)</h2>
+            <p><em>I'd love your feedback!(당신의 연락을 기다립니다.)</em></p>
+            <!-- container -->
+            <div class="container">
+                <!-- map -->
+                <div class="map"><img src="images/map.png" alt="나의위치"></div>
+                <!-- //map -->
+                <!-- right -->
+                <div class="right">
+                    <div class="addr">
+                        <ul>
+                            <li>Chicago, US</li>
+                            <li>Phone: +00 151515</li>
+                            <li>Email: mail@mail.com</li>
+                        </ul>           
+                        <p>Swing by for a cup of , or leave me a note:</p>
+                    </div>
+                    <form action="my.jpg">
+                        <input type="text" placeholder="이름" >
+                        <input type="email" placeholder="메일" >
+                        <input type="text" placeholder="메세지">
+                        <button>메세지전송하기</button>
+                    </form>
+                </div>
+                <!-- //right -->
+            </div>
+            <!-- //container -->
+        </section>
 
     <!-- 푸터 -->
-    <footer>
-        <div class="tbtn">To the top</div>
-        <div class="sns">sns</div>
-        <p class="copy">copyright 2023 LHJ. All rights reserved.</p>
-    </footer>
+        <footer>
+            <div class="tbtn">To the top</div>
+            <div class="sns">
+                <a href="#">페이스북</a>
+                <a href="#">인스타그램</a>
+                <a href="#">스냅챗</a>
+                <a href="#">종?</a>
+                <a href="#">트위터</a>
+                <a href="#">링크드인</a>
+            </div>
+            <p class="copy">copyright 2023 LHJ. All rights reserved.</p>
+        </footer>
 </body>
 </html>
