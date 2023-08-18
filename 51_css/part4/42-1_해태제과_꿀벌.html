@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        /* 😀프레임의 높이구하는법
+                heigt:5610px
+                전체 프레임 수 :35개
+                따라서 5880/30하면= 187px
+        */
+        div {
+            position: relative;
+            width:282px;
+            height:187px;
+            background:url(../part4/image/bg-main0-3-0.png) no-repeat;
+            left:0px; top:0;
+            text-indent: -9999em;
+            border: 1px solid black;
+           
+        }
+
+        /* 전체 프레임수는 35이지만 마지막 프레임을 빼야 steps(29) 글씨가 멈춰야 한다. */
+        .anim{animation: move 2.5s steps(29) infinite; }
+        
+        @keyframes move {
+            0% {background-position: 0 0 ;}
+            /* 29 *187 = -5712px  음수로 써야 위로 올라감. */
+            100%{background-position: 0 -5423px ;} 
+        }
+
+    </style>
+</head>
+<body>
+    <h1>애니메이션</h1>
+    <div class="anim">달콤한 세상으로의 초대</div>
+
+</body>
+</html>

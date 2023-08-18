@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        .wrap {
-            overflow:hidden;
-        }
+
+        /* 
+        transform: skewX(숫자deg);
+        transform: skewY(각도);
+        transform: skew(각도, 각도);
+         */
+
+
+
+        .wrap { overflow:hidden; }
         .outer {
             float:left;
             margin: 20px;
@@ -20,21 +27,19 @@
             width:100px;
             height:100px;
             background: red;
-            transition: .5s;
-        }
+            transition: .5s; }
 
         .outer:hover .trfskx {
             /* transform: skewX(숫자deg); */
-            transform: skewX(-15deg);
-        }
+            transform: skewX(-15deg);}
+
         .outer:hover .trfsky {
             /* transform: skewY(각도); */
-            transform: skewY(30deg);
-        }
+            transform: skewY(30deg);}
+
         .outer:hover .trfsk {
             /* transform: skew(각도, 각도); */
-            transform: skew(30deg, 30deg);
-        }
+            transform: skew(30deg, 30deg); }
     </style>
 </head>
 <body>

@@ -14,25 +14,26 @@
             색의 기본값: 글자색 
         */
 
-        /* 
-            x위치: 2px
+        /*  x위치: 2px
             y위치: 2px
             blur: 4px
-            color: black
-        */
-        .ts1 {
-            color: white;
-        }
+            color: black*/
+        .ts1 {color: white;   text-shadow: 2px 2px 4px black;}
+
+
 
         /* 
             x위치: 1px, 0, 0
             y위치: 1px, 0, 0
             blur: 2px, 25px, 5px
-            color: black, blue, darkblue
-        */
+            color: black, blue, darkblue*/
         .ts2 {
             color: white;
-        }
+            text-shadow: 
+            1px 1px 2px black,
+            0 0 25px blue,
+            0 0 5px darkblue;}
+
 
 
         /* 
@@ -40,17 +41,21 @@
             x위치: -1px, 0, 1px, 0
             y위치: 0, 1px, 0, -1px
             blur: 없음.
-            color: 모두 black
-        */
+            color: 모두 black */
         .ts3 {
             color: coral;
-        }
+            text-shadow: 
+            -1px 0 black,
+            0 1px black,
+            1px 0 black,
+            0 -1px black; }
+
     </style>
 </head>
 <body>
     <h1>텍스트 그림자 효과</h1>
     <p class="ts1">text-shadow</p>
-    <p class="ts2">text-shadow</p>
-    <p class="ts3">text-shadow</p>
+    <p class="ts2">text-shaddddddow</p>
+    <p class="ts3">text-shadoooooow</p>
 </body>
 </html>

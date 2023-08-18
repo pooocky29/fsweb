@@ -6,30 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
-    <style>
-        /* <ul>에 사용 */
-        /* disc */
 
-        /* circle */
 
-        /* square */
-
-        /* <ul>,<ol>에 모두 사용 - 항목 마커 제거 */
-
-        /* <ol>에 사용 */
-        /* decimal */
+<style>
+         /*
+        [목록 속성]
+        list-style-type : 유형; (<ul>disc ,<ol>decimal)
+        list-style-image : 이미지 마커; (url="이미지경로")
+        list-style-position : 위치; (outside(기본값), inside ->li태그 기준)
         
+        [속기형]
+        list-style:type 또는 image | position */ 
+
+        /*😊 <ul>에 사용 */
+
+        /* disc */
+            .lst1{list-style: none;}
+        /* circle */
+            .lst2 li{list-style-type: square;  border: 1px solid red; list-style-position: inside;}
+        /* square */
+            .lst3{list-style-image: url(../assets/imges/star.png);}
+        /* <ul>,<ol>에 모두 사용 - 항목 마커 제거 */
+            .lst10{list-style: none;}
+
+
+        /*😊 <ol>에 사용 */
+        /* decimal */
+            .lst4{list-style-type: decimal-leading-zero;}
         /* decimal-leading-zero */
-
+            .lst5{list-style-type: decimal-leading-zero;}
         /* upper-alpha */
-
+            .lst6{list-style-type: upper-alpha;}
         /* lower-alpha */
-
+            .lst7{list-style-type: lower-alpha;}
         /* upper-roman */
-
+            .lst8{list-style-type: upper-roman;}
         /* lower-roman */
-
-    </style>
+            .lst9{list-style-type: lower-roman;}
+        /* 기타 */
+            .lst11{list-style-type: lower-greek;}
+</style>
 </head>
 
 <body>
@@ -56,39 +72,41 @@
         <li>카페라떼</li>
     </ul>
 
+
+    <!--박스가 달라도 전체 순번을 내리는 방법이 있다->start="숫자"라고 쓰면 됨  -->
     <h2>순서 있는 목록</h2>
-    <ol class="lst4">
-        <li>아메리카노</li>
+    <ol class="lst4" >
+        <li>decimal</li>
         <li>카페모카</li>
         <li>카페라떼</li>
     </ol>
-    <ol class="lst5">
-        <li>아메리카노</li>
+    <ol class="lst5" >
+        <li>decimal-leading-zero</li>
         <li>카페모카</li>
         <li>카페라떼</li>
     </ol>
     <ol class="lst6">
-        <li>아메리카노</li>
+        <li>upper-alpha</li>
         <li>카페모카</li>
         <li>카페라떼</li>
     </ol>
     <ol class="lst7">
-        <li>아메리카노</li>
+        <li>lower-alpha</li>
         <li>카페모카</li>
         <li>카페라떼</li>
     </ol>
     <ol class="lst8">
-        <li>아메리카노</li>
+        <li>upper-roman</li>
         <li>카페모카</li>
         <li>카페라떼</li>
     </ol>
     <ol class="lst9">
-        <li>아메리카노</li>
+        <li>lower-roman</li>
         <li>카페모카</li>
         <li>카페라떼</li>
     </ol>
     <ol class="lst11">
-        <li>아메리카노</li>
+        <li>lower-greek</li>
         <li>카페모카</li>
         <li>카페라떼</li>
     </ol>

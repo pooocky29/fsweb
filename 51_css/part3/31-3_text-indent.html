@@ -6,23 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        /* 들여쓰기 40px */
+        /* 😊[text-transform]: 소문자->대문자 / 대문자->소문자로 변형 none/ uppercase, lowercase, capitalize */
 
-        /* %는 가로 크기가 기준: 50% */
+
+        /*
+         😊[line-heghit의 단위]
+            - 길이단위:px, em, rem 
+            - 상대단위: em,rem,% 
+            - 절대단위 : px
+        */
+
+
+        /* 들여쓰기 40px */
+            .tipx{text-indent: 40px;}
+
+
+        /* 🎈 text-indent에서의 %는 자기가 위치한 width가 기준이이라서 <p>박스의 가로를 기준으로 50%를 말하는 것임. */
+            .tip{text-indent: 50%; border: solid 1px red;}
+
         
+
         /* 줄간격 32px */
+            .lhpx{line-height: 32px;}
 
         /* 줄간격 숫자는 글자 크기의 배수: 2 */
+            .lhn{line-height: 2;}
 
         /* 줄간격 %는 글자 크기가 기준: 200% */
+            .lhp{line-height: 200%;}
+
+
 
         /* 대소문자 변환 */
-
+            .ttn{text-transform: none;}
         /* 모두 대문자 */
-
+            .ttu{text-transform: uppercase;}
         /* 모두 소문자 */
-
+            .ttl{text-transform: lowercase;}
         /* 단어별 첫 글자 대문자 */
+            .ttc{text-transform: capitalize;}
+
+
 
     </style>
 </head>

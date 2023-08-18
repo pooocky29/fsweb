@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        /* display 속성이 inline, inline-block 요소에 적용된다. */
         p {text-decoration: underline overline; font-size: 3rem; line-height: 3em;}
+        
+         /* 🎈🎈text-align은 블록요소에 직접주면 인라인 요소들이 정리되지만
+           vertical-align은 직접 인라인요소에 줘야 적용이 먹힌다. */
 
-        /* 
+        /* 😊속성이 display: inline(video,img), display:inline-block(button,input), display:table:cell일때 vertical-align적용된다. */
+        /* 😊vertical-align 적용대상: 텍스트 , 인라인요소 , 테이블(td,th)
+           😊vertical-align      값: (숫자)px , % , 키워드 */
+           
+    
+        /* 😊[키워드]
             baseline: 부모 요소의 기준선(baseline)에 맞춤(기본값)
             text-top: 요소의 맨 위를 부모 텍스트의 맨 위에 맞춤
             top: 요소의 맨 위를 줄에서 가장 큰 요소의 맨 위에 맞춤
@@ -19,21 +26,34 @@
             super: 부모의 윗첨자 기준선에 맞춤
             sub: 부모의 아래첨자 기준선에 맞춤
         */
-
+        /* 요소들을 나란히 배치할때 키워드를 많이씀. */
+        .vat img{vertical-align:top;}
+        .vam img{vertical-align: middle;}
+        .vab img{vertical-align: bottom;}
+        
         /* px 단위는 텍스트 baseline 기준, 음수 가능 */
-        /* % 단위는 부모 요소의 줄 간격 기준, 음수 가능 */
+        .vapx img{vertical-align: 144px;}
+        
         /* em 단위는 부모 요소의 글꼴 크기, 음수 가능 */
+        .vaem img{vertical-align: 1em;}
+        
+        /* % 단위는 부모 요소의 줄 간격 기준, 음수 가능 */
+        .vaper img{vertical-align: 100%;}
+        
+    
+        </style>
 
-    </style>
+
 </head>
 <body>
     <h1>수직 정렬</h1>
-    <p class="vat">vertical-align:top; <img src="/51_css/assets/star2.png" alt="스타2"></p>
-    <p class="vam">vertical-align:middle; <img src="/51_css/assets/star2.png" alt="스타2"></p>
-    <p class="vab">vertical-align:bottom; <img src="/51_css/assets/star2.png" alt="스타2"></p>
-
-    <p class="vapx">vertical-<sub>align</sub>: px; <img src="/51_css/assets/star2.png" alt="스타2"></p>
-    <p class="vaem">vertical-<sub>align</sub>: em; <img src="/51_css/assets/star2.png" alt="스타2"></p>
-    <p class="vaper">vertical-<sub>align</sub>: %; <img src="/51_css/assets/star2.png" alt="스타2"></p>
+    <p class="aa">vertical-align:아무것도 안준것; <img src="../assets/imges/star.png" alt="스타2"></p>
+    <p class="vat">vertical-align:top; <img src="../assets/imges/star.png" alt="스타2"></p>
+    <p class="vam">vertical-align:middle; <img src="../assets/imges/star.png" alt="스타2"></p>
+    <p class="vab">vertical-align:bottom; <img src="../assets/imges/star.png" alt="스타2"></p>
+    <!-- 😊 <sub>:아래첨자 <sup>:위첨자 -->
+    <p class="vapx">vertical-<sub>align</sub>: px; <img src="../assets/imges/star.png" alt="스타2"></p>
+    <p class="vaem">vertical-<sub>align</sub>: em; <img src="../assets/imges/star.png" alt="스타2"></p>
+    <p class="vaper">vertical-<sub>align</sub>: %; <img src="../assets/imges/star.png" alt="스타2"></p>
 </body>
 </html>

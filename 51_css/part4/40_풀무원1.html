@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>풀무원</title>
+    <style>
+    /* 구글폰트 */
+    
+    @import url('https://fonts.googleapis.com/css2?family=Gasoek+One&family=Noto+Sans+KR:wght@500;700;&display=swap');
+    body{font:1.6rem/1.5 'Noto Sans KR', sans-serif; color: #333; letter-spacing: -1;}
+
+    /* 타이포: 글꼴,크기,색,스타일,줄간격,자간 */
+    html{font-size: 10px;}
+    h2{font-size: 4.5rem; font-weight: normal;}
+    p{font-size: 2rem; font-weight: 500;}
+    dt{font-size: 2.4rem; font-weight: 700; }
+    dd{font-size: 1.4rem;}
+    dl{color: #fff;}
+    
+    
+    /* 초기화 */
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    li{list-style: none;}
+    
+    /* 섹션공통 */ 
+    section{height: 100vh; width: 100%; background: #ece9de; }
+    
+    #sec1{background-color: #ece9de;}
+
+    
+    /* li가로 크기가 393*3=1179px */
+    /* position으로 요소를 가로/세로 중앙배치 */
+    /* .container{position: absolute; left: 50%; top:50%; width: 1179px; margin-left: -590px; margin-top: -122px; border: 1px solid red;}*/
+    .container{width: 1179px; margin:0 auto; padding-top: 143px;}
+    
+    p{margin: 30px 0 54px 0;}
+
+    ul::after{content: ''; display: block; clear: both; }
+    li{position: relative; float: left; width: 393px; height: 493px; text-align: center; background: no-repeat 50% 50%;}
+    /* 회사에서는 파일 명명규칙이란게 존재함. */
+    li:nth-of-type(1){background-image: url(../part4/image/s01_list_icon_1.png),url(../part4/image/s01_list_img1.jpg)}
+    li:nth-of-type(2){background-image: url(../part4/image/s01_list_icon_2.png),url(../part4/image/s01_list_img2.jpg)}
+    li:nth-of-type(3){background-image: url(../part4/image/s01_list_icon_3.png),url(../part4/image/s01_list_img3.jpg)}
+
+    /* hover적용 */
+    li:nth-of-type(1):hover{background-image: url(../part4/image/s01_list_icon_1_on.png); background-color: #3f3d33;}
+    li:nth-of-type(2):hover{background-image: url(../part4/image/s01_list_icon_2_on.png); background-color: #2c3f46;}
+    li:nth-of-type(3):hover{background-image: url(../part4/image/s01_list_icon_3_on.png); background-color: #729246;}
+
+    /* li에 마우스 오버하면 dl이 opacity:1됨 */
+    li:hover dl{opacity: 1;}
+    /* position을 absolute하면 요소의 width가 콘텐츠 크기만큼 변경됨. 그래서 width를 100%로 줘서 다시 정렬되게 하기 */
+    /* position을 absolute하면 maging:0 auto값 먹히지 않음. */
+    dl{opacity: 0; position: absolute;  top:314px; left: 50%; margin-left:-120px;  width:240px; transition: all .5s;}
+    dt{margin-bottom:12px;  /* padding-bottom:12px;  border-bottom: 1px solid #fff; */}
+    dt::after{content: ''; width: 240px; height: 2px; display:block; background: #fff; margin:6px auto 0;}
+    span{display: block;}
+
+    
+</style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- 풀무원1(섹션따라하기) -->
+        <section id="sec1">
+            <div class="container">
+                <h2>바른먹거리</h2>
+                <p>나와 내 가족의 건강, 더 나아가 지구환경의 건강까지 두루 살핍니다.</p>
+                <ul>
+                    <li>
+                        <dl>
+                            <dt>바른먹거리</dt>
+                            <dd>
+                                <span>내 가족의 건강과 행복을 위한</span>
+                                <span>바른먹거리는 무엇일까요?</span>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>로하스</dt>
+                            <dd>
+                                <span>여러분도 로하스 식생활을</span>
+                                <span>시작해보세요</span>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>바른먹거리 캠페인</dt>
+                            <dd>
+                                <span>어렸을 때 입맛이 평생 건강</span>
+                                <span>&nbsp;</span>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- //풀무원1 -->
+
+        <!-- 풀무원2(섹션스스로하기) -->
+        <section id="sec2">
+
+        </section>
+        <!-- //풀무원2 -->
+    </div>
+</body>
+</html>
+
+
+
+<!-- display-> display:table-cell -->
+<!-- table-cell 종류에는 <td>,<th> -->
+<!-- vertical-align 수직정렬-> 인라인요소, 테이블셀 속성을 사용해서 정렬할수 있다. -->
+<!-- table 요소는 블록요소이지만 width를 100%로 잡지 않는 특징이 있다. -->
+
+<!-- 🎈display:table;을 사용하는 이유는 수직정렬때문에 사용한것임.
+    section를 display:table; width:100%
+    .container을 display:table-cell, vertical-align:middel;
+    .inner를 width:1179px; magin:0 auto; 처리를 해야함
+ -->

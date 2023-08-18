@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+     
+        .anim{
+            width:178px;
+            height:100px;
+            background:url(../part4/image/bg-main0-0.png) no-repeat;
+            opacity: 0;
+            text-indent: -999em;}
+
+        /* position 안쓰고 움직여 보기 */
+          .anim{animation: name 1s ease 2s infinite; }
+          @keyframes name {
+            0% { transform: translate(0, 0);}
+            100%{transform: translate(200px, 0); opacity: 1;} }
+            
+ </style>
+
+</head>
+<body>
+    <h1>애니메이션</h1>
+     <div class="anim">fill예제 구름</div>
+</body>
+</html>

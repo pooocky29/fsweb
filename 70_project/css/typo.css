@@ -3,9 +3,21 @@
 
 a{color: #111;}
 
+h2{text-align: center;}
+h2+p{text-align: center;}
+
 
 .counter{color: #fff;}
-footer{color: #fff;}
+
+.parallax span{
+    color: #fff; 
+    letter-spacing: 10px;
+    font-size: 3.6rem;
+    line-height: 400px;}
+
+.parallax{text-align: center;}
+
+footer{color: #fff; text-align: center;}
 footer a{color: #fff;}
 
 .copy{color:#777;}

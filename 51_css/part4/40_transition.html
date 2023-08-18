@@ -6,33 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-
+        /* 😊attribute(html속성) /property(css속성)  */
         /* 
-            transition-property: 전환 속성;
-            transition-duration: 전환 시간(단위: s(초));
-            transition-timing-function: 전환 시간 함수;
-            transition-delay: 전환 지연 시간(단위: s(초));
+        
+           ✍transition-property: 전환 속성;
+                값: all(모든속성), width(withd속성만 전환이된다), height(height속성만 전환이된다), background
+           ✍transition-duration: 전환 일정시간(단위: s(초));
+                값: 숫자s
+           ✍ transition-timing-function: 전환 시간 함수;
+                값:ease; ease-in; ease-out; ease-in-out;
+                등속: Linear
+                사용자 정의:cubic-bezier(n,n,n,n)
+           ✍transition-delay: 전환 지연 시간(단위: s(초));
 
+        [😊속기속성]
             transition: [property] duration [timing-function] [delay];
+            transition: all 1s ease 0s;은  transition:1s; 와 같은표현이다.
+            transition: all 0.3s ease 0s;은 transition:.3s;와 같은표현이다.
         */
 
 
+
+
         /* div에 전환 속성을 all, 전환 시간은 0.3초, 가속도는 ease, 지연 시간은 0초로 지정하시오. */
+        div{width:100px; height:100px; background: red;
+             transition-property:all; 
+             transition-duration: 0.3s;
+             transition-timing-function:ease;
+             transition-delay: 2s;}
         
-        div {
-            width:100px;
-            height:100px;
-            background: red;
-        }
-        
-        div:hover {
-            width: 200px;
-            background: blue;
-        }
+        /*😊 이벤트:hover는 마우스오버시와 마우스아웃할때의 모든 모습을 포함하는것이다. */
+        /*😊 일반적으로 :hover에다가 transition을 주지않고 원본에 다가 transition효과를 준다. */
+             div:hover{width:200px;  background:blue;}
+
     </style>
 </head>
 <body>
-    <h1>전환</h1>
+    <h1>전환transition</h1>
     <div></div>
 </body>
 </html>

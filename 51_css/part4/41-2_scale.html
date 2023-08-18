@@ -6,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        .wrap {
-            display: flex;
-        }
+
+
+        /* 😀기본값이 1이다.
+        transform: scaleX(); 가로
+        transform: scaleY(); 세로
+        transform: scaleZ(); 깊이 ->✨원근감과 더불어 translate()를 같이 써줘야 scaleZ()이 적용된다.
+        transform: scale3d(x,y,z);
+        transform: scale(x,[y]); -> y값을 생략하면 x에 비례하여 y값이 적용된다
+         */
+
+
+        .wrap { display: flex; }
         .outer {
             margin: 20px;
             border:1px solid black;
@@ -23,6 +32,7 @@
         }
         .outer:hover .trfscx {
             /* transform: scaleX(w); */
+            /* 1이 기본값임. 1보다 크면 커지고 1보다 작으면 작아짐 */
             transform: scaleX(1.2);
         }
         .outer:hover .trfscy {
@@ -34,7 +44,7 @@
             transform: scaleZ(1) translateZ(0px);
         }
         .outer:hover .trfscz {
-            /* 원근감(perspective), translate()과 함께 사용해야 한다. */
+            /* ✨원근감(perspective), translate()과 함께 사용해야 한다. */
             /* transform: scaleZ(숫자); */
             transform: scaleZ(1.2) translateZ(100px);
         }

@@ -7,13 +7,12 @@
     <title>HTML+CSS</title>
     <style>
         /* 
-            의사(Pseudo, 가상, 유사) 클래스
-            타입을 구분한다.
+            🎈의사(Pseudo, 가상, 유사) 클래스 타입을 구분한다.
 
-            선택자:first-of-type
-            선택자:last-of-type
-            선택자:nth-of-type(n)
-            선택자:nth-last-of-type(n)
+            😊선택자:first-of-type ->첫번째 요소를 선택한다
+            😊선택자:last-of-type -> 마지막 요소를 선택한다
+            😊선택자:nth-of-type(n) ->위에서 아래로 n번째 요소를 선택한다
+            😊선택자:nth-last-of-type(n) -> 아래에서 위로 n번째 요소를 선택한다
             
             n: 1,2,3,..., odd, even, 2n-1, 2n, 3n ...
             
@@ -24,12 +23,22 @@
             홀수: 2n-1 또는 odd
         */
 
+        p:first-of-type{color: blueviolet;}
+        p:last-of-type{color: blueviolet;}
+        p:nth-of-type(2){color:red;}
+        p:nth-of-type(12){text-decoration:underline 2px red;}
+        p:nth-last-of-type(1){background-color: rgb(218, 218, 180);}
+
+        /* 수열 홀수*/
+        p:nth-of-type(2n+1){font-weight: 900;}
+
     </style>
 </head>
 <body>
+    🎈🎈<!-- h1,h2,p태그 요소가 섞여있음 : of-type은 같은요소(p)만 봐서 중간에 <h1>가 껴있어도 순서에 영향을안줌-->
     <h1>의사 클래스 선택자</h1>
-    <h2>~of-type</h2>
     <p>1 번째 요소입니다.</p>
+    <h2>~of-type</h2>
     <p>2 번째 요소입니다.</p>
     <p>3 번째 요소입니다.</p>
     <p>4 번째 요소입니다.</p>

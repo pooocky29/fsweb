@@ -6,27 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        div {
-            width:100px;
-            height:50px;
-            margin:10px;
-            background: red;
-            transition: 1s;
-        }
-        div:hover {
-            width: 200px;
-        }
-        /* 느린 시작과 끝, 시작 속도가 마지막 속도보다 약간 빠름 */
+        div {width:100px; height:50px; margin:10px; background: red; transition: 1s; }
+        div:hover {width: 200px;}
 
-        /* 느린 시작 */
+        /* 😊transition-timing-function: 시간함수 
+                값:ease; ease-in; ease-out; ease-in-out;
+                등속: Linear
+                사용자 정의:cubic-bezier(n,n,n,n)
+        */
 
-        /* 느린 끝 */
+        /* 시작속도가 마지막속도 보다 약간빠름 */
+            .trs1{transition-timing-function:ease;}
+
+        /* 느린 시작(시작점이 느림) */
+            .tes2{transition-timing-function:ease-in;}
+            
+        /* 느린 끝(도착점에서 점점느려짐) */
+            .tes3{transition-timing-function:ease-out;
+                 transition-timing-function:cubic-bezier(0,0,.58,1);}
 
         /* 느린 시작과 끝, 시작 속도가 마지막 속도보다 약간 느림 */
+            .tes4{transition-timing-function:ease-in-out;}
 
         /* 등속 */
+            .tes5{transition-timing-function:linear;
+                 transition-timing-function:cubic-bezier(0,0,1,1);}
 
         /* cubic-bezier(n,n,n,n) */
+        /* 음수는 0과 같다. 1보다 큰 값은 1과 같다 */
+            .tes6{transition-timing-function:cubic-bezier(.6,0,.57,1);}
         /* https://cubic-bezier.com/#.17,.67,.83,.67  */
         
     </style>

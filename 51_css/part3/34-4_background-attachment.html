@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML+CSS</title>
+    <title>페럴렉스스트롤 예시</title>
     <style>
-        div {
-            height: 800px;
-            border: 1px solid red;
-            margin: 20px;
-        }
+        div {height: 800px; border: 1px solid red;margin: 20px;}
 
         /* 
             배경 이미지의 고정 여부
             background-attachment: 값;
-            값: scroll, fixed
+            값: scroll(기본값), fixed
             scroll: 배경 이미지가 스크롤 된다.
             fixed: 배경 이미지가 고정된다.
         */
 
         /* div1 클래스에 parallax1.jpg 이미지를 사용하여 패럴렉스 이미지를 만들어 보세요. */
+            
+            /* 
+            .div1{
+                background-image: url(../../70_project/images/parallax1.jpg); 
+                background-repeat: no-repeat;
+                background-position: center 0;
+                background-size:cover;
+                background-attachment: fixed;
+            } */
 
+            /* 속기형 */
+            .div1{background: url(../../70_project/images/bg1.jpg) no-repeat center 0/cover fixed; }
     </style>
 </head>
 

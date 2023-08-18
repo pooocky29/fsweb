@@ -6,21 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        /* 자동 줄 바꿈(o), Enter(x), sp/tab(x) */
+        /*😊 [공백처리]-> 스페이스바 / 엔터 / 탭 이 3가지의 공백을 처리하는게 white-space 이다.*/
+
+        /*
+        😊<br>: 강제 줄바꿈 태그
+        😊<pre>: 기록한 그대로 표시해주는 태그 */
+
+
+        /* 자동 줄 바꿈(o), Enter(x), sp(두칸이상을 말함)/tab(x) */
         .whn {white-space: normal;}
+
         /* 자동 줄 바꿈(x), Enter(x), sp/tab(x) */
-        .whnw {white-space: nowrap;}
+        .whnw {white-space: nowrap; color: red;}
+
         /* 자동 줄 바꿈(x), Enter(o), sp/tab(o) */
         .whp {white-space: pre;}
+
         /* 자동 줄 바꿈(o), Enter(o), sp/tab(o) */
-        .whpw {white-space: pre-wrap;}
+        .whpw {white-space: pre-wrap; color: blue;}
+
         /* 자동 줄 바꿈(o), Enter(o), sp/tab(x) */
         .whpl {white-space: pre-line;}
+
     </style>
 </head>
 <body>
     <h1>CSS 텍스트 속성</h1>
     <h2>white-space</h2>
+    <!-- 🎈앤터로 줄바꿈해도 1칸 이상의 공백을 인식하지 못함 -->
+    <p>아무리
+        공백을 
+        줘도
+        한칸만 인정해줌
+        </p>
     <p class="whn">Lorem           ipsum dolor sit. Lorem ipsum dolor sit. 
         Lorem            ipsum dolor sit. Lorem ipsum dolor sit. 
         Lorem ipsum dolor sit. Lorem ipsum dolor sit. 
@@ -29,18 +47,19 @@
         Lorem            ipsum dolor sit. Lorem ipsum dolor sit. 
         Lorem ipsum dolor sit. Lorem ipsum dolor sit. 
         Lorem ipsum dolor sit.</p>
-    <p class="whp">Lorem           ipsum dolor sit. Lorem ipsum dolor sit. 
-        Lorem            ipsum dolor sit. Lorem ipsum dolor sit. 
-        Lorem ipsum dolor sit. Lorem ipsum dolor sit. 
-        Lorem ipsum dolor sit.</p>
-    <p class="whpw">Lorem           ipsum dolor sit. Lorem ipsum dolor sit. 
-        Lorem            ipsum dolor sit. Lorem ipsum dolor sit. 
-        Lorem ipsum dolor sit. Lorem ipsum dolor sit. 
-        Lorem ipsum dolor sit.</p>
-    <p class="whpl">Lorem           ipsum dolor sit. Lorem ipsum dolor sit. 
-        Lorem            ipsum dolor sit. Lorem ipsum dolor sit. 
-        Lorem ipsum dolor sit. Lorem ipsum dolor sit. 
-        Lorem ipsum dolor sit.</p>
+
+    <p class="whp">pre은 엔터가
+
+        표현이 된다. 스      페    이    스 바도 표현이된다. 하지만 자동 줄바꿈(wrap)은 적용 되지않는다.
+    </p>
+
+    <p class="whpw">pre-wrap은 엔터가
+
+        표현이 된다. 스      페    이    스 바도 표현이된다.그리고 pre-wrap은 자동 줄바꿈(wrap)이 된다.</p>
+
+    <p class="whpl">pre-line은  엔터가
+
+        표현이 된다. 스      페    이    스 바 표현이 안된다.그리고 pre-line은 자동 줄바꿈(wrap)이 된다.</p>
 
 </body>
 </html>

@@ -6,7 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
+        /* 🎈🎈text-align은 블록요소에 직접주면 인라인 요소들이 정리되지만
+               vertical-align은 직접 인라인요소에 줘야 적용이 먹힌다. */
 
+        body *{border: 1px solid red;}
+
+        .tal{text-align: left;}
+        .tar{text-align: right;}
+        .tac{text-align: center;}
+        /* 양쪽맞춤 : 영문은 justify을 하면 단어단위로 자동 줄바꿈처리 해버림(그래서 단어사이에 공백이 많이 생김) */
+        .taj{text-align: justify;}
+        .tab{text-align: center;}
+        /* justify해주고 단어를 쪼개서 공백을 채워줄 속성은 word-break이다 */
+        .text{text-align: justify; word-break: break-all;}
+
+        img{width: 100px;}
+        .img1{text-align: center;}
     </style>
 </head>
 <body>
@@ -15,5 +30,9 @@
     <p class="tar">text-align은 텍스트의 수평(가로) 정렬 속성으로 block 요소 안에 있는 inline 요소(텍스트, 이미지 등)만을 정렬 한다. 즉, block 요소에만 적용할 수 있다.</p>
     <p class="tac">text-align은 텍스트의 수평(가로) 정렬 속성으로 block 요소 안에 있는 inline 요소(텍스트, 이미지 등)만을 정렬 한다. 즉, block 요소에만 적용할 수 있다.</p>
     <p class="taj">text-align은 텍스트의 수평(가로) 정렬 속성으로 block 요소 안에 있는 inline 요소(텍스트, 이미지 등)만을 정렬 한다. 즉, block 요소에만 적용할 수 있다.</p>
+    <!-- b태그(인라인)로 묶인태그는 적용이 안된다.  -->
+    <b class="tab">text-align은 텍스트의 수평(가로) 정렬 속성으로 block 요소 안에 있는 inline 요소(텍스트, 이미지 등)만을 정렬 한다. 즉, block 요소에만 적용할 수 있다.</b>
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, vitae. Reiciendis maxime, voluptate magnam excepturi quisquam minima sed doloribus quis fugiat aspernatur totam repudiandae? Minus expedita deleniti odit sunt voluptates!Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, vitae. Reiciendis maxime, voluptate magnam excepturi quisquam minima sed doloribus quis fugiat aspernatur totam repudiandae? Minus expedita deleniti odit sunt voluptates!Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, vitae. Reiciendis maxime, voluptate magnam excepturi quisquam minima sed doloribus quis fugiat aspernatur totam repudiandae? Minus expedita deleniti odit sunt voluptates!</p>
+    <p class="img1"><img src="../assets/imges/coca.png"> </p>
 </body>
 </html>

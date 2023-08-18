@@ -6,17 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        div {
-            width: 500px;
-            height: 350px;
-            border: 1px solid red;
+                    /* background-blend-mode: 이미지 합성방식 */
 
-            /* background-image:url(), url(), ... */
-            /* 첫 번째로 기록한 url이 위로 지정된다. */
+                    
+        /* 속기형을 사용할때 position을 쓸때 슬래쉬 하고 사이즈를 꼭 써줘야 작동함. */
+        /*🎈 [속기형] background: color image reperat position/size origin clip ;  */
+        /*😊 background-repeat: reperat(기본값), no-repeat , repeat-x ,repeat-y ->,콤마를 쓰면 이미지 각각의 반복값을 중복줄수 있음 */
+        /*😊 background-position: x위치 y위치 (x위치:left,right,center),(y위치:top,botom,center)) */
+        /*😊 background-size: contain, cover  */
 
-            /* bg3.png와 bg1.jpg 두 개의 이미지를 하나의 배경 이미지 속성으로 지정하시오. */
+        /*😊 background-image:url(), url(), ...  -> (url)을 여러번 쓸수 있음   */
+        /*😊 첫 번째로 기록한 url이 위로 지정된다.  -> 위치 이미지의 순서가 있음  */
 
+        /* 별이미지 와 이탈리아이미지 두 개의 이미지를 하나의 배경 이미지 속성으로 지정하시오. */
+            div {width: 500px; height: 350px;  border: 1px solid red;
+
+            background-image: url(../assets/imges/star.png), url(../assets/imges/italy1_1200.png); 
+            background-repeat: no-repeat;
+            background-position: 0 bottom , 0 top;
+            background-size: 100px 100px, cover;
         }
+        /*🎈 background 속기 속성을 사용할때에는 이미지 한개만 사용하기!
+            하지만 콤마를 쓰면 사용가능하다. */
+          
     </style>
 </head>
 

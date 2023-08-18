@@ -11,48 +11,98 @@
             width:100px;
             height:100px;
             background: yellow;
-            margin:20px;
-            left:0px; top:0px;
+            left:0px; top:0;
         }
 
-        /* 
+        /* 😀[애니메이션 속성]
             animation-name: 애니메이션 이름;
             animation-duration: 애니메이션 시간(단위: s(초));
-            animation-iteration-count: 애니메이션 반복 여부;
-            animation-direction: 애니메이션 방향;
-            animation-timing-function: 애니메이션 시간 함수;
             animation-delay: 애니메이션 지연 시간(단위: s(초));
+            animation-iteration-count: 애니메이션 반복 여부;
+                값: 숫자,infinite
+            animation-direction: 애니메이션 방향;
+                값: nomal(내가 기록한방향대로 움직임) 
+                    alternate(애니메이션 정방향 재생 후 역방향 재생.)
+                    reverse(역방향 재생.)
+                    alternate-reverse;(역방향 재생 후 정방향 재생.)
+            animation-timing-function: 애니메이션 시간 함수;
+                 값: ease, ease-in, ease-out, ease-in-out,liiner,cubic-bezier, 😀steaps(숫자)
+            animation-fill-mode:
+                값: none;(상단 원본에서 출발 -> @keyframes name{0~100%까지} 갔다가 -> 다시 상단원본에서 시작)
+                    forwards(상단 원본에서 출발-> @keyframes name{0~100%까지} 멈춤 infinite 사용하지 말아야한다/ 해태 구름,텍스트)
+                    🎈backwards(@keyframes name{0~100%까지}여기서 부터가 출발점->원본으로 돌아감->(하지만 시작은 프레임에서부터 시작함)) 
+                    both;(@keyframes name{0~100%까지}여기서 부터가 출발점->)
+            animation-play-state:
+                값: running;(기본값)
+                    paused(일시정지)
         */
 
-
-        /* .anim에 애니메이션의 이름은 move, 시간은 1초, 무한 반복(infinite), 좌우 왕복(alternate), 등속도(linear), 지연 시간은 2초로 지정하시오. */
-
-
+        /*😀[속기형]
+        animation: name duration [delay] [timing-function] [iteration-count] [direction]  */
+  
         
-        /* 
-            애니메이션 코드 형식
-            @keyframe 이름 {
-                from {속성: 값;}
-                to {속성: 값;}
-            }
+        /* 프레임 사이의 간격(0% -> 50% -> 50.3%)을 나타내서 속도감을 줄수있음
+        😀from(시작을 나타냄) to(끝을 나타냄)-> 중간값 없음.
+        😀  0%(시작) 50%(중간) 100%(끝)     -> 중간값을 사용할수 있음
+        
+
+        😀[애니메이션 코드 형식]
+        
+        @keyframes 이름 {
+            from {속성: 값;}
+            to {속성: 값;} }
             
             또는 
             
-            @keyframe 이름 {
+            @keyframes 이름 {
                 0% {속성: 값;}
-                100% {속성: 값;}
-            }
-        */
-
+                50.1% {}
+                50.2% {}
+                50.3% {}
+                50.33% {}
+                ...
+                100% {속성: 값;} }
+    */
+                
+     /* .anim에 애니메이션의 이름은 move, 시간은 1초, 무한 반복(infinite),
+         좌우 왕복(alternate), 등속도(linear), 지연 시간은 2초로 지정하시오. */
+        /* .anim{animation: move 1s ease 2s infinite alternate ;} */
+        /* .anim{  animation-name: move;
+                    animation-duration: 1s;
+                    animation-delay: 2s;
+                    animation-timing-function:ease;
+                    animation-iteration-count: infinite;
+                    animation-direction: normal; }
+            
         @keyframes move {
-            0% {left:0;}
-            100% {left:200px;}
+            0% {left:0; top: 50px;}
+            50%{right: 50px; top: 50px;}
+            100% {right:50; top: 0;} 
+        } */
+
+
+
+        /* 😀[애니메이션 이름규칙]
+        1.영문의 대소문자 구별
+        2.첫글자는 영문자,-,_ 로 사용가능
+        3.특수문자는 -,_사용가능
+         */
+        .anim{animation: name 1s ease 2s infinite;}
+        
+        @keyframes name {
+            0% {left:0; top:0;}
+            25%{left: 200px; top: 0px;}
+            50%{left: 200px; top: 200px;}
+            70%{left: 0; top: 200px;}
+            100%{left: 0; top: 0;} 
         }
 
     </style>
 </head>
 <body>
+
     <h1>애니메이션</h1>
-    <div class="anim">박스</div>
+    <div class="anim">텍스트</div>
+
 </body>
 </html>

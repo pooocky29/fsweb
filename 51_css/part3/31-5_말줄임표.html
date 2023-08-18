@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>말줄임표</title>
+    <style>
+        li{ border: 1px solid red; width: 400px;
+
+            /* 줄바꿈 x */
+            white-space: nowrap; 
+            /* 말줄임표 속성: ellipsis뜻은 생략한다는의미 */
+            text-overflow: ellipsis;
+            /* 박스크기에 넘어간 글을 숨김 */
+            overflow: hidden;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. </li>
+        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elitLorem ipsum dolor, sit amet consectetur adipisicing elit..</li>
+    </ul>
+</body>
+</html>

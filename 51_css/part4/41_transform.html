@@ -7,51 +7,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        .outer {
-            border: 1px solid black;
-            /* perspective는 관점 속성으로 부모 요소에 지정한다. */
-            perspective: 1000px;
-            /* 관점의 위치로 perspective 속성과 함께 사용해야 한다. */
-            perspective-origin: 50% 50%;
-            margin: 20px;
-        }
+        /* 🎈 perspective는 3d속성을 사용할때 써줘야한다.(perspective를 사용하지 않으면 translateZ의 변화를 느낄수 없다.)*/
 
+
+        /* ✨[perspective(원근감) 주는법] -> 800~1000px이 적당한 값이고 그 이하의 값은 너무 가까워서 왜곡이 일어날수 잇음.
+            1. 부모한테 perspective: 1000px;을 주고 자식에 translateZ(100px);를 사용한다.-> 자식 모두가 원근감을 가짐
+            2. 자식(자기자신한테)transform:perspective(숫자px) translateZ(100px);를 사용한다. -> 내가 원하는 특정요소만 원근감 가질수 있음. */
+
+        /* 😀transform 정리 
+            transform: translate(x, y);     이동
+            transform: scale(w, h);         크기조절  
+            transform: rotate(각도);        회전     (값:deg)
+            transform: skew(각도, 각도)     기울임    (값: deg);
+            transform: perspective(숫자px)  원근감  -> ✨이렇게 속성으로도 perspective사용가능하다. 이때는 자기자신에게 지정해야됨
+        */
+
+        
+            .outer {
+            border: 1px solid black;
+            /* ✨perspective(원근감)는 바라보는 거리를 설정하는 속성으로 부모요소에 지정한다.  */
+            perspective: 1000px;
+            /* 😀 관점의 위치로 perspective 속성과 함께 사용해야 한다. */
+            perspective-origin: 50% 50%;  /* 부모한테 관점위치를 50% 50%준거임  */
+            margin: 20px; }
+
+
+        /* .trf는 span태그임 그래서 inline-block으로 바꿔줌 */
         .trf {
-            display: inline-block;
+            display:inline-block;
             width:100px;
             height:100px;
             background: red;
             transition: .5s;
         }
 
-        /* 
-            transform: translate(x, y);
-            transform: scale(w, h);
-            transform: rotate(각도); (단위: deg)
-            transform: skew(각도, 각도) (단위: deg);
-        */
 
-        /* .outer에 마우스를 올렸을 때 .trftr의 위치를 가로로 100px 이동되게 하시오. */
-
+        /* .outer에 마우스를 올렸을 때 .trftr의 위치를  100px 이동되게 하시오. */
+            .trftr:hover{transform: translateZ(100px);}
 
         /* .outer에 마우스를 올렸을 때 .trfsc의 크기를 너비/높이 모두 1.2로 지정하시오. */
+        /* 🎈🎈 scale속성이 z축 준것처럼 효과가 비슷해 보이지만 scale는 크기를 커지게하는 2d효과임. */
+            .trfsc:hover{transform:scale(1.2,1.2);}
+              
 
+        /* 변환의 기준 */
+                .trfro {transform-origin: 0 0;}
 
-        .trfro {
-            /* 변환의 기준 */
-            transform-origin: 0 0;
-        }
         /* .outer에 마우스를 올렸을 때 .trfro를 60도 회전되도록 지정하시오. */
-
+        /* 위에 {transform-origin: 0 0;}을 써서 0 0을 기준으로해서 rotate된다. */
+                .trfro:hover{transform: rotate(60deg);}
 
         /* .outer에 마우스를 올렸을 때 .trfrox를 x축 기준으로 60도 회전되도록 지정하시오. */
-
+                .trfrox:hover{transform: rotateX(60deg);}
 
         /* .outer에 마우스를 올렸을 때 .trfroy를 y축 기준으로 90도 회전되도록 지정하시오. */
-
+                .trfroy:hover{transform: rotateY(90deg);}
 
         /* .outer에 마우스를 올렸을 때 .trfsk를 y축 기준으로 10도 기울이시오. */
-
+                .trfsk:hover{transform: skewY(10deg);}
 
     </style>
 </head>
@@ -59,26 +72,28 @@
 <body>
     <h1>변환</h1>
     <h2>이동</h2>
-    <div class="outer">
-        <span class="trf trftr">translate</span>transform
-    </div>
-    <h2>크기 조절</h2>
-    <div class="outer">
-        <span class="trf trfsc">scale</span>transform
-    </div>
-    <h2>회전</h2>
-    <div class="outer">
-        <span class="trf trfro">rotate</span>transform
-    </div>
-    <div class="outer">
-        <span class="trf trfrox">rotate</span>transform
-    </div>
-    <div class="outer">
-        <span class="trf trfroy">rotate</span>transform
-    </div>
-    <h2>기울기</h2>
-    <div class="outer">
-        <span class="trf trfsk">skew</span>transform
+    <div class="wrap">
+        <div class="outer">
+            <span class="trf trftr">translate</span>transform
+        </div>
+        <h2>크기 조절</h2>
+        <div class="outer">
+            <span class="trf trfsc">scale</span>transform
+        </div>
+        <h2>회전</h2>
+        <div class="outer">
+            <span class="trf trfro">rotate</span>transform
+        </div>
+        <div class="outer">
+            <span class="trf trfrox">rotateX축</span>transform
+        </div>
+        <div class="outer">
+            <span class="trf trfroy">rotateY축</span>transform
+        </div>
+        <h2>기울기</h2>
+        <div class="outer">
+            <span class="trf trfsk">skew</span>transform
+        </div>
     </div>
 </body>
 

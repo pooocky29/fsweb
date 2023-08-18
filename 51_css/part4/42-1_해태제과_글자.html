@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        /* 이미지 전체 
+        heigt:5880px
+        전체 프레임 수 :35개
+        따라서 5880/35하면= 168px
+        */
+        div {
+            position: relative;
+            width:390px;
+            height:168px;
+            background:url(../part4/image/bg-txt.png) no-repeat;
+            left:0px; top:0;
+            text-indent: -9999em;
+           
+        }
+
+        /* 전체 프레임수는 35이지만 마지막 프레임을 빼야 글씨가 멈춰야 한다. */
+
+        .anim{animation: move 1s steps(34) forwards; }
+        
+        @keyframes move {
+            0% {background-position: 0 0 ;}
+            /* 34 *168 = -5712px */
+            100%{background-position: 0 -5712px ;} 
+        }
+
+    </style>
+</head>
+<body>
+    <h1>애니메이션</h1>
+    <div class="anim">달콤한 세상으로의 초대</div>
+
+</body>
+</html>

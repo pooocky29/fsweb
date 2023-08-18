@@ -1,4 +1,3 @@
-08_gradient.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,50 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        div {
-            width: 200px;
-            height: 100px;
-            border: 1px solid red;
-            margin: 20px;
-        }
 
-        /* 
-            선형(linear) 그라디언트
-            1) linear-gradient([to 방향1], 색1, 색2, [색3, ...]) 
+        /* [접두사]
+         */
+        div {width: 200px; height: 100px; border: 1px solid red; margin: 20px; }
+
+        /* 😀[선형(linear) 그라디언트]
+            1)background-image: linear-gradient([to 방향], 색1 %, 색2 %, 색3 %, ...) 
                 - 방향: left, right, top, bottom
+                - 방향 2개를 쓰면 대각선의 그라디언트를 만들 수 있다.
             
-            2) linear-gradient([각도], 색1, 색2, [색3, ...])
-                - 각도: 0~360deg 
-        */
-
-        /* .lg1에 위 blue, 아래 white의 선형 그라디언트를 지정해 보세요. */
-        
+            2) background-image: linear-gradient([각도], 색1, 색2, 색3, ...)
+            - 각도: 0~360deg (-음수도가능) / 
+            */
+            
+            /*🎁 색상 뒤에 %을 사용 할 수 있다.red 20% , yellow 20% */
+        /* .lg1에 선형 그라디언트를 지정해 보세요.(최소한 2개의 색을 써야 표현가능) */
+            .lg1{background-image: linear-gradient(yellow 60%,red);}
         
         /* .lg2에 왼쪽 아래 #ff0000, 오른쪽 위 #ffffff의 선형 그라디언트를 지정해 보세요. */
-
+            .lg2{background-image: linear-gradient(50deg, #ff0000,#ffffff);}
+            .lg2-1{background-image: linear-gradient(to left, #ff0000,#ffffff);}
 
         /* .lg3에 왼쪽 위 blue, 가운데 white, 오른쪽 아래는 yellow의 선형 그라디언트를 지정해 보세요. */
+            .lg3{background-image: linear-gradient(-200deg,blue,white,yellow);}
+
+        /* 😀 [원형(radial) 그라디언트]
+            1)background-image: radial-gradient([모양], 색1, 색2, 색3, ...);
+                - 모양: circle*/
+             /* .rg에 중심은 white, 바깥쪽은 blue인 모양의 그라디언트를 지정해 보세요. */
+                .rg1{background-image: radial-gradient(white,blue);}
+                .rg2{background-image: radial-gradient(circle,white,blue);}
+
+        /* 😀 [원뿔형(conic) 그라디언트]
+             1)background-image: conic-gradient([from 각도], 색1, 색2, 색3, ...); 
+             / from 숫자deg:색의 시작위치   */
+             /* at 숫자% 숫자% : 원뿔의 중심 위치 (at 50% 50% 기본값) */
+                .cg{background-image: conic-gradient(from 90deg,green,yellow);}
+                .cg1{background-image: conic-gradient(at 60% 45%,green,orange,yellow); border-radius: 50%; width:100px;}
+                .cg2{background-image: conic-gradient(green 0deg,green 90deg,orange 90deg,orange 180deg,yellow 180deg); border-radius: 50%; width:100px;}
 
 
-        /* 
-            원형(radial) 그라디언트
-            1) radial-gradient([모양], 색1, 색2, [색3, ...]);
-                - 모양: circle
-        */
-        /* .rg에 중심은 white, 바깥쪽은 blue인 원형 모양의 그라디언트를 지정해 보세요. */
-
+            /*
+             closest-side:변에서 가까운
+             closest-corner:모서리에서 가장 가까운
+             farthest-side:변에서 가장 먼
+             farthest-corner:모서리에서 가장 먼 
+             */
         
     </style>
 </head>
+
 <body>
-    <h1>그라디언트</h1>
-    <h2>선형</h2>
+    <h1>그라디언트:점진적으로 변하는 색채</h1>
+    <h2>선형 linear</h2>
     <div class="lg1">1</div>
     <div class="lg2">2</div>
+    <div class="lg2-1">to left</div>
     <div class="lg3">3</div>
 
-    <h2>원형</h2>
-    <div class="rg">4</div>
+    <h2>원형 radial</h2>
+    <div class="rg1">나는 타원형!</div>
+    <div class="rg2">나는 원형! circle을 써줘야해</div>
 
+    <h2>원뿔형 conic(최근추가된 내용)</h2>
+    <div class="cg">나는 from 위치값</div>
+    <div class="cg1">나는 at 위치값</div>
+    <div class="cg2">d</div>
 </body>
 </html>

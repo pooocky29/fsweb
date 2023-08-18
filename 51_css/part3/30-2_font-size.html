@@ -6,37 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        html {font-size: 20px;}
-        body {font-size: 10px;}
+       /*   😊글꼴은 상속된다. 
+            <p>의 조상<body>인데 <p>는 가장가까운 <body>의 글꼴 속성을 상속받는다.
+            그래서 아무것도 px지정 안했을때 body에 적용된 크기가 p한테 적용됐었음. */
 
-        /* em 단위는 부모 태그에 지정한 글꼴 크기를 기준 */
-        /* rem 단위는 html 태그에 지정한 글꼴 크기를 기준 */
-        /* % 단위는 부모 태그에 지정한 글꼴 크기를 기준 */
+            /* 
+            😊단위: px, em , rem(많이사용) , % 
+            😊키워드: xx-small, x-small,small,smaller,medium,large,larger,x-large
+            */
+        
+         html {font-size: 20px;}
+         body {font-size: 10px;}
+         .div {font-size: 15px;}
 
+        /*. 🎈만약부모가 em단위로 되어 있으면 그 위의 부모단위로 계속 올라간다.  */
+        /* 😊 em 단위는 부모 태그(가장가까운 부모)에 지정한 글꼴 크기를 기준으로 커진다 */
+        /* 😊 rem 단위는 html 태그에 지정한 글꼴 크기를 기준으로 커진다 */
+        /* 😊 % 단위는 부모 태그에 지정한 글꼴 크기를 기준   */
+
+        .fz16px{font-size: 16px;}
+        .fz1em{font-size: 1em}
+        /* rem * html = 30 */
+        .fz1rem{font-size:1.5rem }
+        .fzmedium{font-size: medium}
+        .fz퍼센트{font-size:100% }
+
+        .fzxx-small{font-size: xx-small}
+        .fz10px{font-size:10px }
+        .fzx-small{font-size: x-small}
+        .fz10px{font-size: 10px}
+        .fzsmall{font-size: small}
+        .fz13px{font-size: 13px}
+        .fzsmaller{font-size: smaller}
+        .fz133333px{font-size:13.3333px }
+        .fz18px{font-size:18px }
+        .fzlarge{font-size:large }
+        .fzlarger{font-size:larger }
+        .fz192px{font-size: 19.2px}
+        .fzx-large{font-size: x-large}
+        .fz24px{font-size: 24px}
+        .fzxx-large{font-size: xx-large;}
+        .fz32px{font-size: 32px;}
+
+        
     </style>
 </head>
 <body>
     <h1>글꼴 크기</h1>
-    <p class="fz1">글자의 크기 비교: 16px</p>
-    <p class="fz1_1">글자의 크기 비교: 1em</p>
-    <p class="fz1_2">글자의 크기 비교: 1rem</p>
-    <p class="fz1_3">글자의 크기 비교: medium</p>
-    <p class="fz1_4">글자의 크기 비교: 100%</p>
-    <p class="fz2">글자의 크기 비교: xx-small</p>
-    <p class="fz2_1">글자의 크기 비교: 10px</p>
-    <p class="fz3">글자의 크기 비교: x-small</p>
-    <p class="fz3_1">글자의 크기 비교: 10px</p>
-    <p class="fz4">글자의 크기 비교: small</p>
-    <p class="fz4_1">글자의 크기 비교: 13px</p>
-    <p class="fz5">글자의 크기 비교: smaller</p>
-    <p class="fz5_1">글자의 크기 비교: 13.3333px</p>
-    <p class="fz6">글자의 크기 비교: large</p>
-    <p class="fz6_1">글자의 크기 비교: 18px</p>
-    <p class="fz7">글자의 크기 비교: larger</p>
-    <p class="fz7_1">글자의 크기 비교: 19.2px</p>
-    <p class="fz8">글자의 크기 비교: x-large</p>
-    <p class="fz8_1">글자의 크기 비교: 24px</p>
-    <p class="fz9">글자의 크기 비교: xx-large</p>
-    <p class="fz9_1">글자의 크기 비교: 32px</p>
+    <div>
+        <p class="fz16px">글자의 크기 비교: 16px</p>
+        <p class="fz1em">글자의 크기 비교: 1em</p>
+        <p class="fz1rem">글자의 크기 비교: 1rem</p>
+        <p class="fzmedium">글자의 크기 비교: medium</p>
+        <p class="fz퍼센트">글자의 크기 비교: 100%</p>
+    </div>
+
+    <!-- 참고로 확인 -->
+    <p class="fzxx-small">글자의 크기 비교: xx-small</p>
+    <p class="fz10px">글자의 크기 비교: 10px</p>
+    <p class="fzx-small">글자의 크기 비교: x-small</p>
+    <p class="fz10px">글자의 크기 비교: 10px</p>
+    <p class="fzsmall">글자의 크기 비교: small</p>
+    <p class="fz13px">글자의 크기 비교: 13px</p>
+    <p class="fzsmaller">글자의 크기 비교: smaller</p>
+    <p class="fz133333px">글자의 크기 비교: 13.3333px</p>
+    <p class="fzlarge">글자의 크기 비교: large</p>
+    <p class="fz18px">글자의 크기 비교: 18px</p>
+    <p class="fzlarger">글자의 크기 비교: larger</p>
+    <p class="fz192px">글자의 크기 비교: 19.2px</p>
+    <p class="fzx-large">글자의 크기 비교: x-large</p>
+    <p class="fz24px">글자의 크기 비교: 24px</p>
+    <p class="fzxx-large">글자의 크기 비교: xx-large</p>
+    <p class="fz32px">글자의 크기 비교: 32px</p>
 </body>
 </html>

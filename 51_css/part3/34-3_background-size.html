@@ -6,12 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        div {
-            width: 350px;
-            height: 350px;
-            border: 1px solid red;
-            margin: 20px;
-        }
+        div {width: 350px; height: 350px; border: 1px solid red; margin: 20px; }
+        div {background-image: url(../assets/imges/coca.png); background-repeat: no-repeat; }
 
         /* 
             배경 이미지의 크기
@@ -20,16 +16,20 @@
             너비/높이: auto, cover, contain
             cover: 이미지가 일부 잘릴 수 있으나 가득 채움
             contain: 이미지는 잘리지 않으나, 빈공간이 생길 수 있음
-            숫자(단위)를 하나만 사용하면 너비를 나타내고, 높이는
-            비례적으로 조정된다.
-        */
-        div {
-            background-image: url(/51_css/assets/20220511_1124.jpg);
-            background-repeat: no-repeat;
-        }
+            숫자(단위)를 하나만 사용하면 너비를 나타내고, 높이는 비례적으로 조정된다. */
+
+            
         /* 숫자 0은 단위 생략 가능 */
-        /* 숫자(단위)의 경우 하나만 쓰면 x위치를 말하고, y위치는 가운데로 설정된다. */
         /* %는 이미지 배경이 들어가는 박스 크기가 기준 */
+        .bgs1{background-size: auto;}
+        .bgs2{background-size: cover;}
+        .bgs3{background-size: contain;}
+        .bgs4{background-size: 500px 333px;}
+        /* 🎈🎈숫자(단위)의 경우 하나만 쓰면 너비를 나타내고, 높이는 비례적으로 조정된다 */
+        .bgs5{background-size:333px;}
+        .bgs6{background-size:100% 100%;}
+        /* 🎈🎈숫자(단위)의 경우 하나만 쓰면 너비를 나타내고, 높이는 비례적으로 조정된다 */
+        .bgs7{background-size:100%;}
 
 
 

@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
+
+        /*  px 단위사용
+        😀2D표현
+        transform: translate(x[, y]); -> x값만 써도됨.
+        transform: translateX();
+        transform: translateY();
+        
+        😀3D표현
+        transform: translateZ();
+        transform: translate3d(x,y,z);
+        */
+
         .wrap {
             display: flex;
         }
@@ -30,9 +42,9 @@
             /* transform: translateY(y); */
             transform: translateY(100px);
         }
-        .trftz {
-            transform: perspective(1000px) translateZ(0px);
-        }
+        /* 😀얘가 있으며 마우스 벗어났을때도 perspective효과가 들어간다. 그래서 얘도 같이 써줘야함 */
+            .trftz {transform: perspective(1000px) translateZ(0px);}
+
         .outer:hover .trftz {
             /* 원근감(perspective)과 함께 사용해야 한다. */
             /* transform: translateZ(z); */
