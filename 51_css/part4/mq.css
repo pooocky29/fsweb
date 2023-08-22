@@ -1,0 +1,24 @@
+@charset "UTF-8";    
+    
+/* @import url(phone.css); */
+@import url(tablet.css) (min-width:768px);
+@import url(desktop.css) (min-width:1920px);
+
+
+
+
+/* 모바일 우선 */
+
+
+    /* phone */
+         body{background-color:red;}
+                 
+    /* tablet */
+        /* @media screen and (min-width:768px){
+                body{background-color: orange;}
+                 } */
+
+    /* desktop */
+        /* @media screen and (min-width:1920px){
+                body{background-color: yellow;}
+                 } */

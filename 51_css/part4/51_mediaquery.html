@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD</title>
+
+    <!-- 미디어 쿼리를 css에 포함해서 작업하는 방식 -->
+    <link rel="stylesheet" href="mq.css">
+
+    <!-- css의 @media 키워드를 html media속성으로 대체할수 있다. -->
+    <!-- <link rel="stylesheet" href="phone.css" > 
+    <link rel="stylesheet" href="tablet.css" media="(min-width:768px)"> 
+    <link rel="stylesheet" href="desktop.css" media="(max-width:992px)">  -->
+
+
+    <style>
+        /* 
+        😀[속성의미]
+            @media not screen {} not은 스크린을 제외한다는 의미
+            @media screen and (조건),(조건){}
+
+        😀[미디어사용법]
+            @media [not|only] screen [mediatype] [and|,] (expressions) {
+                       선택자{border:1px solid red;}
+            }
+
+            mediatype: all, screen, tv, projection, print, ...
+            and: 그리고
+            , : 또는
+            expressions: 조건으로 min-width, max-width, orientation, aspect-ratio(비율) ...
+
+        😀[이하/이상]
+            min-width: 최소 가로크기  ex)  min-width:600px -> 600px 이상인 크기
+            max-width: 최대 가로 크기 ex)  max-width:600px -> 600px 이하인 크기
+        */
+
+        /* 😀브레이크포인트(break point)를 잘 선정해야된다. */
+        /* 🎈media가 중첩될때 케스팅케이스에 따라서 아래부분에 쓰인것을 따른다.  */
+
+
+        /* orientation */
+    
+             /* 600이하 세로형 */
+            /* @media (orientation:portrait) and (max-width:600px) {
+                body{background-color: red;}
+            } */
+
+            /* orientation: landscape  900이하 가로형 */
+            /* @media (orientation:landscape) and (max-width:900px) {
+                body{background-color: blue;}
+            }
+
+    */
+    </style>
+</head>
+
+<body>
+    <h1>미디어쿼리</h1>
+    <p>뷰포트 설정과 미디어쿼리를 이용한 반응형 웹입니다.</p>
+</body>
+
+</html>
