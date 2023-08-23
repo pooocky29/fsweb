@@ -1,0 +1,120 @@
+
+@charset "UTF-8";
+
+
+/* 리셋 */
+*{box-sizing: border-box;} 
+body,h1,h2,h3,p,ul{margin: 0; padding: 0;}
+body{background-color: #fff;
+    font-size: 16px;
+    color: #666666;
+    }
+ul li{padding: 0; list-style:none;}
+a{text-decoration: none; cursor: pointer;}
+
+
+/* 공통 */
+.sec{width: 100%;}
+
+
+/* 해더 */
+
+
+
+/* 상단 케로셀 */
+.sec .carousel{height: 400px; background-color: lightgoldenrodyellow;}
+
+
+/* 상단 탭메뉴(sec1) */
+
+.tab ul{
+    width: 1170px; height: 140px; 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    outline: 1px solid red;}
+.tab ul li{ margin: 0 20px;}
+.tab ul li a{font-size: 20px; color: black;}
+
+
+
+/* 제품이미지 목록 (sec2) */
+
+.ITEM{
+    width: 1170px; height: 2000px;
+    display: flex; 
+    margin: 0 auto;
+    outline: 2px solid blue;
+}
+
+/* 정렬 */
+.ITEM ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: normal;
+ }
+
+ /* li크기 */
+.ITEM ul li{width: 370px; height: 330px; 
+            outline: 2px solid blue;}
+
+
+/* 상품이미지 크기 */
+.pd-img img{width: 270px; height: 189px;} 
+
+
+
+
+
+
+
+
+/* 푸터 */
+footer {
+    width: 100%;
+    height: 300px;
+}
+.bn a {
+    color: #000;
+}
+.bcon {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+
+}
+
+.bcon>li {
+    width: 320px;
+    text-align: center;
+    line-height: 20px;
+}
+
+
+.bmn {
+    display: inline-block;
+    height: 40px;
+    line-height: 50px;
+    font-size: 2rem;
+}
+
+.bsn li {
+    margin: 3px;
+}
+
+.copy {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.copy span {
+    display: block;
+    padding: 10px;
+}
+/* //푸터 */

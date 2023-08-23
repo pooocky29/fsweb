@@ -7,44 +7,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * {box-sizing: border-box;}
 
         /* 
             플렉스 박스(유연한 박스)
-            주축과 교차축
-                flex-direction:row; 이면 주축 row, 교차축 column
-                flew-direction:column; 이면 주축 column, 교차축 row
+            😀 주축과 교차축
+                flex-direction:row; 이면 주축 row, 교차축 column     -> j(주축) /a(교차)
+                flex-direction:column; 이면 주축 column, 교차축 row  
 
-            부모: 플렉스 컨테이너
-                1. display:flex;
-                2. flex-direction: 방향;
-                3. flex-wrap: 줄바꿈;
-                4. flex-flow: direction wrap
-                5. justify-content: 주축 정렬
-                6. align-items: 교차축 정렬
-                7. align-content: 교차축 블록 방향 정렬 (2개의 라인)
+           😀 부모: 플렉스 컨테이너
+                display:flex;
+                    1. flex-direction: 방향;
+                            값: row(기본값), column, row-revers,
+                    2. flex-wrap: 줄바꿈;
+                            값:wrap, nowrap, wrap-reverse
+                    3. flex-flow: direction wrap (1,2번의 속기형임)
+                    4. justify-content: 주축 정렬
+                        값:🎈flex-start(direction이 역방향일때 그방향에서 시작임)
+                           🎈start(direction의 revers 상관없이 위치는 시작위치이다)
+                             flex-end
+                             end
+                             center
+                             space-between
+                             space-around
+                             space-evenly
+                    5. align-items: 교차축 정렬
+                        값:nomal-기본값  ->(자식에다가 width,height값을 주면 stretch처럼 늘어나지 않는다. 반대로 값을 안주면 늘어남),
+                           baseline
+                           flex-start
+                           flex-end
+                           center...
+                    6. align-content: 교차축 블록 방향 정렬 (2개의 라인)
 
-            자식: 플렉스 아이템
-                8. align-self: 교차축 정렬, align-items 보다 우선 적용된다.
-                9. flex-grow: 커진다.
-                10. flex-shrink: 작아진다.
-                11. flex-basis: 처음 크기
-                12. flex: grow shrink basis
-                13. order: 순서, 숫자가 작을수록 앞에 배치
+           😀 자식: 플렉스 아이템
+                    7.  align-self: 교차축 정렬, align-items 보다 우선 적용된다. (자식 스스로한테 적용하는것)
+                    8.  flex-grow: 커진다.
+                    9.  flex-shrink: 작아진다.
+                    10. flex-basis: 처음 크기
+                    11. flex: grow shrink basis (8,9,10의 속기형 순서대로써야함)
+                    12. order: 순서, 숫자가 작을수록 앞에 배치
         */
 
 
+        /* div1(div2의 부모)>div2(부모)>div3(손자) 의 구조일때 손자는 플렉스 아이템이고 div2는 컨테이너 이자 플렉스 아이템이다 */
+
         /* 부모 요소인 .container의 display를 flex로 적용해 보세요. */
-        .container {
-            outline: 1px solid red;
-        }
+            /* outline-offset으로 보더와 아웃라인사이의 간격을 떨어지게 할수 있음 */
+        .container { outline: 2px solid red; outline-offset: 2px; border: 2px solid blue;
+            display: flex;}
 
         .container div {
             width: 100px;
             height: 100px;
             background-color: gray;
+            border:3px solid #fff;
+            border-spacing:5px;
+     
+           
+           
+            
         }
 
     </style>
@@ -59,10 +80,11 @@
         그리고, 자식 요소는 플렉스 아이템이라고 부른다.
     -->
     <div class="container">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
+        <div>1 나는 플렉스 아이템</div>
+        <div>2 나는 플렉스 아이템</div>
+        <div>3 나는 플렉스 아이템</div>
+        <div>4 나는 플렉스 아이템</div>
     </div>
-</body>
 
+</body>
 </html>

@@ -7,25 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
+        /*
+           flex-grow: 0   (팽창)
+           flex-shrink: 1 (수축)
+           flex-basis: auto; (너비의 초기값)
+           
+           수축은 되지만 팽창은 안됨.
+        */
+
+
+
+        /* 😀wrap은 줄 바꿈속성이다. 하지만 공간이 부족할때 줄바뀜이 된다. */
+
         .container div {
             width: 100px;
             height: 100px;
             background-color: gray;
+            font-size: 20px;
         }
 
         .container {
             display: flex;
             outline:1px solid red;
+            width: 600px;
         }
 
         /* (1) .flwnw에 줄바꿈 속성을 nowrap으로 지정하시오. */
-
+                .flwnw{flex-wrap: nowrap;}
         
-        /* (2) .flwnw에 줄바꿈 속성을 wrap으로 지정하시오. */
+        /* (2) .flww에 줄바꿈 속성을 wrap으로 지정하시오. */
+                .flww{flex-wrap: wrap;}
 
-
-        /* (3) .flwnw에 줄바꿈 속성을 wrap-reverse으로 지정하시오. */
-
+        /* (3) .flwwr에 줄바꿈 속성을 wrap-reverse으로 지정하시오. */
+                .flwwr{flex-wrap:wrap-reverse;}
 
     </style>
 </head>
