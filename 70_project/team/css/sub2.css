@@ -19,28 +19,78 @@ a{text-decoration: none; cursor: pointer;}
 
 /* 해더 */
 
+.wrap{background-color: beige;}
+
+ 
 
 
-/* 상단 케로셀 */
-.sec .carousel{height: 400px; background-color: lightgoldenrodyellow;}
+
+/* 제품비주얼 (케로셀) */
+section.sec0{
+    height: 600px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #84C440;}
+
+.visual{
+    width: 1170px;
+    height: 320px;
+    margin-top: 85px;}
+
+button{ 
+    border: 0;
+    background-color: transparent;
+    color:#FFF;
+    font-size: 25px;
+    cursor: pointer; }
+
+.but1{position: absolute; top:320px; left: 400px;}    
+.but2{position: absolute; top:320px; right: 400px;}    
+
+.visual h1{
+    position:absolute; 
+    top: 330px;
+    left: 460px; 
+    color:#FFF;}
+
+.visual p{
+    position:absolute;
+    top: 310px;
+    left: 1100px;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 18px;
+    text-align:center;}
+
+.slide{display: flex; flex-direction: row; justify-content:center;}
+.slide img{height:320px; }
+
+
 
 
 /* 상단 탭메뉴(sec1) */
-
-.tab ul{
+.sec1{
     width: 1170px; height: 140px; 
-    margin: 0 auto;
+    margin: -40px auto;
+    background: url(../images/sub2/bg_tabbox.png);}
+
+.tab ul{ 
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    outline: 1px solid red;}
+    justify-content: center;}
+
 .tab ul li{ margin: 0 20px;}
 .tab ul li a{font-size: 20px; color: black;}
 
 
 
-/* 제품이미지 목록 (sec2) */
 
+
+
+
+/* 제품이미지 목록 (sec2) */
 .ITEM{
     width: 1170px; height: 2000px;
     display: flex; 
