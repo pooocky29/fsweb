@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset.css */
+        body,ul{padding: 0; margin: 0;}
+        ul{list-style: none;}
+        img{width: 100%; vertical-align: top;}
+
+        /* 공통 */
+        section{padding: 0 30px;}
+        li{margin-bottom: 16px;}
+
+
+        /* 테블릿 */
+        @media (min-width:576px) {
+           ul{
+            display: flex;
+            flex-wrap: wrap;
+            width:1500px;
+            margin:0 auto;
+            justify-content: space-between;
+            }
+            li{
+                flex: calc(50% - 38px);
+            }
+            li:nth-of-type(2n-1){
+                margin-right: 16px;
+            }
+        }
+
+        /* 데스크탑 */
+        @media (min-width:992px) {
+            ul{
+           padding: 0  calc(50% - 750px);
+            }
+            li{
+                flex: calc(25% - 38px);
+                margin-right: 16px;
+            }
+
+            li:not(li:nth-of-type(4n)){
+                margin-right: 16px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container"> 
+            <h1>이탈리아</h1>
+            <ul>
+                <li><img src="../assets/imges/italy1.jpg" alt="이미지"></li>
+                <li><img src="../assets/imges/italy2.jpg" alt="이미지"></li>
+                <li><img src="../assets/imges/italy1.jpg" alt="이미지"></li>
+                <li><img src="../assets/imges/italy1.jpg" alt="이미지"></li>
+            </ul>
+        </div>
+    </section>
+
+
+</body>
+</html>

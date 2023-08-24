@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네개배치(플랙스박스)</title>
+    <style>
+        /* 리셋 */
+        body,ul,h1,h3,p{padding:0; margin:0;}
+        *{box-sizing: border-box;}
+        li{list-style: none;}
+        a{text-decoration: none; color: black;}
+
+        /* 😀가운데 정렬방법 */
+        /* ul{display: flex; padding: 0 202px 0 201px;}       방법1 */
+        /* ul{display: flex;  padding:0 calc(50% - 750px);}   방법2 */
+        /* ul{display: flex; width:1500px; margin:0 auto;}    방법3 */
+        
+        .container{width:1500px;  margin:0 auto;}
+        ul{display: flex; justify-content: space-between;}
+        li{display: flex; flex-direction: column; justify-content:space-between; width:360px; outline: 1px solid red; }
+        a{display: block; height: 60px; padding:16px; text-align:center; outline: 1px solid black; }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <ul>
+                <li>
+                    <div>
+                        <img src="https://via.placeholder.com/360x240" alt="테스트">
+                        <h3>jon doe</h3>
+                        <p>CEO &amp founder</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, facilis?</p>
+                    </div>
+                    <a href="#">자세히보기</a>
+                </li>
+                <li>
+                    <div>
+                        <img src="https://via.placeholder.com/360x240" alt="테스트">
+                        <h3>jon doe</h3>
+                        <p>CEO &amp founder</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, facilis?</p>
+                    </div>
+                    <a href="#">자세히보기</a>
+                </li>
+                <li>
+                    <div>
+                        <img src="https://via.placeholder.com/360x240" alt="테스트">
+                        <h3>jon doe</h3>
+                        <p>CEO &amp founder</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, facilis?</p>
+                    </div>
+                    <a href="#">자세히보기</a>
+                </li>
+                <li>
+                    <div>
+                        <img src="https://via.placeholder.com/360x240" alt="테스트">
+                        <h3>jon doe</h3>
+                        <p>CEO &amp founder</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, facilis?</p>
+                    </div>
+                    <a href="#">자세히보기</a>
+                </li>
+            </ul>
+        </div>
+       
+    </section>
+</body>
+</html>

@@ -15,12 +15,12 @@
                 flex-direction:row; 이면 주축 row, 교차축 column     -> j(주축) /a(교차)
                 flex-direction:column; 이면 주축 column, 교차축 row  
 
-           😀 부모: 플렉스 컨테이너
+            😀 부모: 플렉스 컨테이너
                 display:flex;
                     1. flex-direction: 방향;
-                            값: row(기본값), column, row-revers,
+                            값: row(기본값), column, row-revers, column-revers
                     2. flex-wrap: 줄바꿈;
-                            값:wrap, nowrap, wrap-reverse
+                            값: wrap, nowrap, wrap-reverse
                     3. flex-flow: direction wrap (1,2번의 속기형임)
                     4. justify-content: 주축 정렬
                         값:🎈flex-start(direction이 역방향일때 그방향에서 시작임)
@@ -32,18 +32,35 @@
                              space-around
                              space-evenly
                     5. align-items: 교차축 정렬
-                        값:nomal-기본값  ->(자식에다가 width,height값을 주면 stretch처럼 늘어나지 않는다. 반대로 값을 안주면 늘어남),
-                           baseline
-                           flex-start
-                           flex-end
-                           center...
-                    6. align-content: 교차축 블록 방향 정렬 (2개의 라인)
+                        값: nomal-기본값  ->(자식에다가 width,height값을 주면 stretch처럼 늘어나지 않는다. 반대로 값을 안주면 늘어남),
+                            stretch: 늘어남
+                            flex-start
+                            flex-end
+                            center...
+                            baseline: 베이스라인에 맞춰서 정렬
 
-           😀 자식: 플렉스 아이템
+                    6. align-content: 교차축 블록 방향 정렬 (2개의 라인=flex-wrap일때)
+                        값: flex-start
+                            flex-end
+                            stretch
+                            center
+                            space-between
+                            space-around
+                            space-evenly
+                       🎈[align-items과 align-content의 차이점]
+                            1. alin-contetn는 flex-wrap일때(2개 의 라인일때) 사용한다. -> 그뜻은 한줄인 내용물은 alin-items를 사용한다.
+                            2. items는 개별의 아이템별로 한줄한줄 처리가 된다면 content는 그룹으로 묶인것처럼 통째로 처리가 된다.
+                                (flex-start를 비교해보면 알수있음)
+
+
+            😀 자식: 플렉스 아이템
+                    🎈 [교차축 동시적용시] align-items(부모)보다 align-self(자식)이 우선순위가 높아서 적용이 된다
+                    🎈 align-self의 값을 지정하지않으면(auto=상속을 받아서 기본값이 다 될수가 있다.)  align-items 값을 상속받는다.
                     7.  align-self: 교차축 정렬, align-items 보다 우선 적용된다. (자식 스스로한테 적용하는것)
-                    8.  flex-grow: 커진다.
-                    9.  flex-shrink: 작아진다.
-                    10. flex-basis: 처음 크기
+                            값: stretch(기본값),flex-start,flex-end,center, baseline
+                    8.  flex-grow: 숫자  (커진다.)
+                    9.  flex-shrink:숫자 (작아진다.)
+                    10. flex-basis: 숫자 (처음 크기)
                     11. flex: grow shrink basis (8,9,10의 속기형 순서대로써야함)
                     12. order: 순서, 숫자가 작을수록 앞에 배치
         */
@@ -61,11 +78,7 @@
             height: 100px;
             background-color: gray;
             border:3px solid #fff;
-            border-spacing:5px;
-     
-           
-           
-            
+            border-spacing:5px;     
         }
 
     </style>

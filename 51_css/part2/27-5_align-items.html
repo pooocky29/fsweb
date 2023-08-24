@@ -12,15 +12,15 @@
         .container {  display: flex; border:1px solid orange; }
 
         /* 플렉스 아이템 */
-        .container div { background-color: gray; }
+        .container div { outline: 1px solid red; }
 
         /* 교차축 세로 */
-        .wrap1 .container { height:200px; }
+        .wrap1 .container {height:200px;  }
         .wrap1 .container div { width:100px; }
 
 
         /* 플렉스 컨테이너 크기 만큼 늘어남. */
-        /* 플렉스 아이템의 height를 지정하면 늘어나지 않고, flex-start로 지정된다. */
+        /* 플렉스 아이템의 height를 지정하면 늘어나지 않는다. 하지만stretch을 주면 늘어남  */
                 .ais{align-items: stretch;}
         
         /* (1) .aifs에 플렉스 아이템을 교차축의 시작에 정렬하기 위해 속성을 지정하시오. */
@@ -37,19 +37,23 @@
 
 
 
+        /* 😀글쓰는 방향 writing-mode: */
+        /* 😀horizontal-tb|vertical-rl|vertical-lr; 3가지 방향을 갖는다 */
+        .aib{align-items: baseline;}
+        .wrap1 .aib{writing-mode: horizontal-tb;}
+
         .aib div:nth-child(1) {font-size:3rem;}
         .aib div:nth-child(2) {font-size:1rem;}
         .aib div:nth-child(3) {font-size:2rem;}
         .aib div:nth-child(4) {font-size:4rem;}
 
 
-        /* 교차축을 쉽게보기위해 dispaly:flex로 해놓은것임 */
+        /* 😀교차축을 쉽게보기위해 dispaly:flex로 해놓은것임 */
         .wrap2 { display: flex;}
         /* 교차축을 가로 */
         .wrap2 .container {
             flex-direction: column;
-            width:200px;
-        }
+            width:200px; }
         .wrap2 .container div { height:100px;}
     </style>
 </head>

@@ -7,10 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        .container {
-            display: flex;
-            border: 1px solid orange;
-        }
+        .container { display: flex; border: 1px solid orange;}
 
         .container div {
             width: 100px;
@@ -26,25 +23,26 @@
             flex: [성장] [수축] [초기값];
 
             0이면 성장/수축하지 않음.
-            1이면 성장/수축함.
+            0이 아니면 성장/수축함.
 
-            생략하면 flex: 0 1 auto;
+            생략하면
+            flex: 0 1 auto;
             flex: auto; -> flex: 1 1 auto;
             flex: 1; -> flex: 1 1 auto;
         */
 
-        /* .fl1의 플렛스 아이템의 flex를 0 0 150px로 지정해 보세요. */
-        
-
+        /* 자식한테 써줘야하는 flex속성! */
+        /* .fl1의 플렉스 아이템의 flex를 0 0 150px로 지정해 보세요. */
+                .fl1 div{flex: 0 0 150px;}
 
         /* (1) .fli1에 flex 속성을 1로 지정하시오. */
-
+                .fli1 div{flex:1 ;}
         
         /* (2) .fli2에 flex 속성을 2로 지정하시오. */
-
+                .fli2 div{flex:2;}
 
         /* (3) .fli3에 flex 속성을 3로 지정하시오. */
-
+                .fli3 div{flex:3;}
         
     </style>
 </head>
@@ -52,7 +50,6 @@
 <body>
     <h1>flexible(플렉서블)</h1>
     <h2>플렉스 아이템의 성장/수축/초기값</h2>
-    <div class="wrap1">
         <div class="container fl1">
             <div>1</div>
             <div>2</div>
@@ -68,7 +65,6 @@
             <div class="fli2">2</div>
             <div class="fli3">3</div>
         </div>
-    </div> <!-- //.wrap1 -->
 
 </body>
 

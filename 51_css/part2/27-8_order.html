@@ -7,10 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        .container {
-            display: flex;
-            border:1px solid orange;
-        }
+        .container {display: flex; border:1px solid orange;}
 
         .container div {
             width: 100px;
@@ -21,26 +18,25 @@
         /* 숫자가 작을 수록 앞에 배치 */
         /* 숫자가 같으면 기록된 순서로 */
         /* order 생략하면 0 */
-
         /* 플렉스 아이템의 순번을 .o1은 0, .o2는 2, .o3은 0, .o4는 1로 지정하시오. */
+        /* 😀 같은 숫자를 쓰면 먼저쓴 순서대로 배치가됨 */
+                .o1{order: 0;}
+                .o2{order: 2;}
+                .o3{order: 0;}
+                .o4{order: 1;}
 
-
-
-        
     </style>
 </head>
 
 <body>
     <h1>flexible(플렉서블)</h1>
     <h2>플렉스 아이템의 순서 바꾸기</h2>
-    <div class="wrap1">
         <div class="container">
             <div class="o1">1</div>
             <div class="o2">2</div>
             <div class="o3">3</div>
             <div class="o4">4</div>
         </div>
-    </div> <!-- //.wrap1 -->
 
 </body>
 

@@ -60,15 +60,15 @@ h2 {display: none;}
 
 
 /* 헤더 */
-
  .wrap {
     position: fixed;
     width: 100%;
     height: 100px;
     display: flex;
-    justify-content: space-around;
+    margin-bottom: 100px;
+    justify-content: space-around;}
     
-}
+
 .wrap a {
     color: #000;
 }
