@@ -11,27 +11,37 @@
 <body>
     <h1>출력</h1>
     <script>
+    
         /* 
             객체: window, console, document ...
-            메서드(매개변수1, 매개변수2 ...): alert(), confirm() prompt(), write(), log()
+            메서드(매개변수1, 매개변수2 ...): alert(), confirm() prompt(), write(), log() ->😀괄호 안에는 파라미터 매개값을 넣어 사용할수 있다
 
-            alert('메시지'): 알림 창 출력
-            confirm('메시지'): 확인/취소 창 출력
+            -()괄호안에 문자는 ''또는 ""로 묶어서 사용해야한다.
+            
+
+            window.alert('메시지'): 알림 창 출력 -> window.생략가능 (자바스크립트에서는 .으로 단어를 구별한다)
+            confirm('메시지'): 확인/취소 창 출력 
             prompt('텍스트'[, '기본텍스트']): 프롬프트 창 입력
             document.write(exp1, exp2, ..., expN): 웹 브라우저 화면 출력
             console.log('메시지'): 콘솔 출력
         */
 
+       
+
         // 경고창
+            alert('안녕하세요');
 
         // 확인/취소창
+            confirm('반갑습니다');
 
         // 문서에 쓰기
+            document.write('문서에 쓰기');
 
         // 콘솔
+            console.log('메세지');
 
         // 입력
-
+            prompt('나이를 입력해 주세요','30살');
     </script>
 </body>
 

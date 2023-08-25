@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>서브웨이</title>
-    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -75,20 +75,21 @@
     </header>
     <div class="sec sec1">
         <h2>caroucel</h2>
-        <div class="caroucel">
-            <div class="caroucel_inner">
+        <div class="crc">
+            <div class="crcinner">
                 <div><a href="#"><img src="images/main/main_New_shrimp.png" alt="mian_img1"></a></div>
                 <!-- <div><a href="#"><img src="images/main/main_superpop.png" alt="main_img2"></a></div>
                 <div><a href="#"><img src="images/main/main_appoder.png" alt="main_img3"></a></div>
                 <div><a href="#"><img src="#" alt="main_img4"></a></div> -->
+
+                <div class="crci">
+                    <button class="crci1" name="caroucel_1"></button>
+                    <button class="crci2" name="caroucel_2"></button>
+                    <button class="crci3" name="caroucel_3"></button>
+                </div>
+                <button class="btn_prev"></button>
+                <button class="btn_next"></button>
             </div>
-            <div class="carousel_indicater">
-                <button class="caroucel_indicater" name="caroucel_1"></button>
-                <button class="caroucel_indicater" name="caroucel_2"></button>
-                <button class="caroucel_indicater" name="caroucel_3"></button>
-            </div>
-            <button class="btn_prev"></button>
-            <button class="btn_nxet"></button>
         </div><!-- //.caroucel -->
     </div>
     <div class="sec sec2">
@@ -96,14 +97,55 @@
         <div class="video">
             <iframe width="1440" height="605" src="https://www.youtube.com/embed/8Jj1WUv47dI" frameborder="0"></iframe>
         </div>
-    </div>
+    </div><!-- //.sec sec2 -->
+
     <div class="sec sec3">
         <h2>pm_img</h2>
-        <div>
+        <div class="sec3container">
             <a href="#"><img src="images/main/pm_img.png" alt="promotion_img"></a>
         </div>
-    </div>
+    </div><!-- //.sec sec3 -->
 
+    <div class="sec sec4">
+        <div class="tabs">
+            <div class="tabmenu">
+                <div class="btn">
+                    <label for="btn1">전체</label>
+                    <label for="btn2">진행중인 이벤트</label>
+                    <label for="btn3">종료된 이벤트</label>
+                </div>
+            </div>
+            <div class="tabinner">
+                <input type="radio" name="tabs" id="btn1" checked>
+                <div id="tab1">
+                    <ul class="tabc">
+                        <li><a href="#"><img src="images/main/cf1.jpg" alt=""><span>차은우 메뉴 프로모션</span></a></li>
+                        <li><a href="#"><img src="images/main/news1.jpg" alt=""><span>New 쉬림프 시리즈</span></a></li>
+                        <li><a href="#"><img src="images/main/order1.jpg" alt=""><span>말이 안 나올 땐 손으로 주문하자!</span></a></li>
+                        <li><a href="#"><img src="images/main/sp.jpg" alt=""><span>2023 슈퍼팝 프로모션</span></a></li>
+                    </ul>
+                </div>
+                <input type="radio" name="tabs" id="btn2">
+                <div id="tab2">
+                    <ul class="tabc">
+                        <li><a href="#"><img src="images/main/news1.jpg" alt=""><span>New 쉬림프 시리즈</span></a></li>
+                        <li><a href="#"><img src="images/main/order1.jpg" alt=""><span>말이 안 나올 땐 손으로 주문하자!</span></a></li>
+                        <li><a href="#"><img src="images/main/cf1.jpg" alt=""><span>차은우 메뉴 프로모션</span></a></li>
+                        <li><a href="#"><img src="images/main/goods1.jpg" alt=""><span>카도 썸머 슬리퍼 & 비치팩</span></a></li>
+                    </ul>
+                </div>
+                <input type="radio" name="tabs" id="btn3">
+                <div id="tab3">
+                    <ul class="tabc">
+                        <li><a href="#"><img src="images/main/sp1.jpg" alt=""><span>이달의 썹!프라이즈</span></a></li>
+                        <li><a href="#"><img src="images/main/po1.jpg" alt=""><span>고구마 칩 신규 메뉴 출시</span></a></li>
+                        <li><a href="#"><img src="images/main/egg1.jpg" alt=""><span>에그마요 꿀조합 시리즈</span></a></li>
+                        <li><a href="#"><img src="images/main/sp.jpg" alt=""><span>2023 슈퍼팝 프로모션</span></a></li>
+                    </ul>
+                </div>
+            </div><!-- //tabs -->
+        </div>
+    </div><!-- //.sec sec4 -->
 
     <footer>
         <div class="bn">

@@ -28,29 +28,26 @@ li {
 }
 a {
     text-decoration-line: none;
+    color: #000;
 }
 li {
     list-style: none;
 }
 
-.clearfix::after {
-    content: '';
-    display: block;
-    clear: both;
-}
+
 /* 헤더 */
+
 
 .wrap {
     position: fixed;
     width: 100%;
     height: 100px;
+    z-index: 999;
     display: flex;
     justify-content: space-around;
     
 }
-.wrap a {
-    color: #000;
-}
+
 .wrap:hover {
     transition-duration: 0.3s;
     background: #fff;
@@ -132,13 +129,13 @@ li {
     width: 25px;
 }
 /* 푸터 */
+
 footer {
     width: 100%;
     height: 300px;
+    background: #292929
 }
-.bn a {
-    color: #000;
-}
+
 .bcon {
     height: 200px;
     display: flex;

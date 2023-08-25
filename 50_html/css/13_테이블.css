@@ -1,17 +1,37 @@
 @charset "utf-8";
 
-table, th, td {
-    border:1px solid;
+table, th, td { border:1px solid;}
+
+table {
+    /* 테이블에서만 사용한다. collapse 테두리를 없애는 속성 */
     border-collapse: collapse;
+   /* text-align은 블록요소 안의 인라인 요소를 정렬할때 사용 */
     text-align: center;
 }
+
+tr:nth-of-type(2n){background-color: yellow;}
+
 td {
+    /* td와 th를 중복 적용하면 td로 적용된다. */
     width:100px;
-    height:100px;
+    height:30px;
+    text-align: right;
+    /* 표의 셀의 세로정렬 속성 */
+    vertical-align: bottom;
 }
 
 caption {
     margin-bottom: 10px;
+}
+
+
+/* 행의 색을 입힐때 사용하는 방법 */
+col:nth-child(1) {
+    background: lightblue;
+}
+
+col:nth-child(1) ~ col {
+    background: rgb(62, 255, 88);
 }
 
 #table1 th, #table1 td {
