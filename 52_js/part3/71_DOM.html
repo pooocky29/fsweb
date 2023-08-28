@@ -16,16 +16,24 @@
 </head>
 
 <body>
+    <h2 class="two">getElement</h2>
+    <p>document.getElementById</p>
+    <p>document.getElementsByClassName</p>
+    <p>document.getElementsByTagName</p>
+    <h2>query</h2>
+    <p>document.querySeletor</p>
+    <p>document.querySeletorAll</p>
+    
     <ul>
-        <li>목록1</li>
+        <li id="blue">목록1</li>
         <li>목록2</li>
-        <li class="red">목록3</li>
+        <li class="list">목록3</li>
         <li>목록4</li>
     </ul>
-
+    <!--내부 자바스크립트  -->
     <script>
 
-    // 😀 DOM트리 구조 window(root 제일 최상위임) > document > html
+        // 😀 DOM트리 구조 window(root 제일 최상위임) > document > html
 
         /* 
             DOM(Document Object Model, 문서 객체 모델)
@@ -38,17 +46,48 @@
             - 모든 주석은 주석 노드입니다.
 
             DOM에 접근하기
-            
+        //😀 요소선택 5가지
             - document.getElementById('아이디명')
-            - document.getElementsByClassName('클래스명')
+            -✨ document.getElementsByClassName('클래스명').items(숫자) 
+            -✨ document.getElementsByClassName('클래스명')[index] 
             - document.getElementsByTagName('태그명')
+
+            .과 #을 선택자를 써줘야함
             - document.querySeletor('선택자')
             - document.querySeletorAll('선택자들')
 
-            객체.style.속성 = 값;
+            형식: 객체.메서드().객체.속성
+            객체.style.속성 = '값';
         */
 
-    </script>
-</body>
 
+
+    // id 선택하는 방법    
+       document.getElementById('blue').style.color = 'blue';
+
+    //  getElements 클래스는 중복 선택이 가능하다. 그래서 클래스 red가 하나이면 작용이 안됨. -> 🎈순서를 기록해줘야함
+    //  ✨순서를 기록하는 2가지 방법
+    //  document.getElementsByClassName('list')[0].style.color = 'red';
+        document.getElementsByClassName('list').item(0).style.color = 'yellow';
+
+    // 태그명으로 선택하는방법
+       document.getElementsByTagName('p')[4].style.color= 'orange';
+
+
+    // document.querySeletor -> 속성을 카멜표기법으로 사용해야됨
+       document.querySelector('#blue').style.backgroundColor = 'green';
+
+    // document.querySeletorAll -> 여러개의 선택자를 선택할때 사용
+    document.querySelectorAll('p')[0].style.border = '1px solid red';
+    
+
+    // .innerHTML='값'  태그를 인식o
+    // .innerText='값'  태그를 인식x
+    // var text = document.querySelector('.two')
+    document.querySelector('.two').innerHTML='<h1>h1으로 변경가능하다</h1>'
+    
+
+    </script>
+
+</body>
 </html>
