@@ -20,6 +20,9 @@
     var a = 10;
     var b = 20;
     var c = b;
+    var d = 'd'
+
+
     document.write(
        ` <h1>산술연산자</h1>
         a + b = ${a + b}<br>
@@ -30,14 +33,27 @@
         );
 
     document.write(
-        `<h1>대입연산자</h1>
-        c = b =${c}`
+        `<h1>대입연산자: 누적해서 계산이 된다.</h1>
+        c = b =${c}<br>
+        c +=b =${c +=b}<br>
+        c -=b =${c -=b}<br>
+        a -=b ${a -=b}
+        `
       );
 
- 
-       
+    document.write(
+        `<h1>비교연산자</h1>
+        a > b= ${a > b}<br>
+        a < b= ${a < b}
+       `
+      );
+
+    document.write(
+        `<h1>typeof</h1>
+        d변수의 값은 문자열 맞니? ${typeof d}`
+      );
+   
   </script>
-  <!--    
- -->
+ 
 </body>
 </html>

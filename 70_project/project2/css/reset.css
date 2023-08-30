@@ -1,0 +1,28 @@
+@charset "UTP-8";
+@import url(main.css);
+
+/* 초기화 */
+*{box-sizing: border-box;  }
+
+html{scroll-behavior: smooth;/* 인터넷 ie는 지원을 안함 */
+     font-size: 10px;
+    }
+
+body,h1,ul{
+    margin: 0;
+}
+
+ul{
+    padding: 0;
+}
+
+a{
+    text-decoration: none; 
+}
+
+
+button{
+    border: none;
+}
+
+iframe{border: none; width: 100%;}
