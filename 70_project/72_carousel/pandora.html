@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>캐로셀 - bxSlider</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
+  <style>
+    body {
+      margin: 0;
+    }
+
+    /* #section {
+      height: 100vh;
+      overflow: hidden;
+    }
+    */
+    .slideWrap {
+      width: 1044px;
+      margin: 0 auto;
+      border: 1px solid red;
+    }
+
+    .bx-wrapper {
+      border: none;
+      box-shadow: none;
+      background: transparent;
+      margin-bottom: 0px;
+    }
+
+    .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+      bottom: 32px;
+    }
+
+
+
+    /* 
+      미디어의 크기 (<img>, <video>)
+      object-fit: cover, contain, ...
+      object-position: x위치, y위치
+
+      배경이미지 - background-size: cover, contain;
+      background-position: x위치, y위치
+    */
+  </style>
+</head>
+
+<body>
+  <div id="section">
+    <div class="slideWrap">
+      <div class="slider">
+        <!-- alt는 웹접근성으로 반드시 기록한다. -->
+        <div>
+          <img src="images/pandora/762676C01.png" alt="슬라이드 이미지1">
+          <p>디즈니 더 리틀 머메이드 시셸 참</p>
+          <p>&#8361;138,000</p>
+          <a href="#">제품보기</a>
+        </div>
+        <div><img src="images/pandora/791691C02.png" alt="슬라이드 이미지2"></div>
+        <div><img src="images/pandora/792680C01.png" alt="슬라이드 이미지3"></div>
+        <div><img src="images/pandora/792681C01.png" alt="슬라이드 이미지4"></div>
+        <div><img src="images/pandora/792687C01.png" alt="슬라이드 이미지5"></div>
+        <div><img src="images/pandora/792694C01.png" alt="슬라이드 이미지6"></div>
+        <div><img src="images/pandora/792695C01.png" alt="슬라이드 이미지7"></div>
+        <div><img src="images/pandora/792698C01.png" alt="슬라이드 이미지8"></div>
+        <div><img src="images/pandora/792703C01.png" alt="슬라이드 이미지9"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jquery CDN - 자바스크립트 라이브러리 언어이다 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- bxslider CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+  <!-- js코드는 라이브러리 아래 붙인다 -->
+  <script>
+    /*
+      {} : 객체(object)
+      객체.메서드()
+      자스 데이터 : 숫자, 문자열, 불, 객체{}, ...
+      객체 정의 :
+        {
+          속성: 값,
+          속성: 값,
+          속성: 값
+        }
+      요소.메서드()
+      $('css선택자').bxSlider({ });
+    */
+    $('.slider').bxSlider({
+      auto: true, // 자동 슬라이드
+      // autoControls: false, // 동작.정지 버튼
+      stopAutoOnClick: true, // 클릭 시 자동 슬라이드 멈춤
+      // pager: true, // 페이저 숨김/보임
+      slideWidth: 348, //슬라이드 가로 크기
+      minSlides: 3,
+      maxSlides: 3,
+      moveSlides: 3
+    });
+  </script>
+</body>
+
+</html>

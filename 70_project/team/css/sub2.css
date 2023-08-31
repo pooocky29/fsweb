@@ -66,11 +66,11 @@ button{
     cursor: pointer; }
 
 
-.prev{position: absolute; top:150px; left: 40px;}    
-.next{position: absolute; top:150px; right: 40px;}    
+.but1{position: absolute; top:150px; left: 40px;}    
+.but2{position: absolute; top:150px; right: 40px;}    
 
-.prev:hover,
-.next:hover{
+.but1:hover,
+.but2:hover{
     color:#FFC20D;
     transition: 0.2s ease; }
 
@@ -92,20 +92,20 @@ button{
 
 
 /* 케로셀이미지 */
-.carousel-wrapper{
+.slider{
     position:relative; 
-    left: 330px;
+    left:330px ;
     width: 500px;
     height: 300px;
-    outline: 2px solid red;}
+    overflow: hidden;}
 
-.Carousel{display: flex;}
+.slide{
+    display: flex; 
+    flex-direction: row;
+    justify-content:center; 
+    outline: 1px solid blue;}
 
-.Carousel img {
-    flex: 0 0 auto;
-    width:500px; 
-    height:300px;
-    outline: 1px solid green;}
+.slide img{width:500px ; height: 300px;}
 
 
 
@@ -114,8 +114,9 @@ button{
     width: 1170px; height: 140px; 
     margin: -40px auto;
     margin-bottom: 30px;
-    background-color: #F2F2F2;}
-
+    background-color: #F2F2F2;  
+}
+/* .tab-menu{background: url(../images/sub2/bg_tabbox.png);} */
 
 .tab-menu ul{ 
     display: flex;

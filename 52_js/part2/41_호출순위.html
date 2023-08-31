@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+JS</title>
+</head>
+
+<body>
+<!-- h1의 클릭시 함수가 호출된다. -->
+<h1>함수 </h1>
+<p>여기에 출력되게하자 ~</p>
+
+<script>
+    var txt;
+    txt = document.querySelector('p');
+    console.log(txt);
+
+
+// 현재 함수 변수 이름이 같다. 같은 상황에서 (익명/선언)중에 누가 호출이 될까?
+
+    // 이번에는 선언적 함수가 호출됨  -->🎈 호출 위치가 함수 위이다. 그래서 위치 상관없는 선언적 함수가 호출이 된다.
+    txt.addEventListener('click', fn);
+    
+    // 🎈익명 함수는 선언후 호출해야된다.
+    var fn = function () {
+        txt.innerHTML =  `4<br>`;
+        txt.innerHTML += `5<br>`;
+        txt.innerHTML += `6<br>`;
+    };
+
+    // 🎈선언적 함수는 선언전/선언 후 호출가능하다
+    function fn() {
+        txt.innerHTML =  `1<br>`;
+        txt.innerHTML += `2<br>`;
+        txt.innerHTML += `3<br>`;
+    };
+</script>
+
+
+
+
+</body>
+</html>
