@@ -5,8 +5,7 @@
 *{box-sizing: border-box;  }
 
 html{scroll-behavior: smooth;/* 인터넷 ie는 지원을 안함 */
-     font-size: 10px;
-    }
+     font-size: 15px;}
 
 body,h1,h2,h3,ul,ol,p{
     margin: 0;

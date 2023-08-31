@@ -45,7 +45,7 @@ header{
 
 /* 네비게이션 */
 
-#gnb li{display: inline-block; margin-left: 32px; font-size: 20px;}
+#gnb li{display: inline-block; margin-left: 32px; }
 
 
 /* 섹션공통 */
