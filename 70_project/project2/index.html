@@ -16,7 +16,7 @@
             <ul>
                 <li><a href="#sec2">크록스 메뉴</a></li>
                 <li><a href="#sec3">브랜드 뉴스</a></li>
-                <li><a href="#sec4">매장안내</a></li>
+                <li><a href="#sec4">고객의 소리</a></li>
             </ul>
         </nav>
         <!-- //gnb -->
@@ -28,9 +28,9 @@
         <!-- 섹션1 -->
         <div id="sec1" class="sec">
             <div class="main_img"><img src="images/m1_crocs.png" alt="메인 크록스이미지"></div>
-            <div class="txt">
-                    <span class="tit1"><b>CROCS</b></span>
-                    <span>KOREA</span>
+            <div class="txt wtxt">
+                <span class="tit1"><b>CROCS</b></span>
+                <span>KOREA</span>
             </div>
         </div>
         <!--// 섹션1 -->
@@ -38,7 +38,7 @@
         <!-- 섹션2 -->
         <section id="sec2" class="sec sec23">
             <h2>크록스 메뉴</h2>
-            <ul>
+            <ul class="wtxt">
                 <li><img src="images/crocs1.png" alt="크록스신발이미지1"><span>메뉴1</span></li>
                 <li><img src="images/crocs2.png" alt="크록스신발이미지2"><span>메뉴2</span></li>
                 <li><img src="images/crocs3.png" alt="크록스신발이미지3"><span>메뉴3</span></li>
@@ -98,8 +98,9 @@
 
         <!-- 섹션4 -->
         <section id="sec4" class="sec">
-            <h2>매장안내</h2>
+            <h2>고객의 소리</h2>
             <p>Lets get in touch and talk about your next project.</p>
+            <!-- a태그/button태그/::placeholder 글자색은 직접 설정해야한다.  -->
             <form action="contact.php" method="post">
                 <!-- fieldset안에 legendset 으로도 사용할수 있음 -->
                 <input type="text" name="user_name" placeholder="이름을 써주세요">
@@ -111,7 +112,7 @@
             </form>
             <!-- api가져오기 -->
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25355.88386324015!2d126.8842873743164!3d37.4019984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b60c55719afc1%3A0x4e669ba9942001d4!2z7YGs66Gd7IqkIOuhr-uNsOuwse2ZlOygkCDslYjslpHsoJA!5e0!3m2!1sko!2skr!4v1693368683557!5m2!1sko!2skr"width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25355.88386324015!2d126.8842873743164!3d37.4019984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b60c55719afc1%3A0x4e669ba9942001d4!2z7YGs66Gd7IqkIOuhr-uNsOuwse2ZlOygkCDslYjslpHsoJA!5e0!3m2!1sko!2skr!4v1693368683557!5m2!1sko!2skr" ></iframe>
             </div>
         </section>
         <!--// 섹션4 -->

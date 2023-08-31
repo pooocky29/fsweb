@@ -5,22 +5,29 @@
 
 
 
-/* 폰트 */
-body{font-family: 'Noto Sans KR', sans-serif; font: 1.5rem/1.8;}
+/* *************************************
+typo.css : 크기, 색상, 종류, 굵기,줄간격
+****************************************/
+body{
+  font: 1.5rem/1.8; 
+  font-family: 'Noto Sans KR', sans-serif;}
+/* #sec2 span,#sec4 button,.txt{color: #fff;} */
+.wtxt , button{color: #fff;}
+#gnb ,.txt{letter-spacing: 4px;}
+.txt{font-size: 3.6rem;}
 
-/* 영역확인(와이어프레임) */
-.sec{height: 800px; }
-#sec3{background-color: rgb(241, 241, 241);}
-#sec2{background-color:lightblue;}
-#sec3{background-color:lightsalmon;}
-#sec4{background-color:lightgoldenrodyellow;}
-footer{background-color: lightblue;}
+#sec3 a,#gnb a{color: #111;}
+footer, ::placeholder{color: #777;}
 
+
+/* 공통 */
+  /* 사용자가 배경색상을 바꾸면 컨텐츠와 색상이 안어울리수 있어서 바탕을 지정해줘야한다. */
+body{background: #fff;}
 
 
 /* 해더 */
 header{
-  width:  100%;
+  width: 100%;
   height: 55px;
   position: fixed;
   z-index: 999;
@@ -37,27 +44,43 @@ header{
   
 
 /* 네비게이션 */
+
 #gnb li{display: inline-block; margin-left: 32px; font-size: 20px;}
-#gnb a{color: #111;}
 
 
 /* 섹션공통 */
-.sec{width: 1500px; margin: 0 auto; position: relative; }
+.sec{position: relative; width: 1500px; margin: 0 auto; }
 
 /* 섹션1 */
-#sec1{top: 55px;}
+#sec1{
+  /* transform: translateY(55); 아래 섹션과 컨텐츠가 겹치는 현상이 나타남*/
+  padding-top:55px;
+}
+
+
 .txt{
   position: absolute;
   left: 50%; 
   top: 50%;  
-  margin-top: -10px;
-  margin-left: -80px;
-  color:#ffffff; 
-  font-size: 30px; 
-  font-weight: 900;}
+  transform: translate(-50%,-50%);
+  }
 
-.tit1{padding: 6px 10px; background-color: #ff3683; opacity: 0.85;  }
+.tit1{
+  padding: 6px 10px; 
+  background-color: #ff3683; 
+  opacity: 0.85;  }
 
+/* 섹션2,3,4의 공통 */
+section h2{ 
+  padding-bottom: 20px; 
+  padding: 80px 0 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 섹션3,4공통 */
+section:first-of-type ~ section > p {
+  margin-bottom: 40px;
+}
 
 /* 섹션2,3 공통 */
 .sec23 ul{display: flex; flex-wrap: wrap;}
@@ -65,31 +88,35 @@ header{
   width: 360px; 
   height:240px ; 
   margin-right: 20px; 
-  margin-bottom: 20px;}
+ }
 .sec23 li:nth-of-type(4n){margin-right: 0;}
 
 /* 섹션2*/
-#sec2 li{position: relative;}
-#sec2 span{position: absolute; left: 0; top: 0; padding: 8px 16px; color: #fff; background-color: #111;}
+#sec2 h2{margin-bottom: 40px;}
+#sec2 li{position: relative; border: 1px solid #e2e2e2; }
+
+#sec2 li:nth-of-type(4)~li{margin-top: 40px;}
+#sec2 span{position: absolute; left: 0; top: 0; padding: 8px 16px; background-color: #111;}
 
 /* 섹션3 */
 #sec3 li{
-  height:510px;
+  height: 430px;
   display: flex; 
   flex-direction: column;
   justify-content: space-between;
- outline: 1px solid red;}
+  }
+
+#sec3 li h3{ margin: 16px 0;}
+#sec3 li p:first-of-type{margin-bottom: 16px;}
 
 /* 섹션3 버튼 */
 #sec3 a{
   display: block;
-  color: #111;
   height: 40px;
   text-align: center;
   padding: 8px 0;
   border: 1px solid #111;
 }
-
 
 
 /* 섹션4 */
@@ -102,15 +129,21 @@ border: 1px solid #e2e2e2;
 }
 
 /* 섹션4 버튼 */
+#sec4 {
+  padding-bottom:8px;
+}
 #sec4 button{
-  padding: 10px 30px;
-  color: #fff;
+  padding: 12px 32px;
+  margin: 16px 0 48px 0;
   background-color: #000;
 }
 
 /* 섹션4 지도*/
-.map{}
-
+.map{height: 840px;}
 
 
 /* 푸터 */
+footer{
+  text-align: center;
+  background-color: #333;
+  padding:32px 0;}
