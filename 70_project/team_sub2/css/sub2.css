@@ -74,7 +74,7 @@ button{
     color:#FFC20D;
     transition: 0.2s ease; }
 
-
+/* 케로셀 안의 텍스트  */
 .visual h1{
     position:absolute; 
     top: 150px;
@@ -97,7 +97,9 @@ button{
     left: 330px;
     width: 500px;
     height: 300px;
-    outline: 2px solid red;}
+    overflow: hidden;
+   
+}
 
 .Carousel{display: flex;}
 
@@ -105,7 +107,7 @@ button{
     flex: 0 0 auto;
     width:500px; 
     height:300px;
-    outline: 1px solid green;}
+    }
 
 
 
