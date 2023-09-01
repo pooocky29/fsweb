@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+JS</title>
+</head>
+
+<body>
+    <h1>함수</h1>
+    <p>여기에 출력</p>
+    <p>여기에 출력</p>
+    <p>여기에 출력</p>
+
+    <script>
+        /* 
+            함수 정의
+
+            선언적 함수
+            function 함수명() {
+                코드;
+            }
+
+            익명 함수
+            var 참조변수 = function () {
+                코드;
+            }
+
+            화살표 함수
+            var 참조변수 = () => {
+                코드;
+            }
+
+            함수 호출
+            함수명();
+            참조변수();           
+        */
+      
+/*
+        1부터 5까지 화면에 출력
+    var pTag = document.querySelectorAll('p');
+
+        pTag[0].style.color = 'red';
+        pTag[0].style.fontWeight = 'bold';
+        pTag[0].style.fontSize = '20px';
+
+        pTag[0].innerHTML = '1<br>';
+        pTag[0].innerHTML += '2<br>';
+        pTag[0].innerHTML += '3<br>';
+        pTag[0].innerHTML += '4<br>';
+        pTag[0].innerHTML += '5<br>';
+
+        pTag.item(1).innerHTML = '1<br>';
+        pTag.item(1).innerHTML += '2<br>';
+        pTag.item(1).innerHTML += '3<br>';
+        pTag.item(1).innerHTML += '4<br>';
+        pTag.item(1).innerHTML += '5<br>';
+
+        pTag[2].innerHTML = '1<br>';
+        pTag[2].innerHTML += '2<br>';
+        pTag[2].innerHTML += '3<br>';
+        pTag[2].innerHTML += '4<br>';
+        pTag[2].innerHTML += '5<br>';
+
+   */     
+
+        /* function fn() {
+            document.write(1, '<br>');
+            document.write(2, '<br>');
+            document.write(3, '<br>');
+            document.write(4, '<br>');
+            document.write(5, '<br>');
+        } */
+        /* var fn = function () {
+            document.write(1, '<br>');
+            document.write(2, '<br>');
+            document.write(3, '<br>');
+            document.write(4, '<br>');
+            document.write(5, '<br>');
+        } */
+
+        /*
+        😀제어문
+        1.조건문:if
+        2.선택문:switch
+        3.반복문: for (초기식; 조건식; 증감식;){ 괄호안에 조건을 만족할때 실행된다.}
+
+            for (표현식; 표현식; 표현식){}
+
+        */
+
+
+        //초기식은 한번만 읽는다.
+        //조건식고 증감식은 true이면 반혹해서 읽는다.
+        //1.초기식 > 조건식 > 코드 > 증감식 > 조건식 > 코드 >증감식 ... 순으로 읽는다
+        
+        //i<6을 만족 못기킬때 빠져나와서 문장 5개가 쓰여지는거임 
+        var pTag = document.querySelectorAll('p');
+
+        var fn = () => {
+            for (var i=1; i<6; i++){
+                pTag[0].innerHTML += '<br>'+ i;    
+            };
+        }
+
+        fn();
+
+    </script>
+</body>
+
+</html>

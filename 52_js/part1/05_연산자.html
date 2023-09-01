@@ -15,13 +15,19 @@
     4.논리
     5.조건
   -->
-  <script>
 
+
+ 
+   
+
+  <script>
     var a = 10;
     var b = 20;
     var c = b;
     var d = 'd'
 
+    var x = 2;
+   
 
     document.write(
        ` <h1>산술연산자</h1>
@@ -37,16 +43,31 @@
         c = b =${c}<br>
         c +=b =${c +=b}<br>
         c -=b =${c -=b}<br>
-        a -=b ${a -=b}
+        a -=b =${a -=b}
         `
       );
 
-    document.write(
-        `<h1>비교연산자</h1>
-        a > b= ${a > b}<br>
-        a < b= ${a < b}
-       `
-      );
+      document.write(`
+      <h1>비교연산자</h1>
+        ${a>b}<br>
+        ${a<b}<br>
+        ${a>=b}<br>
+        ${a<=b}<br>
+        ${a==b}<br>
+        ${a===b}<br>
+        ${a!=b}<br>
+        ${a!==b}<br>
+
+    `);
+
+    
+    //산술,단항: ++, --
+    document.write(`
+        <h2> ++, --</h2>
+        x++은 몇인가? ${x++} x = x++ <br>
+        ++x은 몇인가? ${++x} x= ++x  <br>
+  
+        `);
 
     document.write(
         `<h1>typeof</h1>

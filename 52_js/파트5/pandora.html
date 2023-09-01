@@ -38,6 +38,7 @@
             right: 920px;
         }
 
+        /* 블러가 처리된뒤에 텍스트가 나타나서 글씨가 블러가 효과 안된 것 처럼 보임 */
         .txt p {
             font-size: 86px;
             letter-spacing: -1px;
@@ -46,7 +47,7 @@
             transform: translateX(30px);
             animation: txt .5s 1s forwards;
         }
-
+        /* 하나의 키프레임 만들어놓고 애니메이션 이름 같이 써도됨 변수처럼 사용 */
         @keyframes txt {
             0% {transform: translateX(30px); opacity:0;}
             100% {transform: translateX(0); opacity:1;}
@@ -60,8 +61,10 @@
             background: #ffcad4;
             color: #333;
             font-size: 13px;
+            /* translateX를(position: right안쓰고) 준이유는 div를 또 잡아줘야 하기 때문에 translateX를 준거임  */
             transform: translateX(30px); 
             opacity:0;
+            /* forwards를 준 이유는 (100%일때 멈춤)반복을 멈추기위해 사용 */
             animation: txt .5s 1.5s forwards;
         }
 

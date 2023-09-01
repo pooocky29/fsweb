@@ -3,14 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Gasoek+One&family=Noto+Sans+KR&display=swap');
 
 
-
-
 /* *************************************
 typo.css : 크기, 색상, 종류, 굵기,줄간격
 ****************************************/
 body{
   font: 1.5rem/1.8; 
   font-family: 'Noto Sans KR', sans-serif;}
+ 
 /* #sec2 span,#sec4 button,.txt{color: #fff;} */
 .wtxt , button{color: #fff;}
 #gnb ,.txt{letter-spacing: 4px;}
@@ -19,14 +18,23 @@ body{
 #sec3 a,#gnb a{color: #111;}
 footer, ::placeholder{color: #777;}
 
+/* css변수 정의 */
+:rooot {
+  --c111:#111;
+  --cfff:#fff;
+  --c777:#777;
+  --cccc:#ccc;
+}
+
 
 /* 공통 */
   /* 사용자가 배경색상을 바꾸면 컨텐츠와 색상이 안어울리수 있어서 바탕을 지정해줘야한다. */
-body{background: #fff;}
+body{background-color: var(--cfff);}
 
 
-/* 해더 */
+/* 헤더 */
 header{
+  padding: 0 32px;
   width: 100%;
   height: 55px;
   position: fixed;
@@ -34,18 +42,116 @@ header{
   display: flex;
   justify-content:space-between;
   align-items: center;
-  box-shadow: 0px 2px 5px 0 rgba(0,0,0,0.16) , 0px 2px 0px 0 rgba(0,0,0,0.12);
-  background-color: #fff;
-  padding: 0 32px;
-}
-
+  box-shadow: 0px 2px 5px 0 rgba(0,0,0,0.16) ,
+   0px 2px 0px 0 rgba(0,0,0,0.12);
+  background-color: #fff;}
 
 /* 로고 */
-  
+.logo{width: 40%;}
 
 /* 네비게이션 */
+#gnb{display: none;}
 
-#gnb li{display: inline-block; margin-left: 32px; }
+/* 섹션1 */
+#sec1{
+  /* transform: translateY(55); 아래 섹션과 컨텐츠가 겹치는 현상이 나타남*/
+  padding-top:55px;
+}
+.main_img {
+  position: relative;
+}
+.txt{
+  position: absolute;
+  left: 50%; 
+  top: 50%;  
+  transform: translate(-50%,-50%);
+  }
+
+.tit1{
+  padding: 6px 16px; 
+  background-color: #ff3683; 
+  opacity: 0.85;}
+
+.tit2{display: none;}
+
+
+/* 섹션2,3,4 공통 */
+section{padding: 0 30px;}
+section h2{ 
+  padding: 80px 0 20px 0;
+  padding-bottom: 20px; 
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+/* 섹션2,3공통 */
+.sec23 li{
+  width: auto; 
+  height:auto ; 
+ }
+
+/* 섹션2 */
+#sec2 h2{margin-bottom: 40px;}
+#sec2 li{
+  position: relative; 
+  border: 1px solid #ccc }
+/* #sec2 li:first-of-type ~ li{margin-top: 16px;} */
+/* #sec2 li + li{ margin-top: 16px;} */
+
+/* 섹션3,4공통 */
+section:first-of-type ~ section > p {
+  margin-bottom: 40px;}
+
+/* 섹션3 */
+#sec3 li + li{margin-top: 24px;}
+#sec3 li h3{ margin: 16px 0;}
+#sec3 li p:first-of-type{margin-bottom: 16px;}
+
+/* 버튼 */
+#sec3 a{
+  display: block;
+  background-color: #e5e5e5;
+  height: 40px;
+  text-align: center;
+  padding: 8px 0;
+  margin-top: 20px;
+}
+#sec3 a:hover{background-color: #ccc;}
+
+
+/* 섹션4 */
+  #sec4 input{
+    /* display: block; */
+    width: 100%;
+    padding:12px 16px;
+    margin-bottom: 20px;
+    border: 1px solid #e2e2e2;}
+  
+/* 지도아래 여백 */
+  #sec4 { padding-bottom:8px;}
+  
+/* 버튼 */
+  #sec4 button{
+    padding: 12px 32px;
+    margin: 16px 0 48px 0;
+    background-color: #111;}
+
+.map{height: 185px;}
+
+/* 푸터 */
+footer{
+  padding:32px 0;
+  text-align: center;
+  background-color: #333;}
+  /* 글씨 두줄로 되게하기 - 데스크탑은 그대로 */
+
+
+/* ********* @media 992px이상 (데스크탑)******** */
+@media (min-width:992px){
+  
+/* 해더 */
+/* 네비게이션 */
+#gnb li{display: inline-block; margin-left:32px; }
 
 
 /* 섹션공통 */
@@ -56,7 +162,7 @@ header{
   /* transform: translateY(55); 아래 섹션과 컨텐츠가 겹치는 현상이 나타남*/
   padding-top:55px;
 }
-
+.main_img{position: relative;}
 
 .txt{
   position: absolute;
@@ -70,80 +176,43 @@ header{
   background-color: #ff3683; 
   opacity: 0.85;  }
 
+
 /* 섹션2,3,4의 공통 */
+section{padding:0;}
+
 section h2{ 
-  padding-bottom: 20px; 
   padding: 80px 0 20px 0;
   border-bottom: 1px solid #ccc;
-}
-
-/* 섹션3,4공통 */
-section:first-of-type ~ section > p {
-  margin-bottom: 40px;
-}
+  padding-bottom: 20px; }
 
 /* 섹션2,3 공통 */
 .sec23 ul{display: flex; flex-wrap: wrap;}
+
 .sec23 li{
   width: 360px; 
   height:240px ; 
-  margin-right: 20px; 
- }
+  margin-right: 20px; }
+
 .sec23 li:nth-of-type(4n){margin-right: 0;}
 
 /* 섹션2*/
-#sec2 h2{margin-bottom: 40px;}
-#sec2 li{position: relative; border: 1px solid #e2e2e2; }
-
+/* 8개 이미지중 5번째 이미지부터 마진을 준다는 얘기 */
 #sec2 li:nth-of-type(4)~li{margin-top: 40px;}
-#sec2 span{position: absolute; left: 0; top: 0; padding: 8px 16px; background-color: #111;}
+#sec2 span{position: absolute; left: 0; top: 0; padding: 8px 16px; background-color: var(--c111);}
 
 /* 섹션3 */
 #sec3 li{
   height: 430px;
   display: flex; 
   flex-direction: column;
-  justify-content: space-between;
-  }
-
-#sec3 li h3{ margin: 16px 0;}
-#sec3 li p:first-of-type{margin-bottom: 16px;}
-
-/* 섹션3 버튼 */
-#sec3 a{
-  display: block;
-  height: 40px;
-  text-align: center;
-  padding: 8px 0;
-  border: 1px solid #111;
-}
-
+  justify-content: space-between;}
 
 /* 섹션4 */
-#sec4 input{
-display: block;
-width: 100%;
-padding:12px 16px;
-margin-bottom: 20px;
-border: 1px solid #e2e2e2;
-}
-
-/* 섹션4 버튼 */
-#sec4 {
-  padding-bottom:8px;
-}
-#sec4 button{
-  padding: 12px 32px;
-  margin: 16px 0 48px 0;
-  background-color: #000;
-}
 
 /* 섹션4 지도*/
 .map{height: 840px;}
 
-
 /* 푸터 */
-footer{
-  text-align: center;
-  background-color: #333;
-  padding:32px 0;}
+/* 글씨 두줄로 되게하기 - 데스크탑은 그대로 */
+}
+/* //@midea 992px 이상  */
