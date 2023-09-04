@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+JS</title>
+</head>
+
+<body>
+    <h1>함수</h1>
+    <p>함수1출력</p>
+    <p>함수2출력</p>
+    <p>함수3출력</p>
+    <p>함수4출력</p>
+    <p>함수5출력</p>
+    <p>함수6출력</p>
+  
+    <script>
+      /* 
+      html의 내용 바꾸기: innerHTML, innerText 속성
+      html 속성: 
+      */
+
+     /* innerText 이면 <br>태그 인식을 못한다. (innerHTML)라서 인식을 하는거임.
+     pTags[0].innerHTML =  `num1+num2 = ${num1+num2}<br>`;
+     */
+
+      /* 
+        document: 내장객체
+        document.getElemnetById()
+        document.getElemensByClassName()
+        document.getElementByTagName()
+
+        document.querySelector() -> 아이디 클래스 쓸떄 #,.사용해야한다
+        document.querySelectorAll()
+      */
+
+
+      //요소선택하기
+         var pTags = document.querySelectorAll('p');
+
+
+        //익명함수 p태그 0번째
+          var fn1 = function(num1,num2,num3){
+            pTags[0].innerHTML = 
+            `num1+num2 = ${num1+num2}<br>
+             num1+num2+num3 = ${num1+num2+num3}<br>`;
+            pTags[0].style.color ='red';
+        } 
+
+        //😀화살표 함수 (function 생략가능) p태그 1번째
+         var fn2 = (num1,num2)=> {
+
+        } 
+
+        //😀화살표 함수 (매개변수가 1개일경우 ()를 생략 가능하다.) ->p태그 2번째
+        // innerText로 쓰면 <br>태그 안써도 줄바꿈인식함.
+          var fn3 = num1 => {
+           pTags[2].innerText= `num1+num1 = ${num1+num1}
+           num1+num1+num1 = ${num1+num1+num1}`
+           pTags[2].style.color ='orange';
+        } 
+        
+        //😀화살표 함수 (명령문이 1개일 경우 {}를 생략가능. )->p태그 3번째
+          var fn4 = (num1,num2) => pTags[3].innerHTML= `num1+num2 = ${num1+num2}`
+      
+        
+        //😀화살표 함수 (매개 변수가 없으면 ()생략 불가능하다.) ->p태그 4번째
+           var fn5 = () => document.write(10, '<br>'); 
+        
+        //😀선언적 함수 리턴    -> p태그 5번째
+           function refVar(a,b,c) {
+            pTags[5].innerHTML= `a+b+c= ${a+b+c}`;
+            return;
+           }
+
+
+        //호출값을 주면 매개변수에 들어가서 호출됨
+        fn1(1,1,1);
+        fn2(20,30);
+        //화살표함수
+        fn3(20,30);
+        fn4(20,30);
+        fn5(20,30);
+        
+       //선언적 함수
+       refVar(1,1,1);
+    </script>
+</body>
+</html>

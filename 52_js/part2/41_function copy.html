@@ -10,9 +10,9 @@
 
 <body>
     <h1>함수</h1>
-    <p>여기에 출력</p>
-    <p>여기에 출력</p>
-    <p>여기에 출력</p>
+    <p>여기에 출력1</p>
+    <p>여기에 출력2</p>
+    <p>여기에 출력3</p>
 
     <script>
         /* 
@@ -34,12 +34,13 @@
             }
 
             함수 호출
+            
             함수명();
             참조변수();           
         */
       
 /*
-    😀1부터 5까지 화면에 출력
+   // 😀1부터 5까지 화면에 출력
     
     var pTag = document.querySelectorAll('p');
 
@@ -47,19 +48,19 @@
         pTag[0].style.fontWeight = 'bold';
         pTag[0].style.fontSize = '20px';
 
-        pTag[0].innerHTML = '1<br>';
+        pTag[0].innerHTML =  '1<br>';
         pTag[0].innerHTML += '2<br>';
         pTag[0].innerHTML += '3<br>';
         pTag[0].innerHTML += '4<br>';
         pTag[0].innerHTML += '5<br>';
 
-        pTag.item(1).innerHTML = '1<br>';
+        pTag.item(1).innerHTML =  '1<br>';
         pTag.item(1).innerHTML += '2<br>';
         pTag.item(1).innerHTML += '3<br>';
         pTag.item(1).innerHTML += '4<br>';
         pTag.item(1).innerHTML += '5<br>';
 
-        pTag[2].innerHTML = '1<br>';
+        pTag[2].innerHTML =  '1<br>';
         pTag[2].innerHTML += '2<br>';
         pTag[2].innerHTML += '3<br>';
         pTag[2].innerHTML += '4<br>';
@@ -95,7 +96,7 @@
 
         //초기식은 한번만 읽는다.
         //조건식고 증감식은 true이면 반혹해서 읽는다.
-        //1.초기식 > 조건식 > 코드 > 증감식 > 조건식 > 코드 >증감식 ... 순으로 읽는다
+        //1.초기식 > 조건식 > 코드 > 증감식 > 조건식 > 코드 > 증감식 ... 순으로 읽는다
         
         //i<6을 만족 못기킬때 빠져나와서 문장 5개가 쓰여지는거임 
         var pTag = document.querySelectorAll('p');

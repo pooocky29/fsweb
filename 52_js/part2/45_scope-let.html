@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스코프(Scope) let</title>
+</head>
+
+<body>
+    <h1 style="color: red;">스코프(Scope) let</h1>
+    <script>
+
+       //let의 전역변수
+        let global2 
+        //let global2 재선언 불가능
+        let global3='블럭 밖이야'; 
+        console.log(`0.나는 ${global3}`);
+
+        global2=30;
+
+        //재할당 가능
+        global2='나는 블럭 밖이야';
+       
+        console.log(`1블럭 밖 let global2 ${global2}`);
+
+
+
+            //무조건 선언 후 할당해서 사용해야한다. (호이스팅불가)
+            //  cat='고양이';
+            //  let cat
+
+
+        function fn1(){
+
+            //블럭내부의 지역변수
+            let local1= 300;
+            console.log(`2블럭 안 let local1 ${local1}`);
+
+            //전역변수 블럭내에서 선언전에 재할당할수 없다.) 
+            //global2=40;
+
+            //지역변수 (재선언한 global2) -> 전역변수를 블록 내부에서 재선언하면 전역변수가 지역변수로 바뀜.
+            let global2='나는 블록 안이야';
+            console.log(`3블럭안 let global2 ${global2}`);
+
+
+            //재선언 후 지역변수로 바뀜
+            let global3 ='블록 안이야';
+            console.log(`0.let이 서로 다른 블록이면 재선언 가능해 ${global3}`);
+
+        }
+
+            fn1();
+
+
+        function fn2(){
+
+            //🎈 fn1()에 있는 지역변수 local1과 
+            //   fn2의 지역변수 local1은 이름은 같아도 서로 다른 변수이다.(되도록 지역변수를 사용하자~)(다른 블록에 있음으로 다른취급함.)
+            let local1= 900;
+            console.log(`2블럭 안 let local1 ${local1}`);
+
+            }
+
+        fn2();
+
+        //🎇지역변수는 블럭밖에서 사용할 수 없다. 호출안됨.
+       //🎇console.log(`2블럭 안 let local1 ${local1}`);
+
+        
+    </script>
+</body>
+<!-- var: 😀함수 영역변수 
+전역 변수: 함수 밖에서 선언한 변수
+지역 변수: 함수 내에서 선언한 변수
+1.함수 내에서 전역 변수 값 변경 가능
+2.지역 변수는 함수 밖에서 변경 불가능
+3.전역 변수와 같은 이름을 지역 변수로 재선언 하면 전역변수가 지역변수로 바뀐다.
+4.함수 내에서 선언 없이 할당한 변수는 전역 변수와 같이 사용된다. 
+5.제어문에서 선언한 변수는 전역 변수와 같이 사용된다.
+6.사용 후 아래서 선언할 수 있다.(호이스팅)
+7.재선언 가능(재선언 시 먼저 선언한 변수는 무시된다.)
+ -->
+
+ <!-- let : 😀블록 영역변수 (블록이란{중괄호를 말한다})
+전역 변수: 블록 밖에서 선언한 변수
+지역 변수: 블록 안에서 선언한 변수
+선언 후 사용(호이스팅 불가)
+재선언 불가 
+-->
+
+<!-- const: 😀블록 영역변수
+전역 변수: 블록 밖에서 선언한 변수
+지역 변수: 블록 안에서 선언한 변수
+선언과 할당을 함께 해야함.
+재선언, 재할당 불가
+요소, 배열, 객체, 함수를 할당하여 사용한다.
+-->
+
+<!-- 차이점 정리
+var: 호이스팅(o), 재선언(o), 재할당(o), 변수/상수 값
+let: 호이스팅(x), 같은 블록내에서 재선언(x)(다른블록에서는 재선언 가능하다), 재할당(o), 변수 값
+const: 호이스팅(x), 재선언(x), 재할당(x), 상수 값
+-->
+</html>

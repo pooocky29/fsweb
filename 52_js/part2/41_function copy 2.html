@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+JS</title>
+</head>
+
+<body>
+    <h1>함수</h1>
+    <p>아래에 출력</p>
+  
+    <script>
+    var pTag = document.querySelectorAll('p');
+
+  
+
+        //😀화살표 함수 (function 생략가능)
+         var fn2 = (num1,num2)=> {
+            document.write(num1+num2, '<br>');
+            document.write(num1-num2, '<br>');
+        } 
+
+        //😀화살표 함수 (매개변수가 1개일경우 ()를 생략 가능하다.)
+          var fn3 = num1 => {
+            document.write(num1, '<br>');
+            document.write(num1+num1, '<br>');
+        } 
+        
+        //😀화살표 함수 (명령문이 1개일 경우 {}를 생략가능. )
+          var fn4 = num1 => document.write(num1, '<br>');
+        
+        //😀화살표 함수 (매개 변수가 없으면 ()생략 불가능하다.)
+           var fn5 = () => document.write(10, '<br>'); 
+        
+        //😀리턴 
+           function fn(a,b,c) {
+            document.write(a+b+c ,'<br>');
+            return a - b -c
+           }
+
+        //호출값을 주면 매개변수에 들어가서 호출됨
+        fn2(20,30);
+        //화살표함수
+        fn3(20,30);
+        fn4(20,30);
+        fn5(20,30);
+        
+       //선언적 함수
+       var refVar = fn6(1,2,3);
+        document.write(refVar)
+    </script>
+</body>
+</html>
