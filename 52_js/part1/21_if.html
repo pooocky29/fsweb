@@ -6,26 +6,167 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+JS</title>
+    <style>
+        div{position: fixed; right:0; } 
+    </style>
 </head>
 
 <body>
+    <div>
+        <label for="val">a=</label>
+        <input type="text" id="val" placeholder="숫자를 입력해주세요">
+       <!-- <input type="text" id="val" placeholder="숫자를 입력해주세요" value="5"> -->
+    </div>
     <h1>if</h1>
-    <script>
-        /* 
-            if (조건식) {
-                코드;
+    <p class="p1">if의 출력결과</p>
+    <h1>if~else</h1>
+    <p class="p2">if~else의 출력결과</p>
+    <h1>if~else~else</h1>
+    <p class="p3" title="툴팁">if~else~else의 출력결과</p>
+    <hr>
+    <h1>switch~case</h1>
+    <p class="p4">switch~case의 출력결과</p>
+    <h1>for</h1>
+    <p class="p5">for의 출력결과</p>
+    <h1>while</h1>
+    <p class="p6">while의 출력결과</p>
+    <h1>do~while</h1>
+    <p class="p7">do~while의 출력결과</p>
+    <h1>break</h1>
+    <p class="p8">break의 출력결과</p>
+    <h1>continue</h1>
+    <p class="p9">continue 출력결과</p>
+
+       
+ <script>
+    //조건식에 '가' > '나' True 문자열 비교도 됨.
+    // '가' >= 1  문자열->true로 1값해서 1>=1로 true반환 안되는지 물어보기.
+    
+    //prompt 입력받은 값을 리턴받기
+    //🎈prompt 결과값은 문자열이다. 조건식에 들어갔을때 비교연산자랑 만나면서 형변환으로 계산이됨.
+   // let a = prompt('숫자를 입력하세요');
+
+    //요소를 선택
+    const inEle = document.querySelector('input');
+    const pEle = document.querySelectorAll('p');
+    // pEle[0] 또는 pEle.item(0) 를 사용
+
+/*
+    const pEle1 = document.querySelector('.p1');
+    const pEle2 = document.querySelector('.p2');
+    const pEle3 = document.querySelector('.p3');
+    const pEle4 = document.querySelector('.p4');
+    const pEle5 = document.querySelector('.p5');
+    const pEle6 = document.querySelector('.p6');
+    const pEle7 = document.querySelector('.p7');
+    const pEle8 = document.querySelector('.p8');
+    const pEle9 = document.querySelector('.p9');
+ */  
+
+
+    
+    //😀if의 출력결과
+    let a= 3;
+
+     if(a > 5){
+        pEle1.style.color = 'red';
+    } 
+  
+    //😀if~else의 출력결과
+    if(a > 5){
+        pEle2.innerText = 'next';
+    } else{
+        pEle2.innerText  = 'prev';
+    }
+
+    //html 속성바꾸기:  요소.setAttribute(para속성이름,para속성값);
+
+   //😀if~else~else의 출력결과
+      if(a > 10){
+        //조건1 참일때 실행
+        pEle3.title = '첫번재 조건이 참입니다.';
+    } else if(a > 5){
+        //조건1은 거짓, 조건2는 참일때 실행
+        pEle3.title = '조건1은 거짓, 조건2는 참일때';
+    } else{
+        //조건1,2 거짓일때 실행.
+        pEle3.setAttribute('title','두 조건 모두 거짓입니다.');
+    }
+
+
+
+    //😀switch~case의 출력결과 (switch는 동등비교만 가능하다)
+    //input의 value값이 필요하다.
+    //🎈input박스의 입력한 테이터는 숫자라도 문자열로 취급한다. 그래서 case '1' 이렇게 써줘야한다.
+        
+        inEle.value = 1;
+        
+        switch(inEle.value){
+            case '1':
+                pEle4.title = '1이다';
+                //break는 문장을 나가게 하는 역활
+                break;
+            case '2':
+                pEle4.title = '2이다';
+                break;
+            default:
+                pEle4.setAttribute('title','둘다 아닐때');
+        };
+
+    //😀for의 출력결과 
+    //🎃let i는 지역변수
+    for (let i =0; i<10; i++){
+        //조건식이 참일때 실행 -> 그리고 나서 증감 -> 조건식으로
+        pEle5.innerHTML +='<br>' + i;
+    };
+
+    /* [순서기록해보기]
+     step1: i=0 -> 조건식이 참일때 코드실행 -> 증감 -> 비교조건식 
+     step2: let i=0 읽지 않는다 -> 비교조건식 -> 참일때 코드실행 -> 증감 
+        .
+        .
+        .
+     step9: i가 9값일때 까지만 출력됨.
+     step10: i가 10이 됏을때 i<10거짓이 되니까 코드를 실행하지않고 for문을 빠져나감
+    */
+
+    //😀while의 출력결과
+    //while문은 증감식이{대괄호 안에 있다}. / 초깃값은 while 밖에 있다.
+        //🎃let i는 전역변수 
+        let i=0;
+        while(i<10){
+            //조건식이 false이면 while문을 빠져나감.
+            pEle6.innerHTML +='<br>' + i;
+            i++;
+        };
+    
+    
+    //😀 do~while의 출력결과
+            //한번은 무조건 실행 한다는점이 while과 차이점이다.
+            //🎃let i는 전역변수 그래서 위의 let i와 겹쳐서 오류가 난다.
+            //🎃let i=0;
+            i = 0;
+            do{
+                //조건식이 false이면 while문을 빠져나감.
+                pEle7.innerHTML +='<br>' + i;
+                i++;
+            } while(i<10)
+
+    //😀break 출력결과
+        for(let i=0; i<10; i++){
+            //🎈if문에서 실행 코드가 1문장이면 {}생략이 가능하다 -> if (i === 6) break;
+            if (i === 6){
+                 break;
             }
-        */
+            pEle8.innerHTML += '<br>' + i;
+            };
 
-        var num = 10;
-        var num2 = 3;
-        var num3 = 0;
-
-        // 조건식에 0, null, ''(빈 문자), undefined를 사용하면 false, 그 밖의 값은 true
-
-
-
-    </script>
+     //😀coutinue 출력결과
+         // 제어문에서 continue만나면 아래잇는 코드는 실행하지않고 시작위치로 간다.
+        for(let i=0; i<10; i++){
+        if (i>=3 && i<=6) continue;
+        pEle9.innerHTML += '<br>' + i;
+        };
+</script>
 </body>
-
 </html>

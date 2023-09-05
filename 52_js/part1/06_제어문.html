@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문</title>
+</head>
+<body>
+    <script>
+        /*
+        [조건식]
+            조건식에 사용할 표현식 결과는 true/false 
+            false:  0, null, ''(빈 문자), undefined
+
+        [제어문]
+            1.조건문:if,else
+            2.선택문:switch~case,default
+            3.반복문:for,while,do     
+        
+        [연산자]
+            1.산술
+            2.대입
+            3.비교
+            4.논리:  !(논리부정) / &&(그리고), ||(또는) --쓰여진 순서대로 우선순위가 높다
+            5.조건
+
+        [우선순위]
+            1. !a>b    ->우선순위가 다르다
+            2. !(a>b)  ->우선순위가 다르다
+        
+  */
+
+        a=9
+        document.write(
+            `a >= 10 && a <= 20의 비교연산 결과는 ${a >= 10 && a<=20}<br>`,
+            `a >= 10 || a <= 20의 비교연산 결과는 ${a >= 10 || a<=20}<br>`,
+            `a가 아닌것 ${!a}<br>`, 
+            `자동 형변환이 되어도 십이라는게 숫자는 아니다. ${'십' >= 1 }<br>`, 
+            `'1' >= 1 자동 형변환이 된다. ${'1' >= 1}<br>`, 
+            `문자열로 바뀐다. ${'10'+10}<br>`, 
+            `숫자형 바뀐다. ${'10'*10}<br>`,
+            `문자열에서 문자일때 + 숫자 = 무조건 ${'true' >= 1}<br>`, 
+          
+        );    
+
+    </script>
+</body>
+</html>
