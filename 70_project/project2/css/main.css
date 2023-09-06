@@ -152,7 +152,7 @@ footer{
 /* 해더 */
 /* 네비게이션 */
 #gnb li{display: inline-block; margin-left:32px; }
-
+.logo{width: 10%;}
 
 /* 섹션공통 */
 .sec{position: relative; width: 1500px; margin: 0 auto; }
