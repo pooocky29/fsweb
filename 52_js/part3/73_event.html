@@ -7,60 +7,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS+JS</title>
     <style>
-        body {
-            height: 2000px;
-        }
-        div {
-            width: 300px;
-            height: 300px;
-            margin: 50px;
-            font-size: 50px;
-            color: #fff;
-        }
-        .box1 {
-            background: red;
-        }
-        .box2 {
-            background: blue;
-        }
-        p {
-            font-size: 30px;
-        }
-    </style>
+        body {height: 2000px;}
+        div {width: 100px;height: 100px;margin: 10px;font-size: 20px;color: #fff;}
+        .box3{width: 100px; height: 100px; background-color: rgb(98, 209, 185); }
+        .box1 { background: red;}
+        .box2 { background: blue;}
+         p {font-size: 30px; position: fixed; right: 50%; }
+    </style>     
+    <!--         
+        방법1_요소.addEventListener('이벤트', function(){코드;});
+        방법2_ 요소.addEventListener('이벤트',fn);
+        funtion fn(){코드;};
+        방법3(파라미터가 있을때 처리방법)__요소.addEventListener('이벤트', function(){fn(para);});
+        function fn(para){코드;};
+     -->
 </head>
-
 <body>
-    <div class="box1">박스1</div>
+    <p>여기에 출력</p>
+    <div class="box1" onclick="ev1();">박스1</div>
     <div class="box2">박스2</div>
-    <p></p>
+    <div class="box3">박스3</div>
+    
 
     <script>
         /* 
             Event(이벤트): 웹 문서 영역 안에서 웹 브라우저 또는 사용자가 행하는 동작
 
             이벤트 종류
-            1. 마우스 이벤트: click, mouseenter, mouseleave, mousemove
+            1. 마우스 이벤트: click, mouseenter(마우스오버), mouseleave(마우스아웃), mousemove
             2. 키보드 이벤트: keydown, keypress, keyup
             3. 윈도우 이벤트: scroll, resize
 
             이벤트 처리기(이벤트 핸들러): 이벤트가 발생할 때 그 이벤트에 반응하여 실행하는 함수
+*/
+        //😀방법1: 태그에 직접쓰는 방식/인라인스크립트방식(바람직하지않는 방식이라 html 이벤트 소석으로 지정하기)
+        // <태그 on이벤트명="함수명()">                  
+                // function ev(){
+                //     document.querySelector('p').innerText ='박스1을 클릭';
+                // }
 
-            //방법1
-            <태그 on이벤트명="함수명()">
-
-            //방법2
-            요소.onclick = 함수;
-            function 함수(){}
-
-            //방법3
-            요소.onclick = function(){};
-
-            //방법4
-            요소.addEventListener('이벤트', function(){});
-
+        //😀방법2
+        //< 요소.이벤트속성 = 함수;>
+        /*함수방식 2가지
+        첫째.요소.이벤트속성 = function 함수(){코드;}
+        둘째.요소.이벤트속성 = 함수; ->🎃()를 안쓴다.
+            선언함수: function 함수(){코드;} 또는 const 함수 = function(){}
+        셋째.이방식은 요소가 다르면 중복 코드가 많이생긴다는 단점이 있다.
+            요소.on이벤트 = function(para){코드};
+            ✨요소.on이벤트 = function(){fn();}; //둘이 같은코드 오른쪽코드는 간단하게쓴코드(실무에서사용)//✨요소.on이벤트 =fn;
+            function fn(para){코드;}; 
         */
+
+        //🎈querySelector익명함수 만들기
+            //const qs = function(aa){return document.querySelector(aa);};
+            //익명함수를 화살표함수로 만들어보기
+                /* (para1, para2,...) => {코드1; 코드2;....}
+                매개변수가 1개이면 ()생략가능
+                코드가 1개이면 {}생략가능 -> return이 있을경우는 return도 생략해야 오류가 안난다.
+                */
+            const qs= aa => document.querySelector(aa);
+
+
+        //요소는 const로 
+            //호출문이 함수 위에 있으면 오류남.why? 위에 함수가 익명함수라서
+            const box2 = qs('.box2');
+            const box3 = qs('.box3');
+            const txt =  qs('p');
+            
+            //🎃 ev(); 이렇게 쓰면 먼저 호출하고 변수에 저장하기 때문에 ()를 빼서 쓰는이유이다.
+            box2.onclick = ev2;
+
+            function ev1(){
+                txt.innerText ='박스1을 클릭';
+                }
+            function ev2(){
+                txt.innerText ='박스2을 클릭';
+            }
+
 
     </script>
 </body>
-
 </html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크립트 상단에 써보기</title>
+    <style>
+        body {height: 2000px;}
+        div {width: 100px;height: 100px;margin: 10px;font-size: 20px;color: #fff;}
+        .box3{width: 100px; height: 100px; background-color: rgb(98, 209, 185); }
+        .box1 { background: red;}
+        .box2 { background: blue;}
+        p {font-size: 30px; position: fixed; right: 50%; }
+    </style>
+    <script>
+
+        //상단 script를 쓰고 body를 먼저읽는 기능이 필요할때
+        window.addEventListener('DOMContentLoaded',function(){      
+
+        //qs를 선언함수로 만들기
+        function qs(aa){
+           return document.querySelector(aa);
+        };
+
+        const box2 = qs('.box2');
+        const box3 = qs('.box3');
+        const txt =  qs('p');
+
+        
+        box3.addEventListener('click',function(){
+            txt.innerText ='박스3을 클릭'
+        });
+
+        });//DOMContentLoaded함수 끝
+      
+    </script>
+</head>
+<body>
+    <p>여기에 출력</p>
+    <div class="box1" onclick="ev1();">박스1</div>
+    <div class="box2">박스2</div>
+    <div class="box3">박스3</div>
+    
+
+    <script>
+
+        function qs(aa){
+           return document.querySelector(aa);
+        };
+         
+        const box2 = qs('.box2');
+        const box3 = qs('.box3');
+        const txt =  qs('p');
+
+        box2.onclick = ev2;
+
+        function ev1(){
+            txt.innerText ='박스1을 클릭';
+            }
+        function ev2(){
+            txt.innerText ='박스2을 클릭';
+        }
+
+    </script>
+</body>
+</html>

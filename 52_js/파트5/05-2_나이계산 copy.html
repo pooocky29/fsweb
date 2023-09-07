@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+JS</title>
+</head>
+
+<body>
+    <h1>나이 계산하기</h1>
+    <!-- 😀 1.onchange란? input의 정보가 변경되면 age()함수 호출 
+            2.age()함수가 아래 script태그안에 존재해야 한다.-->
+   
+     <!--[요구사항]
+        1.결과 텍스트가 input아래 줄바꿈되게 하기
+        2..출력은 ``으로 
+     -->
+    <input type="text" id="aaa" onchange="age();">
+    <script>
+ 
+
+
+        function age(){
+            let age1 = getElementById('aaa').value;
+            console.log(age());
+        }
+     
+       
+
+
+        // 출력
+        // let result = document.write(`당신의 나이는 +${input}+살입니다.`);
+        
+ 
+
+        // 나이 출력
+        // 문자열 + 변수 + 문자열
+        // document.write('당신의 나이는 ' + age + '살입니다.');
+        
+    </script>
+</body>
+
+</html>

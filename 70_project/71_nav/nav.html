@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션1</title>
+    <style>  
+ 
+        /* typo 크기,색 */
+        .main a{color: rgb(202, 98, 0); font-size: 1.8rem;}
+        .sub a{color:rgb(173, 171, 0); font-size: 1.4rem;}
+
+        /* depth1 */
+        .main{display: flex; }
+        .main li{margin: 0 16px;}
+        .main>li>a{
+            background-color: lightgray;
+            padding: 8px 16px;}
+
+        .main>li a:hover + .sub{ opacity: 1; visibility: visible;transform: translateY(0px);}
+        /*.sub:hover라고 해서 연결시킨의미가 된다. .sub영역이라서  */
+        .sub:hover{ opacity: 1; visibility: visible; transform: translateY(0px);}
+
+        /* depth2 */
+        .sub{
+            text-align: center;
+            /* display:none는 transition전환 효과 먹히지 않음.  */
+            opacity: 0;
+            transform: translateY(100px);
+            transition: .3s;
+            /* 자리차지하면서 안보이게하는방식 */
+            visibility: hidden;
+            padding: 14px 0 16px;
+            background-color:lightslategray;
+            }
+        .sub a{display: block;}
+
+
+    </style>
+    <link rel="stylesheet" href="/assets/css/resat.css">
+</head>
+<body>
+    <div id="nav">
+        <ul class="main">
+            <li>
+                <a href="#">메인메뉴1</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메인메뉴2</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메인메뉴3</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메인메뉴4</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
