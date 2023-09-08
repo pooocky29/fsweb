@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        section div{height: 200px; background-image: url(콜라) no-repeat;}
+      
+        div {display: inline-block; width: 200px; height: 200px; border: 1px solid red; margin: 20px;}
+        img, video {width: 200px; height: 200px;}
+        
+        /* 셋 공통점
+           - cover / contain 속성을 주었을때 생기는 결과가 같다.그래서 이 둘을 이용해 많이 사용한다. 
+            -오브젝트가 들어간 div박스에도 영향을 받아서 박스 사이즈도 적절히 조절해가면서 사용해야된다.
+        */
+        /* background-size 차이점!
+            값: cover -> 
+                contain
+                auto(기본값) - px,%를 사용해 값을 쓸수 있음
+            ✨background-position: 0 0(기본값) (중앙으로 하고싶으면 50 50으로 해줘야됨.)
+                    left, right, top, bottom, center(값을 50 50준거랑 다름)
+                
+        */
+        /* 
+            object-fit: 값;
+                <img> 또는 <video>을 지정하는 데 사용.
+                박스 크기에 맞게 미디어의 크기 조정.   
+                값: fill: 기본값, 비율 유지 없이 가득 채움.
+                    contain: 비율 유지, 이미지 잘림없이 상자에 맞게 크기 조정, 빈 공간이 생길 수 있음. -> 많이사용
+                    cover: 비율 유지, 이미지가 잘리더라도 상자를 가득 채움.-> 많이사용
+                    none: 원본 크기 그대로, 이미지가 잘리거나 빈 공간이 생길 수 있음.
+            object-position: x위치 y위치;  -> 오브젝트의 위치를 옮기는 속성.
+                값: left, right, top, bottom, center, %, px
+                ✨기본값: 50% 50%
+        */
+        div:nth-of-type(2) img,
+        div:nth-of-type(7) video {
+            object-fit: fill;
+            object-position: 50px 50px;
+        }
+        div:nth-of-type(3) img,
+        div:nth-of-type(8) video  {
+            object-fit: contain;
+            object-position: right;
+        }
+        div:nth-of-type(4) img,
+        div:nth-of-type(9) video  {
+            object-fit:cover;
+            object-position: bottom;
+        }
+        div:nth-of-type(5) img,
+        div:nth-of-type(10) video  {
+            object-fit:none;
+            object-position: 0 0;
+        }
+    </style>
+</head>
+
+<!-- 
+    <iframe>태그는 아직 남아잇음
+    <frame><frame>-> 태그 사라짐.
+
+    <video>
+        <source src="비디오파일.mp4" type="video/mp4">
+        <source src=".webm" type="video/webm">
+        <source src=".ogg" type="video/ogg">
+    </video>
+ -->
+<body>
+    <section class="bg">
+        <h1>배경이미지</h1>
+        <div>auto</div>
+        <div>100%</div>
+        <div>contain</div>
+        <div>cover</div>
+    </section>
+    
+    <hr>
+    <h1>object-fit &amp; object-position</h1>
+    <div>original(아무것도안준것)<img src="/assets/images/coca.png" alt="coca"></div>
+    <div>fill(default)<img src="/assets/images/coca.png" alt="coca"></div>
+    <div>contain<img src="/assets/images/coca.png" alt="coca"></div>
+    <div>cover<img src="/assets/images/coca.png" alt="coca"></div>
+    <div>none<img src="/assets/images/coca.png" alt="coca"></div>
+    <hr>
+    <div>original(아무것도안준것)<video src="/assets/video/mov_bbb.mp4" type="video/mp4" autoplay muted></video></div>
+    <div>fill(default)<video src="/assets/video/mov_bbb.mp4" type="video/mp4" autoplay muted></video></div>
+    <div>contain<video src="/assets/video/mov_bbb.mp4" type="video/mp4" autoplay muted></video></div>
+    <div>cover<video src="/assets/video/mov_bbb.mp4" type="video/mp4" autoplay muted></video></div>
+    <div>none<video src="/assets/video/mov_bbb.mp4" type="video/mp4" autoplay muted></video></div>
+</body>
+</html>
