@@ -6,18 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+JS</title>
+    <style>
+        img {width:300px;}
+    </style>
 </head>
 
 <body>
     <h1>객체</h1>
+    <div></div>
     <script>
+
+        //😀setInterval(funtion(){코드},2000);
+        /* 객체선언
+        const 객체={
+            KEY:값,
+            last name: joo
+            속성:function(){}
+        };
+        */
+       /*
+        객체 사용
+        객체['속성'] 또는 객체.속성
+        -[]안에 속성은 문자열로 표기
+        -속성의 이름에 공백이 있을 경우 객체['last name']로 사용한다. 하지만 카멜케이스로 쓰자!
+        */
+
         /* 
             현실 세계
             TV -> 객체
             켜다, 끄다, 볼륨을 높이다, 볼륨을 낮추다 -> 메서드
             너비, 높이, 색상, 무게의 특징 -> 속성
 
-            자바스크립트는 객체(object) 기반 언어이다.
             객체는 기능(메서드)과 속성을 가지고 있다.
 
             객체.메서드() -> 객체의 메서드를 실행한다.
@@ -35,10 +54,37 @@
                 - HTML 문서 구조
         */
 
-        // 내장 객체 생성
-        // 객체 생성 시 new 키워드와 생성함수를 사용한다.
-        // 참조변수(인스턴스명) = new 생성함수()
+        const box = document.querySelector('div');
 
+        /* let photo = `<img src="/assets/images/italy1.jpg" alt="이탈리아">`;
+        let tit1 = '메인 타이틀입니다.';
+        let tit2 = '서브 타이틀입니다.';
+        let btn = `<button>자세히 보기</button>`;
+        box.innerHTML = `
+            ${photo}<br>
+            ${tit1}<br>
+            ${tit2}<br>
+            ${btn}<br>
+        `; */
+
+        const obj0 = {
+            photo: `<img src="/assets/images/italy1.jpg" alt="이탈리아">`,
+            tit1: '메인 타이틀1입니다.',
+            tit2: '서브 타이틀1입니다.',
+            btn: `<button>자세히 보기1</button>`
+        };
+        const obj1 = {
+            'photo image': `<img src="/assets/images/italy2.jpg" alt="이탈리아">`,
+            'tit1': '메인 타이틀2입니다.',
+            'tit2': '서브 타이틀2입니다.',
+            'btn': `<button>자세히 보기2</button>`
+        };
+
+        // 객체.속성
+        box.innerHTML = obj0.photo + '<br>';
+        // 객체['속성']
+        box.innerHTML += obj0['photo'] + '<br>';
+        box.innerHTML += obj1['photo image'] + '<br>';
 
     </script>
 </body>
