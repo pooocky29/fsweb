@@ -28,7 +28,6 @@
     .util a{font-size: 1.4rem; color: #fff;}
     body{height: 600px;}
 
-
     /* 헤더전체정렬 */
     .head{display: flex; justify-content: center;}
 
@@ -46,6 +45,7 @@
     align-items: center;
     background-color: #0d4633;
     }
+
     /* 헤더 after */
     #header::after{
     content: '';
@@ -72,10 +72,7 @@
     overflow: hidden;
     transition: .5s;
     text-align: center;
-    border: 1px solid red;
     }
-
-    /* #gnb ul{display: flex; justify-content: center;} */
 
      /* depth2 높이 */
     #header:hover #gnb{height: 295px;}
@@ -92,7 +89,7 @@
     text-decoration:underline;}
 
     /* depth2 */
-    .sub li{margin:4px 10px; }
+    .sub li{margin:4px 25px; line-height: 1.8;}
     .sub a{display:block; color:#fff;}
 
     /*depth2 호버시 */
@@ -111,7 +108,6 @@
     color:#f26b24;
     font-weight: 600; 
     text-decoration:underline;}
-
   
     /* 케로셀 */
     .bx-wrapper{
@@ -122,12 +118,15 @@
     background:transparent;
     }
 
+    /* 케로셀 중앙정렬 */
+    .slideWrap{
+    display: flex;
+    justify-content: center;
+    height: 100%; 
+    }
+
     /* 인디케이터 위치조정 */
     .bx-wrapper .bx-pager{bottom: 50px;}
-    .slideWrap{
-        display: flex;
-        justify-content: center;
-        height: 100%; }
 
     /* 인디케이터 버튼 모양*/
     .bx-wrapper .bx-pager.bx-default-pager a{ border:1px solid #fff; border-radius: 50%;}
