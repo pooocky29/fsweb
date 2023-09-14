@@ -2,7 +2,6 @@
 /* 구글폰트 cdn */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-
 /* 외부 css가져오기 */
 @import url(reset.css);
 @import url(typo.css);
@@ -10,14 +9,20 @@
 /* 전체 폰트사이즈 */
 html{font-size: 10px;}
 body{font: 1.5rem/1.8 'Roboto', sans-serif;}
+.skill h3{text-align: center; font-weight: normal;}
+.skill p{letter-spacing: 8px;}
 
 
-/* 작업중 */
-body *{outline: 1px solid rgb(57, 77, 255);}
 
+/* 섹션2,3,4 공통 */
+.sec h2{padding-top: 64px;}
+.sec h2+p{margin: 24px 0 16px 0;}
 
 /* 레이아웃:전체구조 */
-.container{background-color:rgb(190, 211, 230); width: 960px; margin: 0 auto;}
+.container{
+width: 960px; 
+margin: 0 auto;
+padding-bottom: 64px;}
 .counter{background-color: #333;}
 footer{background-color:#333;}
 
@@ -31,65 +36,142 @@ header{z-index: 999; position:fixed; width: 100%; height: 44px; padding: 10px 0;
     background-color: #fff; }
 
 /* 네비게이션 */
- header #gnb li{float: left; list-style: none;}
+ #gnb ul{display: flex;}
+ header #gnb li{ list-style: none;}
  /*a태그에 pading을 줘서 클릭범위를 늘린다  */
  #gnb a{padding: 8px 16px; text-decoration: none;} 
  #gnb a:hover{background-color: #ccc}
-
-
+ #gnb i{margin-right: 8px;}
 
 /* 섹션1 :페럴렉스 이미지*/
-    /* body의 높이가 지정되지 않아서 height높이가 적용되지 않음 그래서 vh단위로 쓴다 */
+/* body의 높이가 지정되지 않아서 height높이가 적용되지 않음 그래서 vh단위로 쓴다 */
 #sec1{position: relative; height:100vh; background-image: url(../../70_project/images/bg1.jpg); }
 #sec1 h1{position: absolute; top: 50%; left: 50%;
          margin-left:-86px; margin-top: -16px;}
 
-
-
-
-/* 메인타이틀 */
-
-/* 섹션2 : 나의소개*/
 
 /* 기본프로필 */
 .basic p:nth-of-type(1){margin-bottom: 64px;}
 
 
 /* 이미지: 내사진 */
-.my-pic{float: left; width: 425px; margin-right:48px ; margin-left: 24px;}
+.profile2{display: flex;}
+.my-pic{flex-shrink: 0; width: 425px; margin-right:48px ; margin-left: 24px;}
+
 
 /* 프로그래스바: 스킬바 */
+.skill h3{margin:48px 0 32px 0;}
+.skill p i{margin-right: 8px;}
+.progress:nth-of-type(1){width: 500px;}
+.progress:nth-of-type(2){width: 85px;}
+.progress:nth-of-type(3){width: 500px;}
+.progress{background: blue;}
+.progressbar{
+    background:#616161;
+    color: #fff;
+    height: 36px;
+    text-align: center;
+}
 
 
 /* 카운터 */
-.counter{padding: 32px 0;  text-align: center;}
-.counter li{float: left; width: 25%; text-align: center; }
+.counter{ padding: 32px 0;  text-align: center;}
+.counter ul{display: flex;}
+.counter li{ width: 25%; text-align: center; }
 .counter span{display: block; font-size: 2.4rem;}
 
 
-
 /* 섹션3 */
-.pf li{width: 225px; float: left; margin-right: 20px; margin-bottom: 20px;}
+.pf ul{display: flex; flex-wrap: wrap; margin-top: 30px;}
+.pf li{
+    flex-shrink: 0;
+    aspect-ratio: 1.4/1;
+    width: 225px; 
+    margin-right: 16px;
+    margin-bottom: 16px;}
 .pf li:nth-of-type(4n){margin-right: 0;}
+
+/*섹션3 버튼*/
+.pfBtn{
+    margin-top: 32px;
+    text-align: center;
+}
+.pfBtn a{
+    padding: 12px 24px;
+    background: red;
+}
 
 /* 섹션3:페럴렉스  */
 #sec3 .parallax{background-image: url(../images/bg2.png);}
 
 
-/* 섹션4: 연락처*/
-.map{float: left; width: 284px;}
-.right{float: right; width: 640px; }
-
-/* 섹션4:페럴렉스  */
+/* 섹션4:페럴렉스 */
+#sec4 .pos{display: flex; justify-content: space-between;
+margin: 48px auto 64px;}
 #sec4 .parallax{background-image: url(../images/bg3.png); }
 
-/* 인풋박스 */
+/*input박스 */
 input{padding: 8px; border: 1px solid #ccc;}
 
-input:nth-of-type(1){float: left; width: 49%;}
-input:nth-of-type(2){float: right; width: 49%;}
-input:nth-of-type(3){float: left; display: block; width: 100%; margin-top: 8px;}
 
+/* 주소영역 */
+.map{
+    width:284px;
+    border-radius: 5px;
+    overflow: hidden;
+    aspect-ratio: 1.8/1;
+}
+.right{width: 640px;}
 
+.addr ul{
+    font-size: 1.8rem;
+}
+.addr ul i{
+    color: #777;
+}
+.addr ul i:hover{
+    color: #777;
+}
+
+.addr i{margin-right: 30px;}
+.addr p{margin: 32px 0 16px;}
+
+form{ display: flex; flex-wrap: wrap; justify-content: space-between;}
+
+input:nth-of-type(1){ width: calc(50% - 4px);}
+input:nth-of-type(2){ width: calc(50% - 4px);}
+input:nth-of-type(3){display: block; width: 100%; margin-top: 8px;}
+
+/*섹션4 form */
+input,button{
+font-size: 1.5rem;
+font-style: 'Roboto',sans-serif;
+}
+
+form div{
+text-align: right;
+width: 100%;}
+
+button{
+padding: 12px 24px;
+margin-top: 16px;
+}
 
 /* 푸터 */
+footer{
+    padding: 64px 0;
+}
+.toTop a{
+    padding: 12px 24px;
+    background: red;
+}
+
+.sns{margin: 16px 0;}
+.sns a{
+color: #ccc;
+margin: 0 5px;
+}
+.sns a:hover{
+color: #fff;
+}
+footer .copy{color: #777;}
