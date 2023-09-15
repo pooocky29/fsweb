@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>풀페이지(가로)</title>
+     <!-- 😀풀페이지일때 마우스휠로 가로로 페이지 이동하는법 구현하기  -->
+    <style>
+
+        /* 리셋 */
+        body{margin: 0;}
+        html{scroll-behavior: smooth;}
+
+        /* 풀레이지 layout */
+        #wrap{display: flex; 
+            /* 세로 스트롤바 숨기기 */
+            height: 100vh; overflow-y:hidden;}
+        
+        
+        .sec{height: 100vh; width: 1920px; flex-shrink:0;}
+        #sec1{background: lightblue;}
+        #sec2{background:lightgoldenrodyellow;}
+        #sec3{background:lightsteelblue}
+        #sec4{background: lightpink;}
+
+     
+    </style>
+</head>
+
+<body>
+    
+    <div id="wrap">
+        <section id="sec1" class="sec">
+            <h2>섹션1</h2>
+        </section>
+        <section id="sec2" class="sec">
+            <h2>섹션2</h2>
+        </section>
+        <section id="sec3" class="sec">
+            <h2>섹션3</h2>
+        </section>
+        <section id="sec4" class="sec">
+            <h2>섹션4</h2>
+        </section>
+    </div>
+    
+    <script>
+    
+        //요소선택
+        const docEle = document.documentElement;
+        const wrap = document.querySelector('#wrap');
+        const sec = document.querySelectorAll('.sec')
+ 
+
+        window.onwheel =(e)=>{
+            e.preventDefault()
+             
+            if(e.deltaY > 0) {
+                //마우스를 내림
+                wrap.scrollLeft += wrap.offsetWidth
+            } else {
+                //마우스 올림
+                wrap.scrollLeft -= wrap.offsetWidth
+            }
+            console.log(wrap.scrollLeft);
+        };
+        
+    </script>
+
+
+</body>
+</html>

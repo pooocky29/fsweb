@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taget-버블링</title>
+    <style>
+        .ancestor {width: 500px; height: 500px; background: #ccc;}
+        .parent {width: 400px; height: 400px; background: #ddd;}
+        .child { width: 300px; height: 300px; background: #eee;}
+        div {font-size: 2rem;}
+    </style>
+</head>
+<body>
+    <div class="ancestor">조상
+        <div class="parent">부모
+            <div class="child"><a href="https://naver.com">자식</a></div>
+        </div>
+    </div>
+    <script>
+
+        /*
+            요소.on이벤트 = 함수;
+                :하나의 요소에 단일 이벤트만 등록 가능
+ 
+            요소.addEventListener('이벤트', 함수, flase(기본값)); 
+                :하나의 요소에 다중 이벤트 등록 가능
+
+
+            이벤트 전파(Event Propagation)
+
+            🎈버블링(Bubbling) : 자식 요소에서 발생한 이벤트가 바깥 부모 요소로 전파 (기본값)    
+                버블링:   child-> parent ->ancestor 이순서로 이벤트가 진행된다.
+            캡쳐링(Capturing) : 자식 요소에서 발생한 이벤트가 부모 요소부터 시작하여 안쪽 자식 요소까지 도달
+                캡쳐링:  ancestor ->parent-> child 이순서로 이벤트가 진행된다.
+
+            addEventListener('이벤트', 함수, 불);
+               불: false(기본값) -> 버블링, true -> 캡쳐링
+
+            event.currentTarget: 이벤트 전파로 인해 이벤트가 발생한 대상 요소나 부모 요소
+            ✨event.target: 이벤트가 실제로 발생한 요소
+            
+             event.stopPropagation(): 이벤트 전파 방지
+           event.preventDefault(): 이벤트 기본값 방지
+
+           대부분 event를 e라고 줄여서 사용한다 
+        */
+
+     
+        const ancestor = document.querySelector('.ancestor');
+        const parent = document.querySelector('.parent');
+        const child = document.querySelector('.child');
+
+        ancestor.addEventListener('click',()=>{
+            event.target.style.color= 'red'
+            console.log(event.target)
+        });
+        parent.addEventListener('click',()=>{
+            event.target.style.border= '1px solid green'
+            console.log(event.target)
+        });
+        child.addEventListener('click',(e)=>{
+            e.target.style.background= 'blue'
+            console.log(event.target)
+            //a태그 링크 기본 이벤트방지
+            e.preventDefault();
+        });
+
+    </script>
+</body>
+</html>

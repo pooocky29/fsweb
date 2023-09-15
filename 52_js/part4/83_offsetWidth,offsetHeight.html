@@ -14,18 +14,56 @@
             border: 5px solid blue;
             margin: 50px;
             background: blue;
+            overflow-y: scroll;
         }
+        p{font-size: 1.5rem;}
     </style>
 </head>
 
 <body>
     <div></div>
+    <p>여기에 출력~</p>
+    <button>버튼</button>
 
     <script>
         /* 
-            요소.offsetWidth ~ 패딩, 테두리 및 스크롤 막대를 포함하여 요소의 볼 수 있는 너비(픽셀 단위)를 반환
-            요소.offsetHeight ~ 패딩, 테두리 및 스크롤 막대를 포함하여 요소의 볼 수 있는 높이(픽셀 단위)를 반환
+        //😀엘리먼트의 전체 크기를 알고 싶다면 : offsetWidth 속성은 요소의 가로 값(보더/패딩 포함)을 가져옵니다. 
+                요소.offsetWidth ~  데이터 값을 수정할 수 없고, 값만 가져올 수 있는 읽기 전용 속성입니다.
+                요소.offsetHeight ~  데이터 값을 수정할 수 없고, 값만 가져올 수 있는 읽기 전용 속성입니다.
+
+        //😀실제로 보여지고 있는 컨텐츠가 얼마만큼의 공간을 차지하고 있는지 확인하고 싶다면,
+                요소.clientWidth  패딩+스크롤 너비
+                요소.clientHeight 패딩+스크롤 높이
+
+            //가져오기 
+                const oh = box.offsetHeight
+            //설정하기(기존의 값을 바꾼다)
+                요소.offsetHeight = 값;
         */
+
+        
+        const box = document.querySelector('div');
+        const txt =document.querySelector('p');
+        const btn = document.querySelector('button')
+
+        //가져오기
+        let oh = box.offsetHeight;
+
+
+        btn.onclick = function(){
+            //설정하기
+            box.offsetHeight= 200;
+        }
+
+
+        //출력
+        txt.innerHTML = `
+        box.offsetWidth = ${box.offsetWidth}<br>
+        box.offsetHeight = ${box.offsetHeight}<br> 
+        box.clientWidth = ${box.clientWidth}<br>
+        box.clientHeight = ${box.clientHeight}<br> 
+        `
+    
 
     </script>
 </body>

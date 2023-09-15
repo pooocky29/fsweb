@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- 창의크기
+        //😀창의 콘텐츠가 담겨있는 영역을 말한다.
+            innerWidth 안쪽너비  (읽기전용)
+            innerHeight 안쪽높이 (읽기전용)
+
+        //😀창의 전체 부분 영역을 말한다.
+            outerWidth  바깥너비
+            outerHeight 바깥높이
+     -->
+    <style>
+        body{height: 1000px;}
+    </style>
+</head>
+<body>
+    <h1>창크기</h1>
+    <p>여기에표기</p>
+    <script>
+        const p=document.querySelector('p')
+        p.innerText =`
+            window.innerWidth:  ${window.innerWidth}
+            window.innerHeight: ${window.innerHeight}
+            window.outerWidth:  ${window.outerWidth}
+            window.outerHeight: ${window.outerHeight}
+        `
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>풀페이지(세로)</title>
+
+    <style>
+
+        html{scroll-behavior: smooth;}
+
+        /* 리셋 */
+        body,h2{margin: 0;}
+    
+
+        .sec{height: 100vh; }
+        #sec1{background: lightblue;}
+        #sec2{background:lightgoldenrodyellow;}
+        #sec3{background:lightsteelblue}
+        #sec4{background: lightpink;}
+
+     
+    </style>
+</head>
+
+<body>
+    
+    <div id="wrap">
+        <section id="sec1" class="sec">
+            <h2>섹션1</h2>
+        </section>
+        <section id="sec2" class="sec">
+            <h2>섹션2</h2>
+        </section>
+        <section id="sec3" class="sec">
+            <h2>섹션3</h2>
+        </section>
+        <section id="sec4" class="sec">
+            <h2>섹션4</h2>
+        </section>
+    </div>
+    
+    <script>
+    
+        //요소선택
+        const docEle = document.documentElement;
+        const sec = document.querySelectorAll('.sec');
+        //창의높이
+        const wh = window.innerHeight;
+        console.log(wh);
+ 
+        for( let i=0; i<sec.length; i++)
+        sec[i].onwheel =(e)=>{
+
+            //기본이벤트 방지
+            //e.preventDefault()
+             
+            if(e.deltaY > 0) {
+                //마우스휠 내림
+                docEle.scrollTop += wh;
+            } else {
+                //마우스휠 올림
+                docEle.scrollTop -= wh;
+            }
+        };
+
+        console.log(wrap.offsetHeight);
+        
+    </script>
+
+
+</body>
+</html>

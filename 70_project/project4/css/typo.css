@@ -1,0 +1,23 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;600&display=swap');
+
+/* 전체 폰트사이즈 */
+html{font-size: 10px;}
+body{font:1.5rem/1.8 'Noto Sans KR', sans-serif;}
+
+
+/* sec3 폰트색상 */
+#sec3,#sec3 a{color: #fff;}
+
+
+/* sec3 폰트크기 */
+#sec3 .tit1{line-height: 1; }
+
+#sec3 .tit1 span:nth-child(1){font-size: 9rem; letter-spacing: 10px;}
+#sec3 .tit1 span:nth-child(2){font-size: 8rem; letter-spacing: 8px;}
+#sec3 .tit1 span:nth-child(3){font-size: 4.4rem; letter-spacing: 5px;}
+
+#sec3 .tit2 p:nth-child(1){font-size: 3.5rem;}
+#sec3 .tit2 p:nth-child(2){font-size: 1.5rem;}
+
+

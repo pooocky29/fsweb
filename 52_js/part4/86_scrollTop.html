@@ -15,22 +15,40 @@
             position: fixed;
             top: 0;
             left: 0;
-            font-size: 30px;
+            font-size: 2rem;
         }
     </style>
 </head>
 
 <body>
-    <p></p>
+    <button>버튼</button>
+    <p>aaaaaaaaaa</p>
 
     <script>
+        //🎈  값을 줄때 px값으로 설정가능하다. (%,vh,vw안먹힘)
         /* 
-            document.documentElement ~ <html> 요소 반환
-            document.querySelector('html')
-            document.documentElement.scrollTop ~ 창에서 스크롤한 양 반환
+            document.documentElement ~ <html> 요소 반환  
+            document.body ~ <body> 요소 반환  -> 많이사용
+            document.querySelector('html')   -> 많이사용
+            document.querySelector('body')
+            요소.scrollTop ~ 요소의  수직 스크롤한 양을 반환 -> 박스의 높이가 아니라 스크롤한 양을 말함
+            요소.scrollLeft ~ 요소의 수평 스크롤한 양을 반환
         */
 
-    </script>
-</body>
+        //요소선택
+        const btn = document.querySelector('button')
+        const txt = document.querySelector('p')
+        const htmlele = document.documentElement
 
+        btn.onclick =function(){
+            htmlele.scrollTop = 300;
+        }
+
+        window.onscroll = function(){
+            txt.innerText = htmlele.scrollTop ;
+        };
+    </script>
+
+
+</body>
 </html>
