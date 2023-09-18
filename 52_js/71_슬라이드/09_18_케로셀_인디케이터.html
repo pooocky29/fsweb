@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오토슬라이드 인디케이터</title>
+    <style>
+        *{box-sizing: border-box;} 
+        body,h1,h2,h3,p,ul{margin: 0; }
+        body{background-color: #fff;}
+        ul{padding: 0; list-style: none;}
+        img{width: 100%;height: 100%; vertical-align: top; object-fit: cover;}
+        a{text-decoration: none;}
+
+         /* slide */
+         #slideWrap {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            /* overflow: hidden; */
+        }
+
+        .slide li{
+            /* 애니메이션 대상이 li */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 100%;}
+        
+        /* 첫번재 사진 보이는 시작지점이 0% */
+         li:first-of-type {left: 0;}
+       
+        /* next/prev Button */
+        .ctls {
+            z-index: 9999;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+        }
+
+        .ctls a {
+            position: absolute;
+            color: #fff;
+        }
+
+        /* 왼쪽버튼 */
+        #pb{left: 10%;}
+
+        /* 오른쪽버튼 */
+        #nb{right: 10%;}
+
+
+        /* indicator(인디케이터) */
+        .indi {
+            z-index: 9999;
+            display: flex;
+            /* 수평가운데 */
+            position: absolute;
+            left: 50%;
+            bottom: 7%;
+            transform: translateX(-50%);
+        }
+
+        .indi li {
+            width: 20px;
+            height: 5px;
+            margin: 0 4px;
+            /* 숫자숨기기(1,2,3,4) */
+            text-indent: -9999em;
+            /* border-radius: 50%; */
+            cursor: pointer;
+            background: #fff;
+        }
+
+        /* 인디케이터 위치알려주는 색상 */
+        .indi li.on{background:red;}
+    </style>
+</head>
+<body>
+    <div id="slideWrap">
+        <!-- 이미지 -->
+        <div class="slide">
+            <ul>
+                <li><img src="/assets/images/main_visual01.jpg" alt="#"></li>
+                <li><img src="/assets/images/main_visual04.jpg" alt="#"></li>
+                <li><img src="/assets/images/main_visual05.jpg" alt="#"></li>
+                <li><img src="/assets/images/italy1.jpg" alt="#"></li>
+                <li><img src="/assets/images/italy2.jpg" alt="#"></li>
+            </ul>
+        </div>
+        <!-- //이미지 -->
+
+        <!-- 좌우버튼 -->
+        <!-- <div class="ctls">
+          <a href="#" id="pb">prev</a>
+          <a href="#" id="nb">next</a>
+        </div> -->
+        <!-- //좌우버튼 -->
+
+        <!-- 인디케이터 -->
+        <ul class="indi">
+            <li class="on">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <!-- //인디케이터 -->
+    </div>
+    <script>
+        //변수선언
+        let idx= 0 , eDelay =0 , currentIdx = 0;
+    
+        // 요소선택
+        const slide = document.querySelector('.slide'),
+              slideList = slide.querySelectorAll('li'),
+              indiBtn = document.querySelectorAll('.indi li'),
+              speed =700;
+
+        //인디케이터
+        //0% 위치 이미지->얘가 나중 이미지로 된다 -100% -> currentIdx번째이미지
+        //버튼을 누른이미지가 현재이미지이다. ->i 번째이미지
+        //currentIdx = i 일때는 이미지가 움직이지 말아야 한다 / 다르면 이미지가 움직여야한다
+
+
+        //0,1,2,3,4 ->사용자 마음
+        for (let i = 0; i<indiBtn.length; i++){
+            
+            indiBtn[i].onclick = ()=>{
+                console.log('몇 번째 버튼이니?', i);
+
+                //만약 dDelay가 0이 아니면 click 이벤트 벗어남.
+                if (eDelay) return;
+                // 두 번째 클릭시 적용
+                eDelay = 1;
+                setTimeout(() => { eDelay = 0; }, speed);
+
+                // 인디케이터의 누른 버튼 순번과 0%의 이미지 순번이 같으면 클릭 함수를 벗어남.
+                if (currentIdx === i) return;
+
+                // i = 0,1,2,3,4
+                currentIdx = i;
+                
+                //0% 이미지(currentIdx)는 -100%으로 
+                    slideList[idx].style.left ="-100%";
+                    slideList[idx].style.transition =`left ${speed/1000}s ease-out`;
+                    indiBtn[idx].classList.remove('on');
+                
+                //인디 버튼 순번에 해당하는 이미지는 0%로 이동 (i는0~4값)
+                    slideList[currentIdx].style.left ="0%";
+                    slideList[currentIdx].style.transition =`left ${speed/1000}s ease-out`;
+                    indiBtn[currentIdx].classList.add('on');
+
+                //(일정시간후) -100% 이미지는 다시 원래 100%로 돌아오기 
+                setTimeout(function(){
+                    slideList[idx].style.left ="100%";
+                    slideList[idx].style.transition ="none";
+                    idx = currentIdx;
+                },speed);
+        
+            };
+        }
+
+    </script>
+</body>
+</html>

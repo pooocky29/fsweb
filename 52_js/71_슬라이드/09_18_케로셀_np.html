@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>케로셀 next/prev</title>
+    <style>
+        *{box-sizing: border-box;} 
+        body,h1,h2,h3,p,ul{margin: 0; }
+        body{background-color: #fff;}
+        ul{padding: 0; list-style: none;}
+        img{width: 100%;height: 100%; vertical-align: top; object-fit: cover;}
+        a{text-decoration: none;}
+
+         /* slide */
+         #slideWrap {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+        }
+
+        .slide li{
+            /* 애니메이션 대상이 li */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 100%;}
+        
+        /* 첫번재 사진 보이는 시작지점이 0% */
+         li:first-of-type {left: 0;}
+       
+        
+        /* next/prev Button */
+        .ctls {
+            z-index: 9999;
+            position: absolute;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .ctls a {
+            position: absolute;
+            color: #fff;
+
+        }
+
+        /* 왼쪽버튼 */
+        #pb{left: 5%;}
+        /* 오른쪽버튼 */
+        #nb{right: 5%;}
+
+
+        /* indicator(인디케이터) */
+        .indi {
+            z-index: 9999;
+            display: flex;
+            /* 수평가운데 */
+            position: absolute;
+            left: 50%;
+            bottom: 5%;
+            transform: translateX(-50%);
+        }
+
+        .indi li {
+            width: 20px;
+            height: 5px;
+            margin: 0 4px;
+            /* 숫자숨기기(1,2,3,4) */
+            text-indent: -9999em;
+            /* border-radius: 50%; */
+            cursor: pointer;
+            background: #fff;
+        }
+
+        /* 인디케이터 위치알려주는 색상 */
+        .indi li.on{background:black;}
+    </style>
+</head>
+<body>
+    <div id="slideWrap">
+        <!-- 이미지 -->
+        <div class="slide">
+            <ul>
+                <li><img src="/assets/images/main_visual01.jpg" alt="#"></li>
+                <li><img src="/assets/images/main_visual04.jpg" alt="#"></li>
+                <li><img src="/assets/images/main_visual05.jpg" alt="#"></li>
+                <li><img src="/assets/images/italy1.jpg" alt="#"></li>
+                <li><img src="/assets/images/italy2.jpg" alt="#"></li>
+            </ul>
+        </div>
+        <!-- //이미지 -->
+
+        <!-- 좌우버튼 -->
+        <div class="ctls">
+          <a href="#" id="pb">prev</a>
+          <a href="#" id="nb">next</a>
+        </div>
+        <!-- //좌우버튼 -->
+
+        <!-- 인디케이터 -->
+        <ul class="indi">
+            <li class="on">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <!-- //인디케이터 -->
+    </div>
+    <script>
+        //변수선언
+        let idx= 0;
+        let eDelay = 0;
+        const speed =700;
+
+        // 요소선택
+        const slide= document.querySelector('.slide'),
+        //const slideList= document.querySelectorAll('.slide li')
+        //아래 방법이 더 빠른 실행방법.
+            slideList= slide.querySelectorAll('li'),
+            npBtn= document.querySelectorAll('.ctls a')
+            
+            //😀prev버튼
+       
+            npBtn[0].onclick =()=>{
+
+                //만약 eDelay가 0이 아니면 click이벤트 벗어난다.
+                if(eDelay) return;
+                //if문이 처음은 지나가고 두번째 클릭시 eDelay값 인식
+                eDelay = 1;
+                setTimeout(()=>{eDelay = 0;},speed);
+
+                //반복문은 전체가 실행 되기 때문에 안됨. 지금은 하나씩 증가해서 실행해야됨.
+                slideList[idx].style.left ="-100%";
+                slideList[idx].style.transition =`left ${speed / 1000}s ease-out`;
+                //idx+1 하면 6번째 이미지가 없기 때문에 에러가 난다. 그래서 if문을 사용해줘야한다.
+                if (idx === 0) idx = 5;
+                slideList[idx-1].style.left ="0%";
+                slideList[idx-1].style.transition =`left ${speed / 1000}s ease-out`;
+                //setTimeout(함수,시간):써준 시간후 한번만
+                //setInterval(함수,시간):써준 시간후 반복
+                setTimeout(function(){
+                    if(idx === 5) idx = 0;
+                    slideList[idx].style.left ="100%";
+                    slideList[idx].style.transition ="none";
+                    idx--;
+                    if(idx === -1) idx =4;
+                },700);
+
+            };
+
+            //😀next 버튼
+            npBtn[1].onclick =()=>{
+
+                //만약 eDelay가 0이 아니면 click이벤트 벗어난다.
+                if(eDelay) return;
+                //if문이 처음은 지나가고 두번째 클릭시 eDelay값 인식
+                eDelay = 1;
+                setTimeout(() => { eDelay = 0; }, speed);
+
+                //반복문은 전체가 실행 되기 때문에 안됨. 지금은 하나씩 증가해서 실행해야됨.
+                // 0 -> 1 -> 2 -> 3 -> 4
+                slideList[idx].style.left ="-100%";
+                slideList[idx].style.transition =`left ${speed/1000}s ease-out`;
+                //idx+1 하면 6번째 이미지가 없기 때문에 에러가 난다. 그래서 if문을 사용해줘야한다.
+                // 1 -> 2 -> 3 -> 4 -> 5
+                if (idx === 4) idx = -1;
+                slideList[idx+1].style.left ="0%";
+                slideList[idx+1].style.transition =`left ${speed/1000}s ease-out`;
+                //setTimeout(함수,시간):써준 시간후 한번만
+                //setInterval(함수,시간):써준 시간후 반복
+                setTimeout(function(){
+                    if(idx === -1) idx = 4;
+                    slideList[idx].style.left ="100%";
+                    slideList[idx].style.transition ="none";
+                    idx++;
+                    if(idx === 5) idx =0;
+                },700);
+
+            };
+
+            
+   
+
+    </script>
+</body>
+</html>

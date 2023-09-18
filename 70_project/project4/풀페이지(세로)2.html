@@ -9,6 +9,7 @@
     <!-- 섹션4로 갔을때 더 밑으로 갔을때 에러 방지하는법 -->
     <!--  //try~catch 에러처리방법  -->
     <link rel="stylesheet" href="css/style.css">
+    <style></style>
 </head>
 
 <body>
@@ -19,6 +20,31 @@
             <!-- 로고 -->
             <!-- 네비게이션 -->
             <!-- 케로셀-->
+            <div id="slideWrap">
+                <ul class="slide">
+                    <li><img src="/assets/images/pic2.jpg" alt="이미지1"></li>
+                    <li><img src="/assets/images/pic3.jpg" alt="이미지2"></li>
+                    <li><img src="/assets/images/pic4.jpg" alt="이미지3"></li>
+                    <li><img src="/assets/images/pic5.jpg" alt="이미지4"></li>
+                    <li><img src="/assets/images/pic6.jpg" alt="이미지5"></li>
+                </ul>
+        
+                <!-- 좌우버튼 -->
+                <div class="ctls">
+                    <a href="#" id="pb">prev</a>
+                    <a href="#" id="nb">next</a>
+                </div>
+        
+                <!-- 인디케이터 -->
+                <ul class="indi">
+                    <li class="on">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+            <!-- //케로셀 -->
         </div>
         <!-- //섹션1 -->
 
@@ -47,7 +73,7 @@
                     </div>
                     <!--//텍스트 스크롤 모션  -->
                     <!-- 고스트 버튼 -->
-                    <a href="#">자세히 보기</a>
+                    <a class="proBtn" href="#">자세히 보기</a>
                     <!-- //고스트버튼 -->
                 </div>
                 <!-- // 텍스트left  -->
@@ -64,5 +90,7 @@
         <!-- //섹션4 -->
     </div>
     <script src="js/fullpage.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/carousel.js"></script>
 </body>
 </html>
