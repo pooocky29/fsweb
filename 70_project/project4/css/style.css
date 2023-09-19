@@ -11,7 +11,72 @@
 #sec4{background: lightpink;}
 
 
-/* 섹션1 */
+
+
+
+/* 😀 헤더 */
+  /* header */
+  #header{
+    position: fixed; 
+    z-index: 9999;
+    width: 100%; 
+    padding: 0 50px;
+    display: flex; 
+    justify-content:space-between; 
+    align-items: center;
+    }
+    #header:hover{background-color:#000}
+
+    #header::after{
+    content: '';
+    position: absolute;
+    top: 95px;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    z-index: -1;
+    transition: .5s;
+    background: green;
+    }
+
+    #header:hover::after{height: 200px;}
+    
+
+    /* 로고 */
+    #header .logo{width: 207px;}
+
+    #header .inner{height: 95px; }
+
+    #gnb{
+        position: relative;
+        height: 95px;
+        z-index: 1;
+        overflow: hidden;
+        transition: .5s;
+        text-align: center;
+    }
+    #header:hover #gnb{height: 295px;}
+
+    /* depth1 */
+    #gnb .main{display: flex;}
+    /* lin-height 상속되어서 공백이 생길수 잇음 */
+    #gnb .main>li{line-height: 95px;}
+    #gnb .main>li>a{
+        padding: 4px 16px;
+        font-size: 1.8rem;
+       }
+
+    /* depth2 */
+    .sub li{margin:4px 16px; line-height: 1.8;}
+    .sub a{display:block; color:#fff;}
+
+    /* sns */
+    .util{display: flex; font-size: 1.3rem;}
+    .util ul{display: flex;}
+    .util li{margin:0 6px;}
+
+
+/* 😀섹션1 */
  /* 캐로셀(carousel) */
  #slideWrap {
     /* 화면의 가로/세로 가운데 */
@@ -83,10 +148,111 @@
 #slideWrap .indi li.on {background: #f00;}
 
 
-/* 섹션2 */
-/* 섹션3 */
+/* 😀섹션2 */
+    /* 섹션 */
+    #sec2 {position: relative;}
+    #sec2 h2 {font-size: 4.4rem; text-align: center;}
+
+    #sec2 p {text-align: center; padding-bottom: 48px; }
+
+    #sec2 .container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 1400px;
+        height: 700px;
+    }
+
+    /* 탭 버튼 */
+    #tabs .btn {
+        z-index: 9999;
+        position: absolute;
+        right: 335px;
+    }
+
+    #tabs .btn a {color: #555;}
+
+    /* li중에서 on클래스인 a만 */
+    #tabs .btn li.on a { color: #007fa8;}
+
+    #tabs .btn li {
+        display: inline-block;
+        padding: 8px 8px;
+    }
+
+    /* 첫번째 li빼고 나머지 의 before*/
+    #tabs .btn li+li::before {
+        content: '|';
+        margin-right: 20px;
+    }
+
+    /*  탭 내용 */
+    #tabs div {
+        /* 4개중에 한개만 보이고 모두숨김 */
+        display: none;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: absolute;
+        width: 1120px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* on이들어간 div 하나는 보이게 */
+    #tabs div.on {display: flex;}
+
+    
+    #tabs figure {
+        flex-shrink: 0;
+        width: 224px;
+    }
+
+    #tabs figure:first-of-type{
+        /* 1위 이미지만 크게 다시지정 */
+        width: 576px;
+    }
+    
+    #tabs figcaption {
+        /* 모든 캡션의 글자크기 */
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin: 8px 0;
+        letter-spacing: -1.4px;
+    }
+
+    #tabs figure:first-of-type figcaption {
+        /* 오른쪽으로 글자배치 */
+        position: absolute;
+        /* 왼쪽맞춤때문에 left로 지정한것이다. */
+        left: 633px;
+        top: 60px;
+        /* 1위캡션의 글자크기만 재설정 */
+        font-size: 4rem;
+        letter-spacing: -1.8px;
+        margin: 8px 0;
+    }
+
+    
+    #tabs figure:first-of-type::after {
+        content: "1위";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 2rem;
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+        background: #007fa8;
+    }
+
+    #tabs figure:first-of-type+figure {margin-left: 30px;}
 
 
+/* 😀섹션3 */
 
 /* sec3 페럴렉스이미지 */
 #sec3 {
@@ -145,4 +311,68 @@ margin-bottom: 16px;
  
 }
 
-/* 섹션4 */
+/*😀 섹션4 */
+
+    #sec4{position: relative;}
+    #sec4 .container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+    }
+
+    #sec4 h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    #sec4 p {margin-bottom: 48px;}
+
+    /* 비디오 */
+    .vid {
+        position: relative;
+        width: 780px;
+        margin: 0 auto 48px;
+    }
+    /* 비디오 플레이어 버튼 */
+    .vid .btn {
+        display: none;
+        position: absolute;
+        left:50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        cursor: pointer;
+        /* span의 수직중앙맞춤을 위해 적당히 */
+        padding-top: 30px;
+        background: rgba(0,0,0,0.5);
+    }
+
+
+    /* 일시정지버튼 */
+    .vid .btn span {
+        display: inline-block;
+        width: 10px;
+        height: 40px;
+        margin: 0 6px;
+        background: #fff;
+    }
+
+    /* 플레이버튼(삼각형) */
+    .vid .btn span.on {
+        margin-left: 15px;
+        background: transparent;
+        /* 보더로 삼각형 만들기 */
+        width:0;
+        height:0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 30px solid #fff;
+        border-right: 0px solid transparent;
+    }
+
+    .vid .btn span.on+span {display: none;}

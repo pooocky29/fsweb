@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일메뉴_아이콘(햄버거버튼)</title>
+    <style>
+
+        
+        /* 모바일 버튼 */
+        .mBtn {
+            z-index: 9999;
+            position: absolute;
+            right:20px;
+            top:20px;
+            width: 20px;
+            height: 16px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .mBtn span {
+            position: absolute;
+            left: 0;
+            /* span선 모두 수직중앙에위치 */
+            top: 50%;
+            width: 100%;
+            /* 보더선으로 굵기를줌 */
+            border-top: 3px solid #000;
+            transition: .3s;
+        }
+
+        /* 햄버거 선 위치조절 */
+        .mBtn span:first-of-type {top: 0;}
+        .mBtn span:last-of-type {top: 100%;}
+
+        /* x선 만들때 첫번째선을 숨기기  */
+        .mBtn.active span:first-of-type{opacity:0;}
+        
+        .mBtn.active span:first-of-type,
+        .mBtn.active span:last-of-type{top:50%;}
+        
+        /* x모양을 만드는 active*/
+        .mBtn.active span:nth-of-type(2) {
+            transform: rotate(45deg);
+            border-top: 3px solid  #000;
+        }
+
+        .mBtn.active span:nth-of-type(3) {
+            transform: rotate(-45deg);
+            border-top: 3px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="mBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+    <script>
+        const mBtn = document.querySelector('.mBtn')
+        //버튼을 클릭하면
+            mBtn.onclick=()=>{
+                mBtn.classList.toggle('active')
+            }
+        //햄버거에서 x버튼으로 바뀌어야함
+        //mBtn 에 active클래스 추가.
+
+    </script>
+</body>
+</html>

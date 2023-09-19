@@ -17,9 +17,7 @@
             list-style: none;
         }
 
-        a {
-            text-decoration: none;
-        }
+        a {text-decoration: none;}
 
         img {
             width: 100%;
@@ -49,9 +47,7 @@
             left: 100%;
         }
 
-        .slide li:first-of-type {
-            left: 0;
-        }
+        .slide li:first-of-type { left: 0;}
 
         /* next/prev Button */
         .ctls {
@@ -70,14 +66,10 @@
         }
 
         /* prev button */
-        #pb {
-            left: 10%;
-        }
+        #pb {left: 10%;}
 
         /* next button */
-        #nb {
-            right: 10%;
-        }
+        #nb {right: 10%;}
 
         /* indi */
         .indi {
@@ -101,9 +93,7 @@
             background: #fff;
         }
 
-        .indi li.on {
-            background: #f00;
-        }
+        .indi li.on { background: #f00;}
     </style>
 </head>
 
@@ -155,7 +145,7 @@
             auto = setInterval(() => nextSlide(), speed * 4);
         }
 
-        // prev
+        //😀 prev
         npBtn[0].onclick = () => {
             // 사용자가 버튼 클릭 시 자동 슬라이드 정지
             clearInterval(auto);
@@ -170,7 +160,7 @@
 
         }; //prev
 
-        // next
+        // 😀 next
         npBtn[1].onclick = () => {
             // 사용자가 버튼 클릭 시 자동 슬라이드 정지
             clearInterval(auto);

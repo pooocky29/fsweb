@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML+JS</title>
+    <title>ua</title>
 </head>
 
 <body>
     <h1>브라우저와 운영체제 정보</h1>
-
+    <P>여기에출력</P>
     <script>
         /* 
             screen: 사용자의 모니터 정보 제공
@@ -30,7 +30,9 @@
                 - 사용 중인 브라우저 이름
                 - 같은 엔진을 사용 중이며 호환 가능한 다른 브라우저
         */
-        
+       const p =document.querySelector('p')
+       p.innerText = navigator.userAgent
+    
     </script>
 </body>
 
