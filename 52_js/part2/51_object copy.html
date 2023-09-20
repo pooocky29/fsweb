@@ -13,34 +13,42 @@
 
 <body>
     <h1>객체</h1>
-    <div></div>
+    <div>여기에 출력</div>
+
+
+    <h1>DATE</h1>
+    <p>여기에 출력</p>
+
+    <h1>MATH</h1>
+    <p>여기에 출력</p>
+
+    <h1>STRING</h1>
+    <p>여기에 출력</p>
+
     <script>
-        /* 😀객체선언
-            const 객체={
-                KEY:값,
-                last name: joo
-                속성:function(){}
-            };
-        */
-       /*😀 객체 사용
+     
+       /*
+       😀객체 사용
             객체['속성'] 또는 객체.속성 -> ✨대괄호쓰는건 .을 삭제한다
             -[]안에 속성은 문자열로 표기
             -속성의 이름에 공백이 있을 경우 객체['last name']로 사용한다. 하지만 카멜케이스(lastName)로 쓰자!
         */
 
-        /* 😀 현실 세계
-        
-            TV -> 객체(사람)
-            켜다, 끄다, 볼륨을 높이다, 볼륨을 낮추다 -> 메서드(동작)
-            너비, 높이, 색상, 무게 -> 속성(특징)
-
-            객체는 기능(메서드)과 속성을 가지고 있다.
-
-            객체.메서드() -> 객체의 메서드를 실행한다.
-            객체.속성 -> 객체의 속성값을 가져온다.
-            객체.속성 = 값 -> 객체의 속성값을 바꾼다.
-
-        */
+       /* //객체 값을 가져오기
+       
+         //속성의 공백이 있는경우
+       person['first name'];
+    
+         //객체['속성']
+       person['age'];
+    
+         //객체.속성 (좋은방법이다.)
+       person.gender;
+    
+        //객체.메서드()
+       person.name();
+       */
+   
     //요소선택
     const box = document.querySelector('div');
 
@@ -55,33 +63,244 @@
             //✨객체사용
             return person.lastName + person['first name']
         }
-    }
+    };
 
-    /* //객체 값을 가져오기
-    
-      //속성의 공백이 있는경우
-    person['first name'];
-
-      //객체['속성']
-    person['age'];
-
-      //객체.속성 (좋은방법이다.)
-    person.gender;
-
-     //객체.메서드()
-    person.name();
-    */
 
     //객체의 값을 수정 할경우 / 객체.속성명= 값;
     person.lastName = '김';
 
     //출력
     box.innerText = `
-    나의 이름은 ${person.name()}입니다.
-    나이는 ${person['age']}세이고요
-    성별은 ${ person.gender}입니다
-    `;
-    
+            나의 이름은 ${person.name()}입니다.
+            나이는 ${person['age']}세이고요
+            성별은 ${ person.gender}입니다
+            `;
+            
+
+
+        // 참조변수 = new Date() -> 현재시간,날짜를 가져오는것
+        // 참조변수 = new Date(연,월,일) -> 사용자가 지정한 것을 가져옴
+
+        // getter(게터):가져오기  -> 대부분 변수에 담와와서 사용한다. let a =객체.속성
+        // setter(세터):지정하기
+        
+        // 날짜 정보를 수정할 때(set)
+        // setFullYear()
+        // setMonth()
+        // setDate()
+        // setHours()
+        // setMinutes()
+        // setSeconds()
+        // setMilliseconds()
+        // setTime()
+
+
+        //😀 날짜 정보를 가져올 때(get)
+        // getFullYear(): 년
+        // getMonth(): 월(0:1월 ~ 11:12월)
+        // getDate(): 일
+        // getDay(): 요일(0:일 ~ 6:토)
+        // getHours(): 시
+        // getMinutes(): 분
+        // getSeconds(): 초
+        // getMilliseconds(): 밀리초
+        // getTime(): 1970년 1월 1일부터 경과된 시간을 밀리초로 반환
+        // toGMTString(): GMT 표준 표기 방식으로 문자열 데이터로 반환
+        // toLocaleString(): 운영 시스템 표기 방식으로 문자열 데이터로 반환
+        // 요소.toLocaleDateString() ~ 날짜 객체의 날짜(시간 아님)를 문자열로 반환
+        // 요소.toLocaleTimeString() ~ 날짜 객체의 시간 부분을 문자열로 반환
+
+        
+        //🎃DATE
+        const pEle = document.querySelectorAll('p');
+        setInterval(clock, 1000);
+        
+        function clock (){
+                //참조변수 = new Date()
+                const d = new Date();
+
+                // 날짜 정보를 가져올 때(get)
+                pEle[0].innerHTML = d + '<br>';
+
+                // getFullYear(): 년
+                pEle[0].innerHTML += d.getFullYear() + '년' + '&nbsp;';
+
+                // getMonth(): 월(0:1월 ~ 11:12월)
+                // 1을 더해야 달의 숫자가 맞다. (인덱스0번부터 시작하는 것땜에 안맞음)
+                pEle[0].innerHTML += (d.getMonth() + 1) + '월' + '&nbsp;';
+
+                // getDate(): 일
+                pEle[0].innerHTML += d.getDate() + '일' + '&nbsp;';
+
+                // getDay(): 요일(0:일 ~ 6:토)
+                let week;
+    switch (d.getDay()) {
+        case 0: week = '일'; break;
+        case 1: week = '월'; break;
+        case 2: week = '화'; break;
+        case 3: week = '수'; break;
+        case 4: week = '목'; break;
+        case 5: week = '금'; break;
+        case 6: week = '토'; break;
+    }
+                pEle[0].innerHTML += `(${week}요일) <br>`;
+
+                // getHours(): 시
+                pEle[0].innerHTML += d.getHours() + ':';
+
+                // getMinutes(): 분
+                pEle[0].innerHTML += d.getMinutes()+':';
+
+                // getSeconds(): 초
+                pEle[0].innerHTML += d.getSeconds();
+
+                // getMilliseconds(): 밀리초
+                pEle[0].innerHTML += `(${d.getMilliseconds()})`;
+
+                // getTime(): 1970년 1월 1일부터 경과된 시간을 밀리초로 반환
+                pEle[0].innerHTML += '<br>' + d.getTime();
+
+                // toGMTString(): GMT 표준 표기 방식으로 문자열 데이터로 반환
+                pEle[0].innerHTML += '<br>' + d.toGMTString();
+
+                // toLocaleString(): 운영 시스템 표기 방식으로 문자열 데이터로 반환 (한꺼번에 나와서 좋지만 편집을 못함.)
+                pEle[0].innerHTML += '<br>' + d.toLocaleDateString();
+                
+                // 요소.toLocaleDateString() ~ 날짜 객체의 날짜(시간 아님)를 문자열로 반환
+                pEle[0].innerHTML += '<br>'+ d.toLocaleDateString();
+
+                // 요소.toLocaleTimeString() ~ 날짜 객체의 시간 부분을 문자열로 반환
+                pEle[0].innerHTML += '<br>' + d.toLocaleTimeString();
+           
+            // 😀참조변수 = new Date(연,월,일) 
+                const dDay = new Date(2023,12,26) 
+            //몇일 남았을까?
+                //1일 -> 24 (시간) -> 24*60 (분)-> 24* 60* 60 (초)-> 24* 60* 60* 1000(밀리초)
+                // 1970.1.1일부터 2023.9.20일까지 
+                // 1970.1.1.일부터 2023.12.26일까지
+                pEle[0].innerHTML += '<br>남은 일 수: ' +
+                 (dDay.getTime()/(24*60*60*1000) - d.getTime()/(24*60*60*1000));
+                // console.log(`현재일:`,d.getTime()/(24*60*60*1000));
+                // console.log(`종강일:`,dDay.getTime()/(24*60*60*1000));
+                // console.log(`남은일수:`,dDay.getTime()/(24*60*60*1000)-d.getTime()/(24*60*60*1000));
+
+            // 😀setFullYear()
+            d.setFullYear(2024);
+            pEle[0].innerHTML += '<br>' + d.getFullYear();
+  
+        }
+
+        //🎃MATH
+        // Math.abs(숫자): 절대값 반환
+        pEle[1].innerHTML = `Math.abs(-50)= ${Math.abs(-50)}<br>`;
+
+        // Math.max(숫자1, 숫자2, 숫자3, ...): 가장 큰 값 반환
+        pEle[1].innerHTML += `Math.max(10,20,30)=${Math.max(10,50,100)}<br>`;
+
+        // Math.min(숫자1, 숫자2, 숫자3, ...): 가장 작은 값 반환
+        pEle[1].innerHTML += `Math.min(10,20,30)=${Math.min(10,50,100)}<br>`;
+
+        // Math.pow(숫자, 제곱값): 거듭제곱값 반환
+        pEle[1].innerHTML += ` Math.pow(2,3)=${ Math.pow(2,3)}<br>`;
+
+        // 🎈Math.random(): 0(포함) ~ 1(제외) 사이의 난수 반환 -> 
+        // 0*6 <= num*6 && num*6 < 1*6  
+        // 0+1 <= num*6+1 && num*6+1 < 6+1  
+        // 1 <= num*6+1 && num*6+1 < 7  
+        let num = Math.random();
+        pEle[1].innerHTML += `Math.random()=${(num*6+1)}<br>`;
+
+        // Math.round(숫자): 소수점 첫째 자리에서 반올림한 정수 반환
+        // Math.ceil(숫자): 소수점 첫째 자리에서 올림한 정수 반환
+        // Math.floor(숫자): 소수점 첫째 자리에서 내림한 정수 반환
+        pEle[1].innerHTML += `Math.round(num*6+1)=${Math.round(num*6+1)}<br>`;
+        pEle[1].innerHTML += `Math.ceil(num*6+1)=${Math.ceil(num*6+1)}<br>`;
+
+        //주사위 쓰려면 이걸써야함 
+        pEle[1].innerHTML += `Math.floor(num*6+1)=${Math.floor(num*6+1)}<br>`;
+        
+        // Math.sqrt(숫자): 제곱근값 반환
+        pEle[1].innerHTML += `Math.sqrt(4)=${Math.sqrt(4)}<br>`;
+        
+        // Math.PI: 원주율 상수 반환
+        pEle[1].innerHTML += `Math.PI=${Math.PI}<br>`;
+
+
+
+        //🎃STRING
+        // 변수를 문자열객체로 사용할수 있다.
+        let str1='hello javacript';
+        let str2='2023-09-20-14-30-25';
+        let str3='name: 홍길동, id: hello, pw:123';
+
+        // 요소(문자열객체).charAt(index): index 번호에 해당하는 문자열 반환  ->(요소.charAt(index) 사용하는순간 charAt(index)가 인스턴스역활)
+            pEle[2].innerHTML = `str2.charAt(7)=${str2.charAt(7)}<br>`;
+
+            // indexOf('찾을문자'): 객체의 왼쪽부터 문자열을 찾아 최초 일치하는 index 번호 반환 (없으면 -1)            
+            pEle[2].innerHTML += `str1.indexOf('j')=${str1.indexOf('j')}<br>`;
+            pEle[2].innerHTML += `str1.indexOf('7')=${str1.indexOf('7')}<br>`;
+
+            // indexOf('찾을문자', 인덱스): 인덱스 번호부터 오른쪽 방향으로 찾을문자와 최초 일치하는 인덱스 번호 반환            
+            pEle[2].innerHTML += `str1.indexOf('a','8')=${str1.indexOf('a','8')}<br>`;
+            
+            // lastIndexOf('찾을문자'): 객체의 오른쪽부터 문자열을 찾아 최초 일치하는 index 번호 반환 (없으면 -1)
+            // lastIndexOf('찾을문자', 인덱스): 인덱스 번호 부터 왼쪽 방향으로 찾을문자와 최초 일치하는 인덱스 번호 반환
+            pEle[2].innerHTML += `str1.lastIndexOf('j')=${str1.lastIndexOf('j')}<br>`;
+            pEle[2].innerHTML += `str1.lastIndexOf('a',8)=${str1.lastIndexOf('a',8)}<br>`;
+            
+            
+            // match('찾을문자'): 객체의 왼쪽부터 문자열을 찾아 최초 일치하는 문자열을 반환 (없으면 null)
+            pEle[2].innerHTML += `str1.match('j')=${str1.match('j')}<br>`;
+            pEle[2].innerHTML += `str1.match('A')=${str1.match('A')}<br>`;
+
+            // search('찾을문자'): 객체의 왼쪽부터 문자열을 찾아 최초 일치하는 index 번호 반환 (없으면 -1)
+            pEle[2].innerHTML += `str1.search('o')=${str1.search('o')}<br>`;
+
+            // substr(index, 개수): 인덱스 번호부터 개수만큼 문자열 반환
+            pEle[2].innerHTML += `str1.substr(6,4)=${str1.substr(6,4)}<br>`;
+
+            // substring(index1, index2): 인덱스1부터 인덱스2이전 구간의 문자열 반환, (단, 음수인 경우 인덱스 0을 가리킴)
+            pEle[2].innerHTML += `str1.substring(0,5)=${str1.substring(0,5)}<br>`;
+            
+            // replace('바꿀문자', '새문자'): 객체의 왼쪽부터 바꿀 문자열을 찾아 일치하는 문자열을 새 문자열로 치환
+            pEle[2].innerHTML += `str1.replace('hello','bye')=${str1.replace('hello','bye')}<br>`;
+            
+            
+            // toLowerCase(): 소문자로 반환
+            pEle[2].innerHTML += `str1.toLowerCase()=${str1.toLowerCase()}<br>`;
+            // toUpperCase(): 대문자로 반환
+            pEle[2].innerHTML += `str1.toUpperCase()=${str1.toUpperCase()}<br>`;
+            // length: 문자열의 문자 총 개수 반환
+            pEle[2].innerHTML += `str1.length=${str1.length}<br>`;
+            
+            
+            // slice(a, b):왼쪽에서 a개의 문자를 자르고,b번째 이후에 문자열을 자른 후 남은 문자열을 반환
+            //(단, b가 -1인 경우 뒤에서부터 1글자를 가리킴)
+            pEle[2].innerHTML += `str1.slice(6,10)=${str1.slice(6,10)}<br>`;
+        
+            // split('문자'): 지정한 문자를 기준으로 문자열 데이터를 나누어 배열에 저장하여 반환
+            pEle[2].innerHTML += `str2.split('-')=${str2.split('-')}<br>`;
+            pEle[2].innerHTML += `str1.split('a')=${str1.split('a')}<br>`;
+                //로그인시 ,로 구별하면 입력받은 값만 들어감.
+                pEle[2].innerHTML += `str3.split(',')=${str3.split(',')}<br>`;
+            
+
+
+            // concat('새문자열'): 문자열에 새 문자열 결합
+            pEle[2].innerHTML += `str1.concat('new java')=${str1.concat(' new java')}<br>`;
+            
+            // string.fromCharCode(아스키코드값): 아스키코드 값에 해당하는 문자열 반환
+            pEle[2].innerHTML += `String.fromCharCode(65)=${String.fromCharCode(65)}<br>`;
+
+            //string.charCodeAt(index): 인덱스 번호에 해당하는 문자열의 아스키코드 값을 반환 (인덱스를 생략하면 0)
+            pEle[2].innerHTML += `str1.charCodeAt(5)=${str1.charCodeAt(5)}<br>`;
+            
+            // trim(): 문자열 앞 또는 뒤에 공백 문자열 삭제
+            pEle[2].innerHTML += `
+            '두  칸  공  백  이'.trim()=${'한  칸   공  백  으  로 나옴'.trim()}
+            <br>`;
+            
+
 
     </script>
 </body>

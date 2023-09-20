@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스킬바</title>
+    <style>
+        .myProgress {
+            width: 100%;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
+
+        .Progressbar {
+            width: 0%;
+            height: 30px;
+            background-color: #04AA6D;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Progress Bar</h1>
+
+    <div class="myProgress">
+        <div class="Progressbar">0%</div>
+    </div>
+    <div class="myProgress">
+        <div class="Progressbar">0%</div>
+    </div>
+    <div class="myProgress">
+        <div class="Progressbar">0%</div>
+    </div>
+
+    <br>
+    <button>Click Me</button>
+
+    <script>
+        const pgBtn = document.querySelector('button')
+        const pgBar = document.querySelector('.Progressbar')
+
+
+        pgBtn.onclick=()=> skill();
+
+
+        
+        function skill(){
+            let i = 0;
+            const timer = setInterval(counter,100);
+
+            //지역함수
+            function counter(){
+                if(i >=20) {
+                    clearInterval(timer);
+                }
+                pgBar.innerHTML =i+'%';
+                pgBar.style.width =i+ '%'
+                i++; 
+            }
+        }
+    </script>
+</body>
+</html>
